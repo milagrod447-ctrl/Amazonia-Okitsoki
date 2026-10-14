@@ -1,0 +1,5 @@
+IMPORTANTE:
+1. Extrae TODO el contenido del ZIP.
+2. index.html, styles.css y script.js deben quedar en la MISMA carpeta.
+3. Abre index.html con Chrome o Edge.
+4. No cambies el nombre de styles.css.

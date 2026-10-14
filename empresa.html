@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazonía Okitsoki | Empresa</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ESTILOS INTERNOS DIRECTOS PARA FORZAR EL DISEÑO EN CUALQUIER DISPOSITIVO */
+        body {
+            overflow-x: hidden !important;
+        }
+
+        .empresa-box-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .why-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .valores-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .proceso-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        /* Adaptación automática limpia para celulares y tablets con separación constante */
+        @media (max-width: 968px) {
+            .empresa-box-grid {
+                grid-template-columns: 1fr !important;
+                padding: 20px !important;
+            }
+
+            .mv-grid {
+                grid-template-columns: 1fr !important;
+                gap: 25px !important;
+            }
+
+            .why-grid-custom {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+
+            .valores-grid-custom {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 25px !important;
+            }
+
+            .proceso-grid-custom {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 25px !important;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .grid-cuatro-datos {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        /* EFECTO DE ANIMACIÓN DE RESPIRACIÓN SUAVE LEVE PARA LA CAJA OSCURA PRINCIPAL */
+        .caja-respiracion-suave {
+            animation: respiracionLeve 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes respiracionLeve {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 15px 35px rgba(74, 30, 13, 0.25);
+            }
+
+            100% {
+                transform: scale(1.008);
+                box-shadow: 0 20px 45px rgba(255, 184, 28, 0.22);
+            }
+        }
+
+        /* ESTILOS DEL MODAL/CÁMARA AMPLADA AL MACHUCAR LA IMAGEN */
+        .modal-galeria {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(20, 7, 2, 0.92);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .modal-galeria.activo {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-imagen-contenido {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 16px;
+            border: 4px solid #FFB81C;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+            object-fit: contain;
+        }
+
+        .modal-cerrar-btn {
+            position: absolute;
+            top: 25px;
+            right: 30px;
+            color: #FFB81C;
+            font-size: 38px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .modal-cerrar-btn:hover {
+            transform: scale(1.2);
+            color: white;
+        }
+
+        .modal-caption {
+            color: #f1e4dc;
+            font-size: 15px;
+            margin-top: 15px;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        /* .page-banner{
+            background-image: url("imagenes/imagen_1.jpeg") !important;
+            min-height: 500px !important;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <!-- =====================================================
+     1. NAVEGACIÓN Y CABECERA FIJA
+===================================================== -->
+    <header class="hero-page" style="position: relative; width: 100%; background-color: #321307;">
+        <nav class="nav">
+            <a class="brand" href="index.html">
+                <img src="imagenes/Amazonia1.jpg" alt="Logo" class="brand-img">
+                <span>Amazonía Okitsoki</span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html" class="active-link">Empresa</a>
+                <a href="publico.html">Público</a>
+                <a href="identidad.html">Identidad</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="manual.html">Manual</a>
+                <a href="mejoras.html">Mejoras</a>
+            </div>
+        </nav>
+
+        <!-- BANNER DE LA PÁGINA EMPRESA -->
+        <div class="page-banner"
+            style="padding: 130px 20px 70px 20px; text-align: center; color: white;">
+            <div class="page-banner-content" style="max-width: 900px; margin: 0 auto;">
+                <p class="eyebrow"
+                    style="color: #FFB81C; font-weight: 800; letter-spacing: 3px; font-size: 12px; margin-bottom: 12px;">
+                    01 · ¿QUIÉNES SOMOS?</p>
+                <h1
+                    style="font-family: 'Playfair Display', serif; font-size: clamp(38px, 6vw, 60px); margin-bottom: 15px; line-height: 1.1;">
+                    Nuestra Empresa & <span style="color: #FFB81C;">Filosofía</span></h1>
+                <p style="color: #f1e4dc; font-size: 16px; font-weight: 500;">"El verdadero grano de cacao artesanal de
+                    Satipo, esencia y tradición de la selva central."</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================
+     2. CONTENIDO PRINCIPAL
+===================================================== -->
+    <main class="main-content"
+        style="padding: 60px 20px; max-width: 1200px; margin: 0 auto; background-color: var(--crema-marfil);">
+
+        <!-- SECCIÓN: DATOS DE LA EMPRESA (CON EL CUADRO DE PRODUCTO QUE FALTABA) -->
+        <section class="section" style="margin-bottom: 30px;">
+            <div class="content-row-dark empresa-box-grid caja-respiracion-suave"
+                style="background: linear-gradient(145deg, #4A1E0D, #321307); border-radius: 20px; padding: 45px; border: 1px solid rgba(255,184,28,0.25);">
+                <div class="dark-text">
+                    <span class="badge-gold"
+                        style="background: rgba(255,184,28,0.2); color: #FFB81C; font-size: 11px; font-weight: 800; padding: 6px 14px; border-radius: 15px; display: inline-block; margin-bottom: 15px;">
+                        <i class="fas fa-seedling"></i> 1. Datos de la Empresa
+                    </span>
+                    <h2
+                        style="font-family: 'Playfair Display', serif; font-size: 32px; color: white; margin-bottom: 15px;">
+                        Amazonía Okitsoki S.A.C.</h2>
+                    <p style="font-size: 14px; color: #f1e4dc; line-height: 1.8; margin-bottom: 25px;">
+                        Chocolatería artesanal y confitería de autor. Elaboramos chocolates artesanales rellenos de
+                        mermelada de frutas nativas (como coco, cocona y maracuyá) y frutos secos de la región (como
+                        sacha inchi).
+                    </p>
+
+                    <!-- LOS CUADROS DE DATOS COMPLETOS (5 CUADROS INCLUYENDO PRODUCTO) -->
+                    <div class="grid-cuatro-datos" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="rebotar-box"
+                            style="background: rgba(255,255,255,0.06); padding: 15px; border-radius: 12px; border-left: 4px solid #FFB81C;">
+                            <span
+                                style="font-size: 11px; color: #FFB81C; font-weight: bold; text-transform: uppercase;">Empresa</span>
+                            <p style="font-size: 13px; color: #fff; margin-top: 3px; font-weight: 600;">Amazonía
+                                Okitsoki S.A.C.</p>
+                        </div>
+                        <div class="rebotar-box"
+                            style="background: rgba(255,255,255,0.06); padding: 15px; border-radius: 12px; border-left: 4px solid #226E28;">
+                            <span
+                                style="font-size: 11px; color: #2ecc71; font-weight: bold; text-transform: uppercase;">Marca</span>
+                            <p style="font-size: 13px; color: #fff; margin-top: 3px; font-weight: 600;">Amazonía
+                                Okitsoki</p>
+                        </div>
+                        <div class="rebotar-box"
+                            style="background: rgba(255,255,255,0.06); padding: 15px; border-radius: 12px; border-left: 4px solid #F59D00;">
+                            <span
+                                style="font-size: 11px; color: #f39c12; font-weight: bold; text-transform: uppercase;">Rubro</span>
+                            <p style="font-size: 13px; color: #fff; margin-top: 3px; font-weight: 600;">Chocolatería
+                                artesanal</p>
+                        </div>
+                        <div class="rebotar-box"
+                            style="background: rgba(255,255,255,0.06); padding: 15px; border-radius: 12px; border-left: 4px solid #e74c3c;">
+                            <span
+                                style="font-size: 11px; color: #e74c3c; font-weight: bold; text-transform: uppercase;">Ubicación</span>
+                            <p style="font-size: 13px; color: #fff; margin-top: 3px; font-weight: 600;">Satipo, Junín
+                            </p>
+                        </div>
+                        <!-- CUADRO AGREGADO DE PRODUCTO (OCUPA LAS 2 COLUMNAS PARA COMPLETAR) -->
+                        <div class="rebotar-box"
+                            style="background: rgba(255,255,255,0.06); padding: 15px; border-radius: 12px; border-left: 4px solid #3498db; grid-column: span 2;">
+                            <span
+                                style="font-size: 11px; color: #3498db; font-weight: bold; text-transform: uppercase;">Producto</span>
+                            <p style="font-size: 13px; color: #fff; margin-top: 3px; font-weight: 600;">Chocolates
+                                artesanales rellenos de mermelada de frutas nativas y frutos secos de la región.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IMAGEN INTERACTIVA QUE SE AGRANDA AL MACHUCAR -->
+                <div class="dark-image rebotar-box" style="position: relative; cursor: pointer;"
+                    onclick="abrirModalImagen('imagenes/IMAGEN FONDO1.jpeg', 'Cacao Nativo Artesanal de Satipo - Amazonía Okitsoki')">
+                    <img src="imagenes/IMAGEN_FONDO1.jpeg" alt="Cacao de Satipo"
+                        style="width: 100%; height: 340px; object-fit: cover; border-radius: 16px; border: 5px solid #FFB81C; box-shadow: 0 10px 25px rgba(0,0,0,0.4);">
+                    <div
+                        style="position: absolute; bottom: 12px; right: 12px; background: rgba(50, 19, 7, 0.85); color: #FFB81C; padding: 6px 12px; border-radius: 20px; font-size: 11px; font-weight: bold; border: 1px solid #FFB81C;">
+                        <i class="fas fa-search-plus"></i> Clic para agrandar
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN AGREGADA: DESCRIPCIÓN DE LA EMPRESA (ABAJO DE DATOS CON MOVIMIENTO) -->
+        <section class="section" style="margin-bottom: 50px;">
+            <div class="rebotar-box"
+                style="background: white; border-radius: 18px; padding: 35px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-left: 6px solid #FFB81C; border-top: 1px solid #eee;">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                    <div
+                        style="width: 45px; height: 45px; background: rgba(255,184,28,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #F59D00; font-size: 20px;">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h2 style="font-family: 'Playfair Display', serif; font-size: 26px; color: #4A1E0D; margin: 0;">
+                        Descripción de la Empresa</h2>
+                </div>
+                <p style="font-size: 14px; color: #555; line-height: 1.8; margin-bottom: 15px;">
+                    Amazonía Okitsoki es un negocio artesanal dedicado a la elaboración de chocolates con cacao nativo
+                    de Satipo, rellenos con mermelada artesanal de frutas de la selva y decorados con frutos secos de la
+                    zona.
+                </p>
+                <p style="font-size: 14px; color: #555; line-height: 1.8; margin: 0;">
+                    Ofrece barras y bombones de chocolate artesanal elaborados con cacao de Satipo, rellenos de
+                    mermeladas exóticas y cubiertos con frutos secos crujientes, presentados en empaques ecológicos y
+                    modernos.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: NUESTRO PROCESO ARTESANAL -->
+        <section class="section" style="margin-bottom: 60px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span class="badge"
+                    style="background: rgba(255,184,28,0.2); color: #FFB81C; font-size: 11px; font-weight: 800; padding: 6px 16px; border-radius: 20px; display: inline-block; margin-bottom: 12px; letter-spacing: 1px;">
+                    TRADICIÓN Y CALIDAD
+                </span>
+                <h2 class="why-title"
+                    style="font-family: 'Playfair Display', serif; font-size: 34px; color: #4A1E0D; margin-bottom: 8px;">
+                    Nuestro Proceso Artesanal
+                </h2>
+                <p style="color: #666; font-size: 14px; max-width: 650px; margin: 0 auto;">
+                    Conoce el viaje del verdadero cacao de Satipo desde la cosecha hasta convertirse en una experiencia
+                    de autor.
+                </p>
+            </div>
+
+            <div class="proceso-grid-custom">
+
+                <!-- Paso 1 -->
+                <div class="proceso-card rebotar-box"
+                    onclick="abrirModalImagen('imagenes/IMAGEN FONDO1.jpeg', 'Paso 01: Selección de Cacao Nativo en Satipo')"
+                    style="background: white; border-radius: 16px; padding: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; cursor: pointer;">
+                    <div
+                        style="overflow: hidden; border-radius: 12px; margin-bottom: 15px; height: 160px; border: 3px solid #FFB81C;">
+                        <img src="imagenes/imagen_3.jpeg" alt="Selección de Cacao"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <span
+                        style="background: #4A1E0D; color: #FFB81C; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 10px;">PASO
+                        01</span>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 18px; color: #4A1E0D; margin: 10px 0 6px 0;">
+                        Selección Nativa</h3>
+                    <p style="font-size: 12px; color: #666; line-height: 1.6; margin: 0;">Granos seleccionados a mano
+                        por agricultores locales de la selva central.</p>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="proceso-card rebotar-box"
+                    onclick="abrirModalImagen('imagenes/IMAGEN FONDO3.jpeg', 'Paso 02: Tostado de Autor y Molienda Tradicional')"
+                    style="background: white; border-radius: 16px; padding: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; cursor: pointer;">
+                    <div
+                        style="overflow: hidden; border-radius: 12px; margin-bottom: 15px; height: 160px; border: 3px solid #226E28;">
+                        <img src="imagenes/imagen_1.jpeg" alt="Tostado Artesanal"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <span
+                        style="background: #226E28; color: white; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 10px;">PASO
+                        02</span>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 18px; color: #4A1E0D; margin: 10px 0 6px 0;">
+                        Tostado de Autor</h3>
+                    <p style="font-size: 12px; color: #666; line-height: 1.6; margin: 0;">Técnicas tradicionales que
+                        potencian el aroma e intensidad pura del chocolate.</p>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="proceso-card rebotar-box"
+                    onclick="abrirModalImagen('imagenes/IMAGEN FONDO1.jpeg', 'Paso 03: Relleno con Frutos Exóticos y Mermeladas Nativas')"
+                    style="background: white; border-radius: 16px; padding: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; cursor: pointer;">
+                    <div
+                        style="overflow: hidden; border-radius: 12px; margin-bottom: 15px; height: 160px; border: 3px solid #F59D00;">
+                        <img src="imagenes/imagen_2.jpeg" alt="Frutas Nativas"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <span
+                        style="background: #F59D00; color: white; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 10px;">PASO
+                        03</span>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 18px; color: #4A1E0D; margin: 10px 0 6px 0;">
+                        Frutos Exóticos</h3>
+                    <p style="font-size: 12px; color: #666; line-height: 1.6; margin: 0;">Relleno con mermeladas de
+                        cocona, maracuyá, coco y crujiente de sacha inchi.</p>
+                </div>
+
+                <!-- Paso 4 -->
+                <div class="proceso-card rebotar-box"
+                    onclick="abrirModalImagen('imagenes/Amazonia1.jpg', 'Paso 04: Presentación en Eco-Empaque Biodegradable')"
+                    style="background: white; border-radius: 16px; padding: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center; border: 1px solid #eee; cursor: pointer;">
+                    <div
+                        style="overflow: hidden; border-radius: 12px; margin-bottom: 15px; height: 160px; border: 3px solid #FFB81C;">
+                        <img src="imagenes/imagen_8.jpeg" alt="Eco Empaque"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <span
+                        style="background: #4A1E0D; color: #FFB81C; font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 10px;">PASO
+                        04</span>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 18px; color: #4A1E0D; margin: 10px 0 6px 0;">
+                        Eco-Empaque</h3>
+                    <p style="font-size: 12px; color: #666; line-height: 1.6; margin: 0;">Presentación biodegradable
+                        alineada con nuestro compromiso ambiental.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: MISIÓN Y VISIÓN -->
+        <section class="section" style="margin-bottom: 60px;">
+            <div class="mv-grid">
+                <div class="why-item rebotar-box"
+                    style="background: white; padding: 40px; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-top: 6px solid #F59D00;">
+                    <div style="font-size: 34px; color: #F59D00; margin-bottom: 15px;"><i class="fas fa-flag"></i></div>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 24px; color: #4A1E0D; margin-bottom: 15px;">
+                        Misión Institucional</h3>
+                    <p style="font-size: 14px; color: #666; line-height: 1.8;">
+                        Elaborar chocolates artesanales de alta calidad combinando el cacao de nuestra región con
+                        mermeladas de frutas nativas y frutos secos, ofreciendo un producto innovador, delicioso y
+                        representativo de la selva central.
+                    </p>
+                </div>
+
+                <div class="why-item rebotar-box"
+                    style="background: white; padding: 40px; border-radius: 18px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-top: 6px solid #321307;">
+                    <div style="font-size: 34px; color: #321307; margin-bottom: 15px;"><i class="fas fa-eye"></i></div>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 24px; color: #4A1E0D; margin-bottom: 15px;">
+                        Visión al 2028</h3>
+                    <p style="font-size: 14px; color: #666; line-height: 1.8;">
+                        Para el año 2028, ser reconocida en la provincia de Satipo y en la región Junín como la marca
+                        líder en chocolatería artesanal de innovación, destacando por el uso de cacao nativo y el valor
+                        cultural de la zona.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: OBJETIVOS ESTRATÉGICOS -->
+        <section class="section section-why-us"
+            style="background: #f4eee3; border-radius: 18px; padding: 45px 35px; margin-bottom: 50px;">
+            <div style="margin-bottom: 35px;">
+                <span class="badge"
+                    style="background: #F9F6E8; color: #F59D00; font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: 12px; display: inline-block; margin-bottom: 10px;">Metas
+                    y Propósito</span>
+                <h2 class="why-title"
+                    style="font-family: 'Playfair Display', serif; font-size: 30px; color: #4A1E0D; margin-bottom: 8px;">
+                    Objetivos Estratégicos</h2>
+                <p style="color: #666; font-size: 14px;">Pilares fundamentales para garantizar nuestro crecimiento y
+                    compromiso sostenible.</p>
+            </div>
+
+            <div class="why-grid-custom">
+                <div class="rebotar-box"
+                    style="background: white; padding: 25px 20px; border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.04);">
+                    <h3 style="color: #F59D00; font-size: 26px; font-weight: 800; margin-bottom: 10px;">01</h3>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 16px; color: #4A1E0D; margin-bottom: 8px;">
+                        Valor Local</h4>
+                    <p style="font-size: 12px; color: #666; line-height: 1.6;">Integración directa de cacao nativo y
+                        frutas exóticas de productores regionales.</p>
+                </div>
+
+                <div class="rebotar-box"
+                    style="background: white; padding: 25px 20px; border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.04);">
+                    <h3 style="color: #F59D00; font-size: 26px; font-weight: 800; margin-bottom: 10px;">02</h3>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 16px; color: #4A1E0D; margin-bottom: 8px;">
+                        Sostenibilidad</h4>
+                    <p style="font-size: 12px; color: #666; line-height: 1.6;">Uso de empaques biodegradables
+                        ecoamigables y respeto por el medio ambiente.</p>
+                </div>
+
+                <div class="rebotar-box"
+                    style="background: white; padding: 25px 20px; border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.04);">
+                    <h3 style="color: #F59D00; font-size: 26px; font-weight: 800; margin-bottom: 10px;">03</h3>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 16px; color: #4A1E0D; margin-bottom: 8px;">
+                        Calidad de Autor</h4>
+                    <p style="font-size: 12px; color: #666; line-height: 1.6;">Brindar una experiencia sensorial única
+                        sobre el origen artesanal de cada chocolate.</p>
+                </div>
+
+                <div class="rebotar-box"
+                    style="background: white; padding: 25px 20px; border-radius: 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.04);">
+                    <h3 style="color: #F59D00; font-size: 26px; font-weight: 800; margin-bottom: 10px;">04</h3>
+                    <h4
+                        style="font-family: 'Playfair Display', serif; font-size: 16px; color: #4A1E0D; margin-bottom: 8px;">
+                        Consolidación</h4>
+                    <p style="font-size: 12px; color: #666; line-height: 1.6;">Estandarizar la identidad visual y de
+                        marca en todos nuestros canales comerciales.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN: VALORES INSTITUCIONALES -->
+        <section class="section" style="margin-bottom: 30px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span class="badge"
+                    style="background: rgba(255,184,28,0.2); color: #FFB81C; font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: 12px; display: inline-block; margin-bottom: 10px;">Principios
+                    Fundamentales</span>
+                <h2 class="why-title" style="font-family: 'Playfair Display', serif; font-size: 32px; color: #4A1E0D;">
+                    Valores Corporativos</h2>
+                <p style="color: #666; font-size: 14px;">Los valores que definen el alma y la ética de Amazonía
+                    Okitsoki.</p>
+            </div>
+
+            <div class="valores-grid-custom">
+                <div class="why-item rebotar-box"
+                    style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center;">
+                    <i class="fas fa-award" style="font-size: 36px; color: #F59D00; margin-bottom: 15px;"></i>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 19px; color: #4A1E0D; margin-bottom: 10px;">
+                        Calidad</h3>
+                    <p style="font-size: 13px; color: #666; line-height: 1.6;">Ofrecer chocolates artesanales elaborados
+                        con el más selecto cacao nativo y frutos cultivados por agricultores de Satipo.</p>
+                </div>
+
+                <div class="why-item rebotar-box"
+                    style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center;">
+                    <i class="fas fa-seedling" style="font-size: 36px; color: #226E28; margin-bottom: 15px;"></i>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 19px; color: #4A1E0D; margin-bottom: 10px;">
+                        Responsabilidad</h3>
+                    <p style="font-size: 13px; color: #666; line-height: 1.6;">Cuidar rigurosamente los recursos
+                        naturales de la selva central, promoviendo prácticas ecoamigables en cada proceso.</p>
+                </div>
+
+                <div class="why-item rebotar-box"
+                    style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center;">
+                    <i class="fas fa-handshake" style="font-size: 36px; color: #4A1E0D; margin-bottom: 15px;"></i>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 19px; color: #4A1E0D; margin-bottom: 10px;">
+                        Respeto</h3>
+                    <p style="font-size: 13px; color: #666; line-height: 1.6;">Fomentar un trato cordial, transparente y
+                        justo con nuestros clientes, colaboradores y comunidades productoras.</p>
+                </div>
+
+                <div class="why-item rebotar-box"
+                    style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center;">
+                    <i class="far fa-heart" style="font-size: 36px; color: #FFB81C; margin-bottom: 15px;"></i>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 19px; color: #4A1E0D; margin-bottom: 10px;">
+                        Compromiso</h3>
+                    <p style="font-size: 13px; color: #666; line-height: 1.6;">Garantizar la mejora constante de
+                        nuestros productos para superar siempre las expectativas de quienes nos eligen.</p>
+                </div>
+
+                <div class="why-item rebotar-box"
+                    style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center;">
+                    <i class="fas fa-fingerprint" style="font-size: 36px; color: #F59D00; margin-bottom: 15px;"></i>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 19px; color: #4A1E0D; margin-bottom: 10px;">
+                        Identidad</h3>
+                    <p style="font-size: 13px; color: #666; line-height: 1.6;">Sentir un profundo orgullo por la riqueza
+                        cultural, la historia y las tradiciones de la provincia de Satipo.</p>
+                </div>
+
+                <div class="why-item rebotar-box"
+                    style="background: white; padding: 30px; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.05); text-align: center;">
+                    <i class="fas fa-leaf" style="font-size: 36px; color: #226E28; margin-bottom: 15px;"></i>
+                    <h3
+                        style="font-family: 'Playfair Display', serif; font-size: 19px; color: #4A1E0D; margin-bottom: 10px;">
+                        Autenticidad</h3>
+                    <p style="font-size: 13px; color: #666; line-height: 1.6;">Mantener recetas genuinas y preparaciones
+                        artesanales que reflejan la verdadera esencia de la selva central.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL EMERGENTE PARA VER FOTOS EN GRANDE AL MACHUCAR -->
+    <div id="modalImagenVisor" class="modal-galeria" onclick="cerrarModalImagen()">
+        <span class="modal-cerrar-btn">&times;</span>
+        <img id="imgModalAmpliada" class="modal-imagen-contenido" src="" alt="Imagen ampliada">
+        <div id="captionModal" class="modal-caption"></div>
+    </div>
+
+    <!-- =====================================================
+     3. PIE DE PÁGINA
+===================================================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo-title">
+                    <img src="imagenes/Amazonia1.jpg" alt="Logo" class="footer-logo-img">
+                    <div class="footer-text-group">
+                        <h2>Amazonía Okitsoki</h2>
+                        <p class="footer-desc">Chocolatería artesanal y confitería de autor.</p>
+                        <p class="footer-location">Satipo, Junín</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-menu">
+                <h3>Explorar</h3>
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html">Empresa</a>
+                <a href="publico.html">Público objetivo</a>
+                <a href="identidad.html">Identidad corporativa</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen institucional</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="manual.html">Manual de identidad corporativa</a>
+                <a href="mejoras.html">Propuestas de mejora</a>
+            </div>
+
+            <div class="footer-info">
+                <h3>Amazonía Okitsoki</h3>
+                <p>El verdadero grano de cacao artesanal de Satipo.</p>
+                <p>Cacao nativo, identidad y tradición de la selva central.</p>
+
+                <div class="footer-socials">
+                    <a href="https://wa.me/tu-numero" target="_blank" aria-label="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com/@tu-usuario" target="_blank" aria-label="TikTok"><i
+                            class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://instagram.com/@tu-usuario" target="_blank" aria-label="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/@tu-usuario" target="_blank" aria-label="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Amazonía Okitsoki S.A.C.</p>
+            <p>Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        /* FUNCIONES JS PARA ABRIR Y CERRAR LA IMAGEN GRANDE AL MACHUCAR */
+        function abrirModalImagen(ruta, texto) {
+            var modal = document.getElementById('modalImagenVisor');
+            var img = document.getElementById('imgModalAmpliada');
+            var caption = document.getElementById('captionModal');
+            modal.classList.add('activo');
+            img.src = ruta;
+            caption.innerText = texto;
+        }
+
+        function cerrarModalImagen() {
+            var modal = document.getElementById('modalImagenVisor');
+            modal.classList.remove('activo');
+        }
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

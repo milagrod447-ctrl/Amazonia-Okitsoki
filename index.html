@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazonía Okitsoki | Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     1. PARTE SUPERIOR EXACTA (FIJA)
+===================================================== -->
+<header class="hero" id="inicio">
+
+    <nav class="nav">
+        <a class="brand" href="index.html">
+            <img src="imagenes/Amazonia1.jpg" alt="Logo" class="brand-img">
+            <span>Amazonía Okitsoki</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active-link">Inicio</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="publico.html">Público</a>
+            <a href="identidad.html">Identidad</a>
+            <a href="identidad-visual.html">Identidad visual</a>
+            <a href="imagen.html">Imagen</a>
+            <a href="aplicaciones.html">Aplicaciones</a>
+            <a href="comunicacion.html">Comunicación</a>
+            <a href="manual.html">Manual</a>
+            <a href="mejoras.html">Mejoras</a>
+        </div>
+    </nav>
+
+    <!-- SLIDER DE LA PORTADA -->
+    <div class="hero-slider" id="heroSlider">
+
+        <!-- Diapositiva 1: Imagen -->
+        <div class="slide active">
+            <div class="slide-bg" style="background-image: url('imagenes/IMAGEN_FONDO1.jpeg');"></div>
+            <div class="hero-content">
+                <p class="eyebrow">CHOCOLATERÍA ARTESANAL · SATIPO, JUNÍN</p>
+                <h1>Amazonía <span>Okitsoki</span></h1>
+                <p>El verdadero grano de cacao artesanal de Satipo.</p>
+                <a class="button" href="empresa.html">Conocer la empresa</a>
+            </div>
+        </div>
+
+        <!-- Diapositiva 2: Video -->
+        <div class="slide">
+            <video class="slide-video" autoplay muted loop playsinline>
+                <source src="imagenes/VIDEO_FONDO2.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+            </video>
+            <div class="slide-overlay"></div>
+            <div class="hero-content">
+                <p class="eyebrow">PROCESO Y ELABORACIÓN</p>
+                <h1>Pasión en Cada <span>Cacao</span></h1>
+                <p>Descubre cómo transformamos el mejor fruto de la selva en chocolate.</p>
+                <a class="button" href="identidad-visual.html">Ver identidad visual</a>
+            </div>
+        </div>
+
+        <!-- Diapositiva 3: Imagen -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('imagenes/IMAGEN_FONDO3.jpeg');"></div>
+            <div class="hero-content">
+                <p class="eyebrow">DULZURA Y TRADICIÓN</p>
+                <h1>Frutos de la <span>Selva Central</span></h1>
+                <p>Rellenos naturales con mermeladas exóticas y frutos crujientes.</p>
+                <a class="button" href="aplicaciones.html">Ver aplicaciones</a>
+            </div>
+        </div>
+
+        <!-- Flechas de navegación -->
+        <button class="slider-arrow prev" id="prevBtn">&#10094;</button>
+        <button class="slider-arrow next" id="nextBtn">&#10095;</button>
+
+        <!-- Puntos indicadores -->
+        <div class="slider-dots" id="sliderDots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </div>
+
+</header>
+
+<!-- BARRA DE CARACTERÍSTICAS (FIJA SIN REBOTE) -->
+<section class="features-bar">
+    <div class="feature-item">
+        <i class="fas fa-leaf"></i>
+        <span>Ingredientes<br>naturales</span>
+    </div>
+
+    <div class="feature-item">
+        <i class="fas fa-seedling"></i>
+        <span>Cacao de<br>la Amazonía</span>
+    </div>
+
+    <div class="feature-item">
+        <i class="far fa-heart"></i>
+        <span>Sin colorantes<br>artificiales</span>
+    </div>
+</section>
+
+<!-- =====================================================
+     2. CONTENIDO CENTRAL
+===================================================== -->
+<main>
+
+    <!-- SECCIÓN: SOLO EL CUADRO COMPLETO TIENE REBOTE -->
+    <section class="section section-why-us rebotar-box">
+        <h2 class="why-title">¿Por qué elegir Amazonía Okitsoki?</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon-text">
+                    <i class="fas fa-seedling"></i>
+                    <div>
+                        <h3>Grano de alta calidad</h3>
+                        <p>Cacao nativo seleccionado a mano por agricultores de Satipo, garantizando una textura y aroma incomparables.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon-text">
+                    <i class="fas fa-mortar-pestle"></i>
+                    <div>
+                        <h3>Elaboración artesanal</h3>
+                        <p>Procesos tradicionales que combinan mermelada natural de frutas exóticas con la calidez de nuestra selva central.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <div class="why-icon-text">
+                    <i class="fas fa-heart"></i>
+                    <div>
+                        <h3>Identidad y pasión</h3>
+                        <p>Cada bombón y barra refleja la riqueza cultural y el compromiso sustentable con nuestra comunidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: BLOQUES DE CONTENIDO CON REBOTE -->
+    <section class="section section-content-blocks">
+        <div class="content-row">
+            <div class="content-card-small rebotar-box">
+                <img src="imagenes/IMAGEN_FONDO1.jpeg" alt="Cacao de Satipo">
+            </div>
+            <div class="content-card-text rebotar-box">
+                <span class="badge">Nuestra Esencia</span>
+                <h2>Chocolatería y Confitería de Autor</h2>
+                <p>Amazonía Okitsoki es una marca comprometida con resaltar los sabores auténticos de Satipo, Junín. Nuestros chocolates integran rellenos de mermelada artesanal elaborada con frutos de la región.</p>
+                <a href="empresa.html" class="button-sec">Conocer más de la empresa</a>
+            </div>
+            <div class="content-card-small rebotar-box">
+                <img src="imagenes/IMAGEN_FONDO3.jpeg" alt="Chocolates">
+            </div>
+        </div>
+
+        <div class="content-row-dark rebotar-box">
+            <div class="dark-text">
+                <span class="badge-gold">Tradición y Calidad</span>
+                <h2>Fusión Única de Cacao y Frutas Exóticas</h2>
+                <p>Nuestra visión al 2028 es ser la marca líder en chocolatería de innovación en la región Junín, combinando valor nutracéutico con empaques biodegradables ecoamigables.</p>
+                <a href="identidad.html" class="button">Ver Identidad Corporativa</a>
+            </div>
+            <div class="dark-image">
+                <img src="imagenes/IMAGEN_FONDO3.jpeg" alt="Delicias Amazónicas">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: GALERÍA CONTINUA -->
+    <section class="section gallery-section">
+        <div class="section-heading-center">
+            <h2>Galería Viva de AMAZONÍA OKITSOKI</h2>
+            <p class="gallery-subtitle">Recorrido continuo por nuestra tradición artesanal, insumos locales y riqueza amazónica</p>
+        </div>
+
+        <div class="gallery-wrapper">
+            <!-- Fila 1 -->
+            <div class="gallery-row-auto" id="galleryRow1">
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_1.jpeg', 'CACAO DE SATIPO')">
+                    <img src="imagenes/imagen_1.jpeg" alt="Cacao de Satipo">
+                    <h3>CACAO DE SATIPO</h3>
+                </div>
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_2.jpeg', 'CHOCOLATES DE AUTOR')">
+                    <img src="imagenes/imagen_2.jpeg" alt="Chocolates Artesanales">
+                    <h3>CHOCOLATES DE AUTOR</h3>
+                </div>
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_3.jpeg', 'EMPAQUES ECOLÓGICOS')">
+                    <img src="imagenes/imagen_3.jpeg" alt="Empaques Ecoamigables">
+                    <h3>EMPAQUES ECOLÓGICOS</h3>
+                </div>
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_4.jpeg', 'CACAO ORGÁNICO')">
+                    <img src="imagenes/imagen_4.jpeg" alt="Cacao Orgánico">
+                    <h3>CACAO ORGÁNICO</h3>
+                </div>
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_6.jpeg', 'FRUTAS EXÓTICAS')">
+                    <img src="imagenes/imagen_6.jpeg" alt="Frutas Exóticas">
+                    <h3>FRUTAS EXÓTICAS</h3>
+                </div>
+            </div>
+
+            <!-- Fila 2 -->
+            <div class="gallery-row-auto" id="galleryRow2">
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_7.jpeg', 'TRADICIÓN SATIPEÑA')">
+                    <img src="imagenes/imagen_7.jpeg" alt="Tradición Satipeña">
+                    <h3>TRADICIÓN SATIPEÑA</h3>
+                </div>
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_8.jpeg', 'VASOS Y EMPAQUES')">
+                    <img src="imagenes/imagen_8.jpeg" alt="Vasos y Empaques">
+                    <h3>VASOS Y EMPAQUES</h3>
+                </div>
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_9.jpeg', 'CACAO DE AROMA')">
+                    <img src="imagenes/imagen_9.jpeg" alt="Cacao de Aroma">
+                    <h3>CACAO DE AROMA</h3>
+                </div>
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_10.jpeg', 'MERMELADAS NATIVAS')">
+                    <img src="imagenes/imagen_10.jpeg" alt="Mermeladas Nativas">
+                    <h3>MERMELADAS NATIVAS</h3>
+                </div>
+                <div class="gallery-card rebotar-box" onclick="openModal('imagenes/imagen_11.jpeg', 'SELECCIÓN ARTESANAL')">
+                    <img src="imagenes/imagen_11.jpeg" alt="Selección Artesanal">
+                    <h3>SELECCIÓN ARTESANAL</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- VENTANA MODAL (PARA AGRANDAR IMAGEN AL MACHUCAR) -->
+<div class="modal-overlay" id="imageModal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modalImg" src="" alt="Imagen grande">
+        <h3 id="modalTitle"></h3>
+    </div>
+</div>
+
+<!-- =====================================================
+     3. PIE DE PÁGINA
+===================================================== -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="footer-logo-title">
+                <img src="imagenes/Amazonia1.jpg" alt="Logo" class="footer-logo-img">
+                <div class="footer-text-group">
+                    <h2>Amazonía Okitsoki</h2>
+                    <p class="footer-desc">Chocolatería artesanal y confitería de autor.</p>
+                    <p class="footer-location">Satipo, Junín</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-menu">
+            <h3>Explorar</h3>
+            <a href="index.html">Inicio</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="publico.html">Público objetivo</a>
+            <a href="identidad.html">Identidad corporativa</a>
+            <a href="identidad-visual.html">Identidad visual</a>
+            <a href="imagen.html">Imagen institucional</a>
+            <a href="aplicaciones.html">Aplicaciones</a>
+            <a href="comunicacion.html">Comunicación</a>
+            <a href="manual.html">Manual de identidad corporativa</a>
+            <a href="mejoras.html">Propuestas de mejora</a>
+        </div>
+
+        <div class="footer-info">
+            <h3>Amazonía Okitsoki</h3>
+            <p>El verdadero grano de cacao artesanal de Satipo.</p>
+            <p>Cacao nativo, identidad y tradición de la selva central.</p>
+
+            <div class="footer-socials">
+                <a href="https://wa.me/tu-numero" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://tiktok.com/@tu-usuario" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://instagram.com/tu-usuario" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com/tu-usuario" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Amazonía Okitsoki S.A.C.</p>
+        <p>Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

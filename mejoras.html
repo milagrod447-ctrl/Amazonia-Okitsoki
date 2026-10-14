@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazonía Okitsoki | Propuestas de Mejora</title>
+
+    <!-- Hoja de Estilos Externa -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconos FontAwesome y Fuentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #F9F6E8 !important;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: #2d211b;
+        }
+
+        /* BANNER SUPERIOR MARRÓN */
+        .header-spacer {
+            padding-top: 130px !important;
+            padding-bottom: 40px !important;
+            background: linear-gradient(135deg, #321307 0%, #4A1E0D 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .badge-small-title {
+            background: rgba(255,184,28,0.2);
+            color: #FFB81C;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 8px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* ESTRUCTURA DE MEJORAS EN GRID */
+        .grid-mejoras {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card-mejora {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            border: 1px solid #eee;
+            border-left: 5px solid #FFB81C;
+            transition: transform 0.3s ease;
+        }
+
+        .card-mejora.green {
+            border-left-color: #226E28;
+        }
+
+        .card-mejora:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-mejora h3 {
+            font-family: 'Playfair Display', serif;
+            color: #4A1E0D;
+            font-size: 20px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-mejora p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        @media (max-width: 968px) {
+            .grid-mejoras {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVEGACIÓN FIJA -->
+<header class="hero-header">
+    <nav class="nav">
+        <a class="brand" href="index.html">
+            <img src="imagenes/Amazonia1.jpg" alt="Logo" class="brand-img">
+            <span>Amazonía Okitsoki</span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn">☰</button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Inicio</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="publico.html">Público</a>
+            <a href="identidad.html">Identidad</a>
+            <a href="identidad-visual.html">Identidad visual</a>
+            <a href="imagen.html">Imagen</a>
+            <a href="aplicaciones.html">Aplicaciones</a>
+            <a href="comunicacion.html">Comunicación</a>
+            <a href="manual.html">Manual</a>
+            <a href="mejoras.html" class="active-link">Mejoras</a>
+        </div>
+    </nav>
+
+    <!-- BANNER PRINCIPAL -->
+    <div class="header-spacer">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <p style="color: #FFB81C; font-weight: 800; letter-spacing: 3px; font-size: 12px; margin-bottom: 12px;">09 · INNOVACIÓN Y CRECIMIENTO</p>
+            <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(36px, 5vw, 56px); margin-bottom: 15px; line-height: 1.1;">
+                Propuestas de <span style="color: #FFB81C;">Mejora</span>
+            </h1>
+            <p style="color: #f1e4dc; font-size: 15px; font-weight: 500;">
+                Estrategias de optimización continua, innovación de productos y expansión comercial.
+            </p>
+        </div>
+    </div>
+</header>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main style="padding: 40px 20px 50px 20px; max-width: 1200px; margin: 0 auto;">
+
+    <section>
+        <div style="text-align: center; margin-bottom: 35px;">
+            <span class="badge-small-title">PLAN DE DESARROLLO 2026 - 2028</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #4A1E0D;">Estrategias de Evolución para Amazonía Okitsoki</h2>
+            <p style="font-size: 13px; color: #666; max-width: 800px; margin: 0 auto;">
+                Iniciativas planificadas para fortalecer la competitividad de nuestra chocolatería artesanal en la región Junín.
+            </p>
+        </div>
+
+        <div class="grid-mejoras">
+            <!-- 1 -->
+            <div class="card-mejora">
+                <h3><i class="fas fa-seedling" style="color: #FFB81C;"></i> Innovación en Sabores y Rellenos</h3>
+                <p>Ampliación del catálogo con nuevas combinaciones estacionales utilizando frutos nativos de la Amazonía como camu camu, aguaje y cocona, potenciando la propuesta de valor diferenciada frente a la competencia.</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="card-mejora green">
+                <h3><i class="fas fa-recycle" style="color: #226E28;"></i> Empaques Sostenibles Avanzados</h3>
+                <p>Transición gradual hacia envoltorios 100% biodegradables y compostables fabricados con materiales derivados de residuos de cacao, reforzando nuestro compromiso ambiental con Satipo.</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="card-mejora">
+                <h3><i class="fas fa-mobile-alt" style="color: #FFB81C;"></i> Optimización de Canales Digitales</h3>
+                <p>Implementación de un sistema de pasarela de pagos automatizada en nuestra página web y optimización de la atención rápida mediante WhatsApp Business para envíos a nivel regional y nacional.</p>
+            </div>
+
+            <!-- 4 -->
+            <div class="card-mejora green">
+                <h3><i class="fas fa-hands-holding-heart" style="color: #226E28;"></i> Alianzas Estratégicas con Agricultores</h3>
+                <p>Fortalecimiento del programa de comercio justo, ampliando los convenios de capacitación técnica y provisión directa de granos con las comunidades agricultoras locales de la Selva Central.</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- =====================================================
+     PIE DE PÁGINA (FOOTER) EXACTO Y ORIGINAL (SIN TOCAR)
+===================================================== -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <div class="footer-logo-title">
+                <img src="imagenes/Amazonia1.jpg" alt="Logo" class="footer-logo-img">
+                <div class="footer-text-group">
+                    <h2>Amazonía Okitsoki</h2>
+                    <p class="footer-desc">Chocolatería artesanal y confitería de autor.</p>
+                    <p class="footer-location">Satipo, Junín</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-menu">
+            <h3>Explorar</h3>
+            <a href="index.html">Inicio</a>
+            <a href="empresa.html">Empresa</a>
+            <a href="publico.html">Público objetivo</a>
+            <a href="identidad.html">Identidad corporativa</a>
+            <a href="identidad-visual.html">Identidad visual</a>
+            <a href="imagen.html">Imagen institucional</a>
+            <a href="aplicaciones.html">Aplicaciones</a>
+            <a href="comunicacion.html">Comunicación</a>
+            <a href="manual.html">Manual de identidad corporativa</a>
+            <a href="mejoras.html">Propuestas de mejora</a>
+        </div>
+
+        <div class="footer-info">
+            <h3>Amazonía Okitsoki</h3>
+            <p>El verdadero grano de cacao artesanal de Satipo.</p>
+            <p>Cacao nativo, identidad y tradición de la selva central.</p>
+
+            <div class="footer-socials">
+                <a href="https://wa.me/tu-numero" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://tiktok.com/@tu-usuario" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://instagram.com/@tu-usuario" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com/@tu-usuario" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Amazonía Okitsoki S.A.C.</p>
+        <p>Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- SCRIPT JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
