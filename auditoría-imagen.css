@@ -1,0 +1,479 @@
+        /* ==========================================================
+           ESTILOS GENERALES CON FONDO CREMA MARFIL Y ANIMACIONES
+        =========================================================== */
+        body {
+            background-color: #F9F6E8 !important;
+            color: #2D211B;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FFB81C, #226E28);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* BANNER DE CABECERA ANIMADO */
+        .auditoria-hero {
+            background: linear-gradient(135deg, #321307 0%, #4A1E0D 100%);
+            text-align: center;
+            padding: 130px 20px 50px 20px;
+            border-bottom: 3px solid #FFB81C;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auditoria-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,184,28,0.08) 0%, transparent 60%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.15); opacity: 0.9; }
+        }
+
+        .auditoria-kicker {
+            font-size: 12px;
+            font-weight: 800;
+            color: #FFB81C;
+            letter-spacing: 3px;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            background: rgba(255, 184, 28, 0.15);
+            padding: 6px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 184, 28, 0.3);
+        }
+
+        .auditoria-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 52px);
+            color: #FFFFFF;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+
+        .auditoria-title span {
+            color: #FFB81C;
+        }
+
+        .auditoria-subtitle {
+            font-size: 15px;
+            color: #F1E4DC;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .auditoria-main {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 30px 20px 60px 20px;
+        }
+
+        /* SUB-NAVEGACIÓN FLOTANTE INTERACTIVA */
+        .auditoria-nav-bar {
+            position: sticky;
+            top: 75px;
+            z-index: 500;
+            margin: 10px 0 45px 0;
+        }
+
+        .auditoria-nav-container {
+            background: #321307;
+            padding: 8px 12px;
+            border-radius: 30px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 1px solid #FFB81C;
+        }
+
+        .auditoria-nav-container::-webkit-scrollbar { display: none; }
+
+        .auditoria-nav-item {
+            color: #E8DDD5;
+            text-decoration: none;
+            padding: 9px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 600;
+        }
+
+        .auditoria-nav-item:hover, .auditoria-nav-item.active {
+            background: #FFB81C;
+            color: #2D0F05;
+            font-weight: 800;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 184, 28, 0.4);
+        }
+
+        /* SECCIONES Y TARJETAS DINÁMICAS */
+        .auditoria-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 140px;
+        }
+
+        .section-header-box {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #4A1E0D;
+            padding-bottom: 12px;
+        }
+
+        .big-section-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: #D9881A;
+            line-height: 1;
+        }
+
+        .section-header-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            color: #4A1E0D;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* TARJETAS CON EFECTO HOVER 3D Y SOMBRA */
+        .content-card {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 22px;
+            line-height: 1.7;
+            font-size: 14px;
+            color: #33231B;
+            transition: all 0.4s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(74, 30, 13, 0.1);
+            border-color: #D9881A;
+        }
+
+        .example-callout {
+            background: #FFF8E7;
+            border-left: 5px solid #D9881A;
+            padding: 18px 22px;
+            border-radius: 0 14px 14px 0;
+            margin-top: 18px;
+            font-size: 13.5px;
+            color: #4A3225;
+            transition: background 0.3s ease;
+        }
+
+        .example-callout:hover {
+            background: #FFF1D0;
+        }
+
+        .example-callout strong {
+            color: #B56800;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* ESPACIOS PARA IMÁGENES */
+        .image-placeholder-box {
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px dashed #D9881A;
+            background: #FFFDF7;
+        }
+
+        .auditoria-img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .placeholder-fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px;
+            text-align: center;
+            color: #4A1E0D;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* GRID DE 2 COLUMNAS INTERACTIVO */
+        .grid-two-cols {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .subcard {
+            background: #FFFFFF;
+            padding: 26px;
+            border-radius: 16px;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .subcard:hover {
+            transform: translateY(-5px);
+            border-color: #FFB81C;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+        }
+
+        .subcard h3 {
+            font-family: 'Playfair Display', serif;
+            color: #4A1E0D;
+            margin-top: 0;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* DIAGRAMAS Y ESQUEMAS VISUALES CON MOVIMIENTO */
+        .diagram-container {
+            background: linear-gradient(135deg, #321307 0%, #1F0802 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #FFB81C;
+            margin: 30px 0;
+            color: #FFF;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .diagram-title {
+            text-align: center;
+            color: #FFB81C;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .flow-steps {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .flow-step-node {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 184, 28, 0.4);
+            padding: 16px 14px;
+            border-radius: 14px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flow-step-node:hover {
+            background: rgba(255, 184, 28, 0.2);
+            transform: translateY(-5px) scale(1.03);
+            border-color: #FFB81C;
+            box-shadow: 0 8px 20px rgba(255, 184, 28, 0.2);
+        }
+
+        .flow-step-node span {
+            display: block;
+            font-size: 10px;
+            color: #FFB81C;
+            font-weight: 800;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .flow-step-node h4 {
+            margin: 0 0 8px 0;
+            font-size: 13.5px;
+            color: #FFFFFF;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .flow-step-node .node-desc {
+            font-size: 11px;
+            color: #E8DDD5;
+            margin: 0;
+            line-height: 1.35;
+            font-weight: 400;
+        }
+
+        .flow-arrow {
+            color: #FFB81C;
+            font-size: 20px;
+            font-weight: 900;
+            animation: arrowBounce 2s infinite;
+        }
+
+        @keyframes arrowBounce {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(4px); }
+        }
+
+        /* TABLAS ESTILIZADAS CON INTERACCIÓN */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #FFFFFF;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            margin-top: 18px;
+            font-size: 13.5px;
+        }
+
+        .styled-table th {
+            background: #321307;
+            color: #FFB81C;
+            padding: 16px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .styled-table td {
+            padding: 16px;
+            border-bottom: 1px solid #E8E0D0;
+            color: #33231B;
+            vertical-align: top;
+            transition: background 0.2s ease;
+        }
+
+        .styled-table tr:hover td {
+            background: #FFFBF0;
+        }
+
+        /* MATRIZ FODA INTERACTIVA */
+        .foda-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 18px;
+        }
+
+        .foda-box {
+            background: #FFFFFF;
+            padding: 25px;
+            border-radius: 16px;
+            border-top: 5px solid #FFB81C;
+            border-left: 1px solid #E8E0D0;
+            border-right: 1px solid #E8E0D0;
+            border-bottom: 1px solid #E8E0D0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        .foda-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .foda-fortalezas { border-top-color: #226E28; }
+        .foda-debilidades { border-top-color: #E67E22; }
+        .foda-oportunidades { border-top-color: #D9881A; }
+        .foda-amenazas { border-top-color: #C0392B; }
+
+        .foda-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            margin-top: 0;
+            color: #4A1E0D;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .foda-box ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #33231B;
+        }
+
+        .foda-box li {
+            margin-bottom: 10px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #4A1E0D;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            background: #E8E0D0;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .back-to-top:hover {
+            background: #FFB81C;
+            color: #2D0F05;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 968px) {
+            .grid-two-cols, .foda-grid-container {
+                grid-template-columns: 1fr !important;
+            }
+            .flow-steps {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 5px 0;
+            }
+        }
