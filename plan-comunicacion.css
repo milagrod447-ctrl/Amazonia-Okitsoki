@@ -1,0 +1,296 @@
+       /* ==========================================================
+           ESTILOS GENERALES BASADOS EN EL DISEÑO GLOBAL DEL SITIO
+        =========================================================== */
+        body {
+            background-color: #2D0F05 !important;
+            color: #F1E4DC;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #FFB81C;
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* BANNER CABECERA */
+        .plan-hero-custom {
+            background: linear-gradient(135deg, #321307 0%, #4A1E0D 100%);
+            text-align: center;
+            padding: 120px 20px 40px 20px;
+        }
+
+        .plan-kicker-gold {
+            font-size: 12px;
+            font-weight: 800;
+            color: #FFB81C;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .plan-title-large {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 5vw, 48px);
+            color: #FFFFFF;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .plan-title-large span {
+            color: #FFB81C;
+        }
+
+        .plan-subtitle-quotes {
+            font-size: 15px;
+            color: #F1E4DC;
+            font-style: italic;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .plan-main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* SUB-NAV FLOTANTE (SIN NÚMEROS) */
+        .plan-nav-bar {
+            position: sticky;
+            top: 75px;
+            z-index: 500;
+            margin: 20px 0 40px 0;
+        }
+
+        .plan-nav-container {
+            background: #1F0802;
+            padding: 8px 12px;
+            border-radius: 30px;
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            border: 1px solid #FFB81C;
+        }
+
+        .plan-nav-container::-webkit-scrollbar { display: none; }
+
+        .plan-nav-item {
+            color: #E8DDD5;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .plan-nav-item:hover, .plan-nav-item.active {
+            background: #FFB81C;
+            color: #2D0F05;
+            font-weight: 700;
+        }
+
+        /* SECCIONES Y TABLAS */
+        .plan-section {
+            margin-bottom: 50px;
+            background: transparent;
+            scroll-margin-top: 140px;
+        }
+
+        .section-header-title {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .big-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: #FFB81C;
+            line-height: 1;
+        }
+
+        .section-header-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #FFFFFF;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .data-grid, .foda-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .data-item {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 184, 28, 0.2);
+        }
+
+        .data-label {
+            font-size: 10px;
+            font-weight: 800;
+            color: #FFB81C;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .data-value {
+            font-size: 14px;
+            color: #F1E4DC;
+            margin: 6px 0 0 0;
+            font-weight: 500;
+        }
+
+        .two-column-card {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 184, 28, 0.2);
+        }
+
+        .right-highlight-box {
+            border-left: 3px solid #FFB81C;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .right-highlight-box blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            color: #FFB81C;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .split-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card-box {
+            padding: 25px;
+            border-radius: 16px;
+        }
+
+        .card-white { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 184, 28, 0.2); }
+        .card-dark { background: #1F0802; color: #FFF; border: 1px solid #FFB81C; }
+        .card-dark h3 { color: #FFB81C; margin-top: 0; }
+
+        .foda-card {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 22px;
+            border-radius: 14px;
+            border-top: 4px solid #FFB81C;
+            border-left: 1px solid rgba(255, 184, 28, 0.2);
+            border-right: 1px solid rgba(255, 184, 28, 0.2);
+            border-bottom: 1px solid rgba(255, 184, 28, 0.2);
+        }
+
+        .foda-f { border-top-color: #226E28; }
+        .foda-o { border-top-color: #FFB81C; }
+        .foda-d { border-top-color: #E67E22; }
+        .foda-a { border-top-color: #C0392B; }
+
+        .foda-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-top: 0; color: #FFB81C; }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 184, 28, 0.2);
+            margin-top: 15px;
+            font-size: 13.5px;
+        }
+
+        .styled-table th {
+            background: #1F0802;
+            color: #FFB81C;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .styled-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 184, 28, 0.15);
+            color: #F1E4DC;
+        }
+
+        .center-cols td:not(:first-child), .center-cols th:not(:first-child) {
+            text-align: center;
+        }
+
+        .total-row {
+            background: #1F0802 !important;
+            color: #FFB81C !important;
+            font-weight: 800;
+        }
+        .total-row td { color: #FFB81C; }
+
+        .process-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .step-card {
+            background: #1F0802;
+            color: #FFF;
+            padding: 18px 12px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid rgba(255, 184, 28, 0.3);
+        }
+
+        .step-card span { font-size: 11px; color: #FFB81C; font-weight: 800; }
+        .step-card h4 { margin: 6px 0 4px 0; font-size: 14px; color: #FFF; }
+        .step-card p { font-size: 11px; color: #E8DDD5; margin: 0; }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #FFB81C;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .back-to-top:hover { text-decoration: underline; color: #FFFFFF; }
+
+        @media (max-width: 968px) {
+            .data-grid, .foda-grid, .split-cards, .two-column-card, .process-steps-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+

@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Comunicación Corporativa | Amazonía Okitsoki S.A.C.</title>
+
+    <!-- Hoja de Estilos Externa Principal -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconos FontAwesome y Fuentes Google -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================================
+           ESTILOS GENERALES BASADOS EN EL DISEÑO GLOBAL DEL SITIO
+        =========================================================== */
+        body {
+            background-color: #2D0F05 !important;
+            color: #F1E4DC;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: #FFB81C;
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* BANNER CABECERA */
+        .plan-hero-custom {
+            background: linear-gradient(135deg, #321307 0%, #4A1E0D 100%);
+            text-align: center;
+            padding: 120px 20px 40px 20px;
+        }
+
+        .plan-kicker-gold {
+            font-size: 12px;
+            font-weight: 800;
+            color: #FFB81C;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .plan-title-large {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(34px, 5vw, 48px);
+            color: #FFFFFF;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .plan-title-large span {
+            color: #FFB81C;
+        }
+
+        .plan-subtitle-quotes {
+            font-size: 15px;
+            color: #F1E4DC;
+            font-style: italic;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .plan-main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* SUB-NAV FLOTANTE (SIN NÚMEROS) */
+        .plan-nav-bar {
+            position: sticky;
+            top: 75px;
+            z-index: 500;
+            margin: 20px 0 40px 0;
+        }
+
+        .plan-nav-container {
+            background: #1F0802;
+            padding: 8px 12px;
+            border-radius: 30px;
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            border: 1px solid #FFB81C;
+        }
+
+        .plan-nav-container::-webkit-scrollbar { display: none; }
+
+        .plan-nav-item {
+            color: #E8DDD5;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+        }
+
+        .plan-nav-item:hover, .plan-nav-item.active {
+            background: #FFB81C;
+            color: #2D0F05;
+            font-weight: 700;
+        }
+
+        /* SECCIONES Y TABLAS */
+        .plan-section {
+            margin-bottom: 50px;
+            background: transparent;
+            scroll-margin-top: 140px;
+        }
+
+        .section-header-title {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 20px;
+        }
+
+        .big-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: #FFB81C;
+            line-height: 1;
+        }
+
+        .section-header-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #FFFFFF;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .data-grid, .foda-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .data-item {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 184, 28, 0.2);
+        }
+
+        .data-label {
+            font-size: 10px;
+            font-weight: 800;
+            color: #FFB81C;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .data-value {
+            font-size: 14px;
+            color: #F1E4DC;
+            margin: 6px 0 0 0;
+            font-weight: 500;
+        }
+
+        .two-column-card {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 184, 28, 0.2);
+        }
+
+        .right-highlight-box {
+            border-left: 3px solid #FFB81C;
+            padding-left: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .right-highlight-box blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            color: #FFB81C;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .split-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card-box {
+            padding: 25px;
+            border-radius: 16px;
+        }
+
+        .card-white { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 184, 28, 0.2); }
+        .card-dark { background: #1F0802; color: #FFF; border: 1px solid #FFB81C; }
+        .card-dark h3 { color: #FFB81C; margin-top: 0; }
+
+        .foda-card {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 22px;
+            border-radius: 14px;
+            border-top: 4px solid #FFB81C;
+            border-left: 1px solid rgba(255, 184, 28, 0.2);
+            border-right: 1px solid rgba(255, 184, 28, 0.2);
+            border-bottom: 1px solid rgba(255, 184, 28, 0.2);
+        }
+
+        .foda-f { border-top-color: #226E28; }
+        .foda-o { border-top-color: #FFB81C; }
+        .foda-d { border-top-color: #E67E22; }
+        .foda-a { border-top-color: #C0392B; }
+
+        .foda-card h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-top: 0; color: #FFB81C; }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 184, 28, 0.2);
+            margin-top: 15px;
+            font-size: 13.5px;
+        }
+
+        .styled-table th {
+            background: #1F0802;
+            color: #FFB81C;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .styled-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255, 184, 28, 0.15);
+            color: #F1E4DC;
+        }
+
+        .center-cols td:not(:first-child), .center-cols th:not(:first-child) {
+            text-align: center;
+        }
+
+        .total-row {
+            background: #1F0802 !important;
+            color: #FFB81C !important;
+            font-weight: 800;
+        }
+        .total-row td { color: #FFB81C; }
+
+        .process-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .step-card {
+            background: #1F0802;
+            color: #FFF;
+            padding: 18px 12px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid rgba(255, 184, 28, 0.3);
+        }
+
+        .step-card span { font-size: 11px; color: #FFB81C; font-weight: 800; }
+        .step-card h4 { margin: 6px 0 4px 0; font-size: 14px; color: #FFF; }
+        .step-card p { font-size: 11px; color: #E8DDD5; margin: 0; }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 12px;
+            color: #FFB81C;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .back-to-top:hover { text-decoration: underline; color: #FFFFFF; }
+
+        @media (max-width: 968px) {
+            .data-grid, .foda-grid, .split-cards, .two-column-card, .process-steps-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <!-- NAVEGACIÓN FIJA Y ESTÁNDAR GLOBAL -->
+    <header class="hero-header">
+        <nav class="nav">
+            <a class="brand" href="index.html">
+                <img src="imagenes/Amazonia1.jpg" alt="Logo" class="brand-img">
+                <span>Amazonía Okitsoki</span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html">Empresa</a>
+                <a href="publico.html">Público</a>
+                <a href="identidad.html">Identidad</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="manual.html">Manual</a>
+                <a href="mejoras.html">Mejoras</a>
+                <a href="plan-comunicacion.html" class="active-link">Plan comunicación</a>
+            </div>
+        </nav>
+
+        <!-- BANNER DE CABECERA -->
+        <div class="plan-hero-custom" id="top">
+            <span class="plan-kicker-gold">08 · ESTRATEGIA CORPORATIVA 2026</span>
+            <h1 class="plan-title-large">Plan de Comunicación <span>& Corporativa</span></h1>
+            <p class="plan-subtitle-quotes">"El verdadero grano de cacao artesanal de Satipo, esencia y tradición de la selva central."</p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL EN 15 APARTADOS -->
+    <main class="plan-main">
+
+        <!-- SUB-NAV FLOTANTE (SIN NÚMEROS) -->
+        <div class="plan-nav-bar">
+            <div class="plan-nav-container">
+                <a href="#ap-01" class="plan-nav-item active">Datos generales</a>
+                <a href="#ap-02" class="plan-nav-item">Presentación</a>
+                <a href="#ap-03" class="plan-nav-item">Diagnóstico</a>
+                <a href="#ap-04" class="plan-nav-item">FODA</a>
+                <a href="#ap-05" class="plan-nav-item">Públicos</a>
+                <a href="#ap-06" class="plan-nav-item">Objetivos</a>
+                <a href="#ap-07" class="plan-nav-item">Identidad y mensaje</a>
+                <a href="#ap-08" class="plan-nav-item">Canales</a>
+                <a href="#ap-09" class="plan-nav-item">Plan de acciones</a>
+                <a href="#ap-10" class="plan-nav-item">Cronograma</a>
+                <a href="#ap-11" class="plan-nav-item">Presupuesto</a>
+                <a href="#ap-12" class="plan-nav-item">KPIs</a>
+                <a href="#ap-13" class="plan-nav-item">Proceso continuo</a>
+                <a href="#ap-14" class="plan-nav-item">Fases aplicadas</a>
+                <a href="#ap-15" class="plan-nav-item">Control trimestral</a>
+            </div>
+        </div>
+
+        <!-- 01. DATOS GENERALES -->
+        <section id="ap-01" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">1.</span>
+                <h2>DATOS GENERALES</h2>
+            </div>
+            <div class="data-grid">
+                <div class="data-item"><span class="data-label">NOMBRE DE LA EMPRESA</span><p class="data-value">Amazonía Okitsoki S.A.C.</p></div>
+                <div class="data-item"><span class="data-label">GIRO DEL NEGOCIO</span><p class="data-value">Chocolatería artesanal, confitería y productos de cacao nativo de autor</p></div>
+                <div class="data-item"><span class="data-label">ACTIVIDAD PRINCIPAL</span><p class="data-value">Elaboración y comercialización de chocolates artesanales con cacao nativo de Satipo, mermeladas de frutas de la selva y derivados amazónicos</p></div>
+                <div class="data-item"><span class="data-label">PÚBLICO OBJETIVO</span><p class="data-value">Jóvenes, adultos, familias, trabajadores, turistas y amantes del cacao artesanal de alta calidad</p></div>
+                <div class="data-item"><span class="data-label">ÁMBITO DE COMUNICACIÓN</span><p class="data-value">Interno (colaboradores) y Externo (clientes y comunidad)</p></div>
+                <div class="data-item"><span class="data-label">DURACIÓN DEL PLAN</span><p class="data-value">3 Meses (Trimestral)</p></div>
+                <div class="data-item"><span class="data-label">RESPONSABLE</span><p class="data-value">Administrador / Encargado de Comunicación y Marketing</p></div>
+                <div class="data-item"><span class="data-label">NOMBRE DEL PLAN</span><p class="data-value">“Amazonía Okitsoki: Sabores que comunican nuestra selva”</p></div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 02. PRESENTACIÓN -->
+        <section id="ap-02" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">2.</span>
+                <h2>PRESENTACIÓN</h2>
+            </div>
+            <div class="two-column-card">
+                <div>
+                    <p>El presente Plan de Comunicación Corporativa tiene como finalidad establecer las estrategias, acciones, canales y mensajes que utilizará Amazonía Okitsoki S.A.C. para fortalecer la comunicación con sus colaboradores, clientes y público objetivo.</p>
+                    <p>El plan permitirá organizar los mensajes transmitidos a través de medios digitales y presenciales, proyectando una imagen coherente, cálida y profesional. Asimismo, busca promocionar la oferta gastronómica y chocolatera, consolidando la identidad de la marca asociada a la riqueza y tradición de la selva de Satipo.</p>
+                </div>
+                <div class="right-highlight-box">
+                    <blockquote>«Proyectar una imagen coherente y consolidar la identidad de marca asociada a la riqueza y tradición del cacao de Satipo.»</blockquote>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 03. DIAGNÓSTICO DE LA COMUNICACIÓN -->
+        <section id="ap-03" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">3.</span>
+                <h2>DIAGNÓSTICO DE LA COMUNICACIÓN</h2>
+            </div>
+            <div class="split-cards">
+                <div class="card-box card-white">
+                    <h3>3.1 Situación Interna</h3>
+                    <p style="font-size:13.5px; line-height:1.6;">Requiere estructurar un canal oficial para informar oportunamente sobre horarios, turnos, promociones semanales, lanzamientos y protocolos de atención al cliente.</p>
+                </div>
+                <div class="card-box card-dark">
+                    <h3>3.2 Situación Externa</h3>
+                    <p style="font-size:13.5px; line-height:1.6;">Requiere dinamizar la presencia digital, estandarizar la línea gráfica y mantener informados a los clientes sobre el catálogo de productos, ofertas y la propuesta cultural diferenciadora.</p>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 04. ANÁLISIS FODA DE LA COMUNICACIÓN -->
+        <section id="ap-04" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">4.</span>
+                <h2>ANÁLISIS FODA DE LA COMUNICACIÓN</h2>
+            </div>
+            <div class="foda-grid">
+                <div class="foda-card foda-f">
+                    <h3>FORTALEZAS (F)</h3>
+                    <ul style="font-size:12.5px; padding-left:16px; line-height:1.5;">
+                        <li>Identidad gráfica sólida ligada a la cultura amazónica y asháninka.</li>
+                        <li>Variedad de productos con insumos regionales nativos de alta calidad.</li>
+                        <li>Atención directa, cálida y personalizada.</li>
+                        <li>Ambiente acogedor y diferenciado en el punto de venta.</li>
+                    </ul>
+                </div>
+                <div class="foda-card foda-o">
+                    <h3>OPORTUNIDADES (O)</h3>
+                    <ul style="font-size:12.5px; padding-left:16px; line-height:1.5;">
+                        <li>Crecimiento de la cultura y consumo de chocolates artesanales de origen.</li>
+                        <li>Uso de videos cortos (Reels/TikTok) para promoción.</li>
+                        <li>Creación de promociones exclusivas en canales digitales.</li>
+                        <li>Difusión de contenido gastronómico-cultural sobre el cultivo del cacao.</li>
+                    </ul>
+                </div>
+                <div class="foda-card foda-d">
+                    <h3>DEBILIDADES (D)</h3>
+                    <ul style="font-size:12.5px; padding-left:16px; line-height:1.5;">
+                        <li>Comunicación digital poco organizada e irregular.</li>
+                        <li>Baja frecuencia de publicaciones en redes sociales.</li>
+                        <li>Falta de un calendario de contenidos estructurado.</li>
+                        <li>Ausencia de medición sistemática de resultados.</li>
+                    </ul>
+                </div>
+                <div class="foda-card foda-a">
+                    <h3>AMENAZAS (A)</h3>
+                    <ul style="font-size:12.5px; padding-left:16px; line-height:1.5;">
+                        <li>Alta competencia en el sector de confitería y golosinas industriales.</li>
+                        <li>Cambios acelerados en las preferencias del público consumidor.</li>
+                        <li>Competidores directos con mayor presupuesto digital.</li>
+                        <li>Saturación publicitaria en redes sociales.</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 05. PÚBLICOS OBJETIVO -->
+        <section id="ap-05" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">5.</span>
+                <h2>PÚBLICOS OBJETIVO</h2>
+            </div>
+            <p style="font-size:13.5px; margin-bottom:15px;">Estructura de públicos e intereses de comunicación identificados:</p>
+            <div class="split-cards">
+                <div class="card-box" style="background:#226E28; color:#FFF;">
+                    <h3 style="color:#FFF; margin-top:0;">PÚBLICO INTERNO</h3>
+                    <p style="font-size:14px; font-weight:600;">Administrador • Maestros Chocolateros • Personal de Atención / Salón</p>
+                </div>
+                <div class="card-box card-white">
+                    <h3 style="margin-top:0;">PÚBLICO EXTERNO</h3>
+                    <p style="font-size:14px; font-weight:600;">Estudiantes • Ejecutivos • Familias • Turistas locales y regionales</p>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 06. OBJETIVOS DE COMUNICACIÓN -->
+        <section id="ap-06" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">6.</span>
+                <h2>OBJETIVOS DE COMUNICACIÓN</h2>
+            </div>
+            <div style="background:#1F0802; color:#FFF; padding:20px; border-radius:14px; margin-bottom:15px; border: 1px solid #FFB81C;">
+                <span style="color:#FFB81C; font-weight:800; font-size:12px; display:inline-block; margin-bottom:6px;">6.1 OBJETIVO GENERAL</span>
+                <p style="font-family:'Playfair Display', serif; font-size:19px; margin:0; line-height:1.4;">Fortalecer la comunicación corporativa interna y externa de Amazonía Okitsoki S.A.C. durante un periodo de 3 meses, para consolidar la identidad de marca, promocionar productos e incrementar la fidelización de clientes.</p>
+            </div>
+            <h3 style="font-size:16px; margin:20px 0 10px 0; color:#FFB81C;">6.2 Objetivos Específicos</h3>
+            <table class="styled-table">
+                <thead>
+                    <tr><th style="width:50px;">N.°</th><th>OBJETIVO ESPECÍFICO</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>O1</strong></td><td>Optimizar los canales de comunicación interna entre gerencia y equipo operativo.</td></tr>
+                    <tr><td><strong>O2</strong></td><td>Incrementar la presencia y la tasa de interacción digital en un 15% mensual.</td></tr>
+                    <tr><td><strong>O3</strong></td><td>Difundir las promociones y combos especiales aumentando sus ventas en un 20%.</td></tr>
+                    <tr><td><strong>O4</strong></td><td>Promover la identidad cultural amazónica mediante contenidos educativos de valor sobre el cacao nativo.</td></tr>
+                    <tr><td><strong>O5</strong></td><td>Implementar un sistema de medición mensual de indicadores de rendimiento (KPIs).</td></tr>
+                </tbody>
+            </table>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 07. IDENTIDAD Y MENSAJE CORPORATIVO -->
+        <section id="ap-07" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">7.</span>
+                <h2>IDENTIDAD Y MENSAJE CORPORATIVO</h2>
+            </div>
+            <div class="data-grid">
+                <div class="data-item">
+                    <span class="data-label">ATRIBUTOS DE MARCA</span>
+                    <p class="data-value">Cálida, acogedora, tradicional, auténtica, amigable y moderna.</p>
+                </div>
+                <div class="data-item">
+                    <span class="data-label">MENSAJE PRINCIPAL (SLOGAN)</span>
+                    <p class="data-value">“Amazonía Okitsoki: Un espacio para disfrutar nuestros sabores y compartir nuestras tradiciones.”</p>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 08. CANALES DE COMUNICACIÓN -->
+        <section id="ap-08" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">8.</span>
+                <h2>CANALES DE COMUNICACIÓN</h2>
+            </div>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>CANAL</th><th>PÚBLICO OBJETIVO</th><th>OBJETIVO PRINCIPAL</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Facebook</strong></td><td>Público general / Familias</td><td>Promocionar productos, combos familiares y eventos.</td></tr>
+                    <tr><td><strong>Instagram</strong></td><td>Jóvenes / Estudiantes</td><td>Mostrar estética visual de productos, Reels e identidad.</td></tr>
+                    <tr><td><strong>WhatsApp Business</strong></td><td>Clientes recurrentes</td><td>Atención rápida, envío de carta digital y toma de pedidos.</td></tr>
+                    <tr><td><strong>Página Web</strong></td><td>Público general / Turistas</td><td>Información institucional, catálogo completo y ubicación.</td></tr>
+                    <tr><td><strong>Carteles / Pizarras</strong></td><td>Clientes en local</td><td>Anuncio de promociones del día y recomendación del maestro chocolatero.</td></tr>
+                    <tr><td><strong>Reuniones / Briefings</strong></td><td>Personal interno</td><td>Coordinación operativa y evaluación de la atención.</td></tr>
+                    <tr><td><strong>WhatsApp Interno</strong></td><td>Personal interno</td><td>Comunicación directa, turnos y avisos urgentes.</td></tr>
+                </tbody>
+            </table>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 09. PLAN DE ACCIONES DETALLADO -->
+        <section id="ap-09" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">9.</span>
+                <h2>PLAN DE ACCIONES DETALLADO</h2>
+            </div>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>ACCIÓN</th><th>CANAL</th><th>FRECUENCIA</th><th>RESPONSABLE</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Publicación de fotos/Reels de productos artesanales</td><td>Instagram / FB</td><td>3x por semana</td><td>Comunicación</td></tr>
+                    <tr><td>Difusión de combos y promociones de chocolate</td><td>Redes Sociales</td><td>Semanal</td><td>Marketing</td></tr>
+                    <tr><td>Atención de consultas y reservas de pedidos</td><td>WhatsApp Business</td><td>Diario</td><td>Atención al cliente</td></tr>
+                    <tr><td>Publicación de contenido cultural/origen del cacao</td><td>Redes Sociales</td><td>Semanal</td><td>Comunicación</td></tr>
+                    <tr><td>Reuniones mensuales de equipo operativo</td><td>Presencial</td><td>Mensual</td><td>Administrador</td></tr>
+                    <tr><td>Actualización de pizarras y carta digital</td><td>Local / Web</td><td>Mensual</td><td>Administrador</td></tr>
+                </tbody>
+            </table>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 10. CRONOGRAMA DE EJECUCIÓN -->
+        <section id="ap-10" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">10.</span>
+                <h2>CRONOGRAMA DE EJECUCIÓN (3 MESES)</h2>
+            </div>
+            <table class="styled-table center-cols">
+                <thead>
+                    <tr><th style="text-align:left;">ACTIVIDAD</th><th>MES 1</th><th>MES 2</th><th>MES 3</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td style="text-align:left;">Diagnóstico y planificación inicial</td><td>✓</td><td></td><td></td></tr>
+                    <tr><td style="text-align:left;">Configuración de canales y plantillas gráficas</td><td>✓</td><td></td><td></td></tr>
+                    <tr><td style="text-align:left;">Publicaciones promocionales periódicas</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                    <tr><td style="text-align:left;">Campaña de difusión de contenido cultural del cacao</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                    <tr><td style="text-align:left;">Atención y gestión en WhatsApp Business</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                    <tr><td style="text-align:left;">Reuniones internas de alineación</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                    <tr><td style="text-align:left;">Seguimiento mensual de indicadores (KPIs)</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                    <tr><td style="text-align:left;">Evaluación final e informe general trimestral</td><td></td><td></td><td>✓</td></tr>
+                </tbody>
+            </table>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 11. PRESUPUESTO REFERENCIAL (PRECIOS S/ 1,300) -->
+        <section id="ap-11" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">11.</span>
+                <h2>PRESUPUESTO REFERENCIAL</h2>
+            </div>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>CONCEPTO / ACTIVIDAD</th><th style="text-align:right;">COSTO ESTIMADO</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Diseño de plantillas y línea gráfica digital</td><td style="text-align:right;">S/ 250.00</td></tr>
+                    <tr><td>Publicidad pautada en redes sociales (Meta Ads)</td><td style="text-align:right;">S/ 450.00</td></tr>
+                    <tr><td>Impresión de carteles, menú y material publicitario</td><td style="text-align:right;">S/ 350.00</td></tr>
+                    <tr><td>Sesión fotográfica de productos y material promocional</td><td style="text-align:right;">S/ 250.00</td></tr>
+                    <tr class="total-row"><td>TOTAL PRESUPUESTADO</td><td style="text-align:right;">S/ 1,300.00</td></tr>
+                </tbody>
+            </table>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 12. INDICADORES CLAVE DE EVALUACIÓN (KPIS) -->
+        <section id="ap-12" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">12.</span>
+                <h2>INDICADORES CLAVE DE EVALUACIÓN (KPIS)</h2>
+            </div>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>INDICADOR / KPI</th><th>META TRIMESTRAL</th><th>MÉTODO DE VERIFICACIÓN</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Frecuencia de publicaciones</td><td>12 publicaciones al mes</td><td>Reporte orgánico de Meta Business Suite</td></tr>
+                    <tr><td>Tiempo de respuesta digital</td><td>100% atenciones &lt; 15 min</td><td>Estadísticas de WhatsApp Business</td></tr>
+                    <tr><td>Ventas de combos promocionales</td><td>+15% de incremento mensual</td><td>Sistema POS / Reporte de caja diario</td></tr>
+                </tbody>
+            </table>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 13. PROFUNDIZACIÓN DEL MODELO DEL PROCESO CONTINUO -->
+        <section id="ap-13" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">13.</span>
+                <h2>PROFUNDIZACIÓN DEL MODELO DEL PROCESO CONTINUO</h2>
+            </div>
+            <p style="font-size:13.5px; line-height:1.6;">El Modelo del Proceso Continuo garantiza que el Plan de Comunicación de Amazonía Okitsoki S.A.C. no sea un documento estático, sino un ciclo adaptativo de mejora constante. Cada fase realimenta directamente a la siguiente mediante datos reales de ventas, respuestas de clientes y feedback del equipo operativo.</p>
+            
+            <div class="process-steps-grid">
+                <div class="step-card"><span>1. DIAGNÓSTICO</span><h4>Auditoría</h4><p>Auditoría & Encuestas</p></div>
+                <div class="step-card"><span>2. ESTRATEGIA</span><h4>Mensajes</h4><p>Mensajes & Ofertas</p></div>
+                <div class="step-card"><span>3. EJECUCIÓN</span><h4>Contenido</h4><p>Contenido & Pizarras</p></div>
+                <div class="step-card"><span>4. CONTROL</span><h4>KPIs</h4><p>KPIs & Interacciones</p></div>
+                <div class="step-card"><span>5. AJUSTE</span><h4>Optimización</h4><p>Optimización Continua</p></div>
+            </div>
+            <p style="font-size:11px; text-align:center; color:#FFB81C; font-weight:700; margin-top:10px;">RETROALIMENTACIÓN Y RE-DIAGNÓSTICO PERMANENTE</p>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 14. FASES DEL MODELO APLICADAS A AMAZONÍA OKITSOKI -->
+        <section id="ap-14" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">14.</span>
+                <h2>FASES DEL MODELO APLICADAS A AMAZONÍA OKITSOKI</h2>
+            </div>
+            <table class="styled-table">
+                <thead>
+                    <tr><th>FASE DEL CICLO</th><th>MECANISMO DE ACCIÓN</th><th>EJEMPLO PRÁCTICO EN LA CHOCOLATERÍA</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Diagnóstico Continuo</strong></td>
+                        <td>Escucha activa en salón y revisión diaria de mensajes recibidos.</td>
+                        <td>Se detecta que los clientes preguntan frecuentemente en WhatsApp si el "Combo Amazonía" incluye chocolate en barra o bombones surtidos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Ajuste Estratégico</strong></td>
+                        <td>Rediseño de piezas gráficas y actualización de los copys informativos.</td>
+                        <td>Se modifica el arte digital especificando claramente: <em>"Incluye Chocolate Nut con Frutos Secos y Bombones de Cacao Nativo"</em>.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Ejecución Focalizada</strong></td>
+                        <td>Lanzamiento de la versión corregida en redes y briefing al personal.</td>
+                        <td>El personal de atención confirma a los clientes las opciones de chocolates desde que toman la orden, alineado al nuevo post publicitario.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Control & Medición</strong></td>
+                        <td>Evaluación semanal del volumen de ventas y tiempo de atención.</td>
+                        <td>Disminuyen un 40% las dudas repetitivas en WhatsApp y aumentan un 18% los pedidos del combo de la semana.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Aprendizaje Organizacional</strong></td>
+                        <td>Documentación del cambio e integración en el manual interno.</td>
+                        <td>Se estandariza la regla de colocar siempre el detalle de los tipos de chocolate en todas las futuras promociones.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- 15. MECANISMO DE CONTROL Y EVALUACIÓN TRIMESTRAL -->
+        <section id="ap-15" class="plan-section">
+            <div class="section-header-title">
+                <span class="big-number">15.</span>
+                <h2>MECANISMO DE CONTROL Y EVALUACIÓN TRIMESTRAL</h2>
+            </div>
+            <p style="font-size:14px; line-height:1.7; background:rgba(255, 255, 255, 0.04); padding:20px; border-radius:12px; border:1px solid rgba(255, 184, 28, 0.2);">
+                Al finalizar la Semana 12, el Administrador convocará a una sesión de cierre con el equipo. Se compararán los resultados frente a las metas planteadas en la matriz de KPIs. Aquellas acciones con retorno positivo (ej. promociones en Instagram con código de descuento) se convertirán en políticas fijas del plan anual de Amazonía Okitsoki S.A.C.
+            </p>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+        PIE DE PÁGINA (FOOTER) EXACTO Y ORIGINAL (DE IDENTIDAD.HTML)
+    ===================================================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo-title">
+                    <img src="imagenes/Amazonia1.jpg" alt="Logo" class="footer-logo-img">
+                    <div class="footer-text-group">
+                        <h2>Amazonía Okitsoki</h2>
+                        <p class="footer-desc">Chocolatería artesanal y confitería de autor.</p>
+                        <p class="footer-location">Satipo, Junín</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-menu">
+                <h3>Explorar</h3>
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html">Empresa</a>
+                <a href="publico.html">Público objetivo</a>
+                <a href="identidad.html">Identidad corporativa</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen institucional</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="manual.html">Manual de identidad corporativa</a>
+                <a href="mejoras.html">Propuestas de mejora</a>
+            </div>
+
+            <div class="footer-info">
+                <h3>Amazonía Okitsoki</h3>
+                <p>El verdadero grano de cacao artesanal de Satipo.</p>
+                <p>Cacao nativo, identidad y tradición de la selva central.</p>
+
+                <div class="footer-socials">
+                    <a href="https://wa.me/tu-numero" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com/@tu-usuario" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://instagram.com/@tu-usuario" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/@tu-usuario" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Amazonía Okitsoki S.A.C.</p>
+            <p>Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT JS SEPARADO -->
+    <script src="script.js"></script>
+
+    <!-- SCRIPT DE NAVEGACIÓN Y PROGRESO INTERNO -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            window.addEventListener("scroll", function () {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("scroll-progress").style.width = scrolled + "%";
+            });
+
+            const navItems = document.querySelectorAll('.plan-nav-item');
+            
+            navItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    navItems.forEach(i => i.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 130;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('.back-to-top').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
