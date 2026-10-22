@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoría e Investigación de Imagen Corporativa | Amazonía Okitsoki S.A.C.</title>
+
+    <!-- Hoja de Estilos Externa Principal -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Iconos FontAwesome y Fuentes Google -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+
+    <!-- Librería para Animaciones al Hacer Scroll (ScrollReveal) -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        /* ==========================================================
+           ESTILOS GENERALES CON FONDO CREMA MARFIL Y ANIMACIONES
+        =========================================================== */
+        body {
+            background-color: #F9F6E8 !important;
+            color: #2D211B;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FFB81C, #226E28);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* BANNER DE CABECERA ANIMADO */
+        .auditoria-hero {
+            background: linear-gradient(135deg, #321307 0%, #4A1E0D 100%);
+            text-align: center;
+            padding: 130px 20px 50px 20px;
+            border-bottom: 3px solid #FFB81C;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auditoria-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,184,28,0.08) 0%, transparent 60%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.15); opacity: 0.9; }
+        }
+
+        .auditoria-kicker {
+            font-size: 12px;
+            font-weight: 800;
+            color: #FFB81C;
+            letter-spacing: 3px;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            background: rgba(255, 184, 28, 0.15);
+            padding: 6px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 184, 28, 0.3);
+        }
+
+        .auditoria-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(32px, 5vw, 52px);
+            color: #FFFFFF;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+
+        .auditoria-title span {
+            color: #FFB81C;
+        }
+
+        .auditoria-subtitle {
+            font-size: 15px;
+            color: #F1E4DC;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .auditoria-main {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 30px 20px 60px 20px;
+        }
+
+        /* SUB-NAVEGACIÓN FLOTANTE INTERACTIVA */
+        .auditoria-nav-bar {
+            position: sticky;
+            top: 75px;
+            z-index: 500;
+            margin: 10px 0 45px 0;
+        }
+
+        .auditoria-nav-container {
+            background: #321307;
+            padding: 8px 12px;
+            border-radius: 30px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 1px solid #FFB81C;
+        }
+
+        .auditoria-nav-container::-webkit-scrollbar { display: none; }
+
+        .auditoria-nav-item {
+            color: #E8DDD5;
+            text-decoration: none;
+            padding: 9px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            white-space: nowrap;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-weight: 600;
+        }
+
+        .auditoria-nav-item:hover, .auditoria-nav-item.active {
+            background: #FFB81C;
+            color: #2D0F05;
+            font-weight: 800;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 184, 28, 0.4);
+        }
+
+        /* SECCIONES Y TARJETAS DINÁMICAS */
+        .auditoria-section {
+            margin-bottom: 60px;
+            scroll-margin-top: 140px;
+        }
+
+        .section-header-box {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #4A1E0D;
+            padding-bottom: 12px;
+        }
+
+        .big-section-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 800;
+            color: #D9881A;
+            line-height: 1;
+        }
+
+        .section-header-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            color: #4A1E0D;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        /* TARJETAS CON EFECTO HOVER 3D Y SOMBRA */
+        .content-card {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 22px;
+            line-height: 1.7;
+            font-size: 14px;
+            color: #33231B;
+            transition: all 0.4s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(74, 30, 13, 0.1);
+            border-color: #D9881A;
+        }
+
+        .example-callout {
+            background: #FFF8E7;
+            border-left: 5px solid #D9881A;
+            padding: 18px 22px;
+            border-radius: 0 14px 14px 0;
+            margin-top: 18px;
+            font-size: 13.5px;
+            color: #4A3225;
+            transition: background 0.3s ease;
+        }
+
+        .example-callout:hover {
+            background: #FFF1D0;
+        }
+
+        .example-callout strong {
+            color: #B56800;
+            display: block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        /* ESPACIOS PARA IMÁGENES */
+        .image-placeholder-box {
+            margin-top: 20px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px dashed #D9881A;
+            background: #FFFDF7;
+        }
+
+        .auditoria-img {
+            width: 100%;
+            max-height: 380px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .placeholder-fallback {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px;
+            text-align: center;
+            color: #4A1E0D;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
+        /* GRID DE 2 COLUMNAS INTERACTIVO */
+        .grid-two-cols {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .subcard {
+            background: #FFFFFF;
+            padding: 26px;
+            border-radius: 16px;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .subcard:hover {
+            transform: translateY(-5px);
+            border-color: #FFB81C;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+        }
+
+        .subcard h3 {
+            font-family: 'Playfair Display', serif;
+            color: #4A1E0D;
+            margin-top: 0;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        /* DIAGRAMAS Y ESQUEMAS VISUALES CON MOVIMIENTO */
+        .diagram-container {
+            background: linear-gradient(135deg, #321307 0%, #1F0802 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #FFB81C;
+            margin: 30px 0;
+            color: #FFF;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .diagram-title {
+            text-align: center;
+            color: #FFB81C;
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .flow-steps {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .flow-step-node {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 184, 28, 0.4);
+            padding: 16px 14px;
+            border-radius: 14px;
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flow-step-node:hover {
+            background: rgba(255, 184, 28, 0.2);
+            transform: translateY(-5px) scale(1.03);
+            border-color: #FFB81C;
+            box-shadow: 0 8px 20px rgba(255, 184, 28, 0.2);
+        }
+
+        .flow-step-node span {
+            display: block;
+            font-size: 10px;
+            color: #FFB81C;
+            font-weight: 800;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .flow-step-node h4 {
+            margin: 0 0 8px 0;
+            font-size: 13.5px;
+            color: #FFFFFF;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .flow-step-node .node-desc {
+            font-size: 11px;
+            color: #E8DDD5;
+            margin: 0;
+            line-height: 1.35;
+            font-weight: 400;
+        }
+
+        .flow-arrow {
+            color: #FFB81C;
+            font-size: 20px;
+            font-weight: 900;
+            animation: arrowBounce 2s infinite;
+        }
+
+        @keyframes arrowBounce {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(4px); }
+        }
+
+        /* TABLAS ESTILIZADAS CON INTERACCIÓN */
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #FFFFFF;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            margin-top: 18px;
+            font-size: 13.5px;
+        }
+
+        .styled-table th {
+            background: #321307;
+            color: #FFB81C;
+            padding: 16px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .styled-table td {
+            padding: 16px;
+            border-bottom: 1px solid #E8E0D0;
+            color: #33231B;
+            vertical-align: top;
+            transition: background 0.2s ease;
+        }
+
+        .styled-table tr:hover td {
+            background: #FFFBF0;
+        }
+
+        /* MATRIZ FODA INTERACTIVA */
+        .foda-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+            margin-top: 18px;
+        }
+
+        .foda-box {
+            background: #FFFFFF;
+            padding: 25px;
+            border-radius: 16px;
+            border-top: 5px solid #FFB81C;
+            border-left: 1px solid #E8E0D0;
+            border-right: 1px solid #E8E0D0;
+            border-bottom: 1px solid #E8E0D0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        .foda-box:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .foda-fortalezas { border-top-color: #226E28; }
+        .foda-debilidades { border-top-color: #E67E22; }
+        .foda-oportunidades { border-top-color: #D9881A; }
+        .foda-amenazas { border-top-color: #C0392B; }
+
+        .foda-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            margin-top: 0;
+            color: #4A1E0D;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .foda-box ul {
+            margin: 0;
+            padding-left: 18px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #33231B;
+        }
+
+        .foda-box li {
+            margin-bottom: 10px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #4A1E0D;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            background: #E8E0D0;
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+
+        .back-to-top:hover {
+            background: #FFB81C;
+            color: #2D0F05;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 968px) {
+            .grid-two-cols, .foda-grid-container {
+                grid-template-columns: 1fr !important;
+            }
+            .flow-steps {
+                flex-direction: column;
+            }
+            .flow-arrow {
+                transform: rotate(90deg);
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <!-- NAVEGACIÓN FIJA Y ESTÁNDAR GLOBAL DE TU SITIO -->
+    <header class="hero-header">
+        <nav class="nav">
+            <a class="brand" href="index.html">
+                <img src="imagenes/Amazonia1.jpg" alt="Logo" class="brand-img">
+                <span>Amazonía Okitsoki</span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn">☰</button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html">Empresa</a>
+                <a href="publico.html">Público</a>
+                <a href="identidad.html">Identidad</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="comunicacion-corporativa.html">comunicacion corporativa</a>
+                <a href="manual.html">Manual</a>
+                <a href="mejoras.html">Mejoras</a>
+                <a href="auditoría-imagen.html">Auditoría Imagen</a>
+            </div>
+        </nav>
+
+        <!-- BANNER PRINCIPAL DE LA AUDITORÍA CON EFECTO RESPLANDOR -->
+        <div class="auditoria-hero" id="top">
+            <span class="auditoria-kicker">09 · ESTRATEGIA Y DIAGNÓSTICO</span>
+            <h1 class="auditoria-title">Auditoría e Investigación <span>de Imagen Corporativa</span></h1>
+            <p class="auditoria-subtitle">Amazonía Okitsoki S.A.C. — Diagnóstico integral de percepción, identidad visual y posicionamiento del cacao artesanal de Satipo.</p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL EN 5 GRANDES MÓDULOS -->
+    <main class="auditoria-main">
+
+        <!-- SECCIÓN 1: NECESIDAD DE LA INVESTIGACIÓN -->
+        <section id="sec-01" class="auditoria-section">
+            <div class="section-header-box">
+                <span class="big-section-num">1.</span>
+                <h2>NECESIDAD DE LA INVESTIGACIÓN</h2>
+            </div>
+
+            <div class="content-card reveal-item">
+                <p>La investigación sobre la imagen corporativa de Amazonía Okitsoki es necesaria para comprender cómo perciben los clientes la marca, su identidad visual, la calidad de sus chocolates artesanales con cacao nativo de Satipo y el nivel de atención prestado en sus canales físicos y digitales. La auditoría permitirá identificar las fortalezas y debilidades de la imagen de la empresa, asegurando que transmita de manera efectiva sus valores esenciales: artesanalidad, identidad cultural asháninka, innovación gastronómica, frescura y origen natural.</p>
+                <p>Asimismo, este análisis estratégico facilitará la identificación de las expectativas de los consumidores (locales, estudiantes, trabajadores y turistas) y detectará oportunidades clave para diferenciar a Amazonía Okitsoki de otras marcas de chocolates comerciales o artesanales en la provincia de Satipo y la región Junín.</p>
+                
+                <div class="example-callout">
+                    <strong>Ejemplo de Aplicación Práctica</strong>
+                    Si los clientes consideran que los chocolates rellenos con mermelada de frutas nativas (como cocona, maracuyá o camu camu) tienen un excelente sabor, pero no logran identificar el significado del término <em>Okitsoki</em> ("grano" o "semilla" en asháninka) ni diferencian los empaques ecológicos de otras marcas locales, será necesario reforzar la comunicación publicitaria y el diseño visual de las etiquetas para resaltar su valor cultural y de origen.
+                </div>
+            </div>
+
+            <div class="grid-two-cols">
+                <div class="subcard reveal-item">
+                    <h3>1.1. Objetivo General</h3>
+                    <p style="margin:0; font-size:13.5px; line-height:1.6; color:#33231B;">Evaluar la imagen corporativa interna y externa de Amazonía Okitsoki S.A.C. para identificar oportunidades estratégicas de mejora que permitan consolidar su identidad visual, fortalecer el posicionamiento de sus chocolates artesanales de autor y potenciar su reconocimiento en el mercado local y regional.</p>
+                </div>
+
+                <div class="subcard reveal-item">
+                    <h3>1.2. Objetivos Específicos</h3>
+                    <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.6; color:#33231B;">
+                        <li><strong>Analizar la identidad visual:</strong> Evaluar logotipo, paleta cromática (Marrón Cacao, Verde Selva, Amarillo Dorado, Anaranjado Frutal, Crema Marfil) y empaques.</li>
+                        <li><strong>Investigar la percepción:</strong> Medir la opinión de consumidores (14 a 50 años, turistas y residentes de Satipo) sobre calidad y experiencia de compra.</li>
+                        <li><strong>Evaluar presencia digital:</strong> Analizar la línea estética y respuesta en Instagram, TikTok, Facebook, catálogo web y WhatsApp.</li>
+                        <li><strong>Analizar la competencia:</strong> Comparar la propuesta de valor con otras chocolaterías de la región Junín.</li>
+                        <li><strong>Formular un plan estratégico:</strong> Proponer acciones continuas para consolidar el liderazgo de la marca hacia el 2028.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 2: PROCESO DE AUDITORÍA DE LA IMAGEN -->
+        <section id="sec-02" class="auditoria-section">
+            <div class="section-header-box">
+                <span class="big-section-num">2.</span>
+                <h2>PROCESO DE AUDITORÍA DE LA IMAGEN</h2>
+            </div>
+
+            <p style="font-size: 14px; line-height: 1.6; margin-bottom: 20px; color: #33231B;">
+                El proceso de auditoría de imagen consiste en examinar minuciosamente los elementos internos y externos que configuran la percepción que el público tiene de Amazonía Okitsoki. Se estructura en cinco etapas fundamentales:
+            </p>
+
+            <!-- DIAGRAMA VISUAL DEL PROCESO CON DESCRIPCIÓN CORTA DENTRO -->
+            <div class="diagram-container reveal-item">
+                <div class="diagram-title">Flujo Global del Proceso de Auditoría</div>
+                <div class="flow-steps">
+                    
+                    <div class="flow-step-node">
+                        <span>ETAPA 2.1</span>
+                        <h4>Análisis de Identidad</h4>
+                        <p class="node-desc">Revisamos nuestro logo, colores y nombre.</p>
+                    </div>
+
+                    <span class="flow-arrow">➔</span>
+
+                    <div class="flow-step-node">
+                        <span>ETAPA 2.2</span>
+                        <h4>Investigación de Percepción</h4>
+                        <p class="node-desc">Consultamos a los clientes qué opinan de la marca.</p>
+                    </div>
+
+                    <span class="flow-arrow">➔</span>
+
+                    <div class="flow-step-node">
+                        <span>ETAPA 2.3</span>
+                        <h4>Evaluación Externa</h4>
+                        <p class="node-desc">Evaluamos nuestros empaques y redes sociales.</p>
+                    </div>
+
+                    <span class="flow-arrow">➔</span>
+
+                    <div class="flow-step-node">
+                        <span>ETAPA 2.4</span>
+                        <h4>Análisis Competitivo</h4>
+                        <p class="node-desc">Nos comparamos con otras marcas locales.</p>
+                    </div>
+
+                    <span class="flow-arrow">➔</span>
+
+                    <div class="flow-step-node">
+                        <span>ETAPA 2.5</span>
+                        <h4>Diagnóstico & Estrategia</h4>
+                        <p class="node-desc">Definimos las mejoras que debemos realizar.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SUBSECCIONES DETALLADAS 2.1 A 2.5 CON EJEMPLOS Y ESPACIO PARA IMÁGENES -->
+            
+            <!-- 2.1 -->
+            <div class="content-card reveal-item" style="margin-top: 30px;">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.1. Análisis de la Identidad Corporativa</h3>
+                <p>Se revisarán la Misión, Visión, Valores (Calidad, Responsabilidad, Respeto, Compromiso) y los elementos de diseño corporativo: logotipo con elementos de la selva (mazorcas de cacao, gotas de chocolate, mermelada y hojas tropicales), eslogan ("Amazonía Okitsoki, el verdadero grano de cacao artesanal de Satipo") y el tono de comunicación amigable y cercano.</p>
+                
+                <div class="example-callout">
+                    <strong>Ejemplo de Aplicación</strong>
+                    Si Amazonía Okitsoki busca proyectarse como una marca con profunda conexión ancestral y natural, sus materiales gráficos y publicaciones deben exhibir siempre imágenes reales del cacao nativo de Satipo, agricultores locales e insumos frescos, garantizando coherencia visual y narrativa.
+                </div>
+
+                <!-- ESPACIO PARA INSERTAR IMAGEN 2.1 -->
+                <div class="image-placeholder-box">
+                    <img src="imagenes/analisis-identidad.jpg" alt="Análisis de Identidad Corporativa - Amazonía Okitsoki" class="auditoria-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-fallback">
+                        <i class="fas fa-image" style="font-size: 32px; color: #D9881A; margin-bottom: 8px;"></i>
+                        <span>[ Insertar aquí imagen sobre Análisis de Identidad / Logotipo ]</span>
+                        <small style="font-size: 11px; color: #888; margin-top: 4px;">Ruta sugerida: imagenes/analisis-identidad.jpg</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.2 -->
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.2. Investigación de la Percepción del Público</h3>
+                <p>Se recopilará información directa de los compradores mediante encuestas y entrevistas breves en el establecimiento comercial y a través de canales digitales.</p>
+                
+                <div class="example-callout">
+                    <strong>Ejemplo de Aplicación</strong>
+                    Preguntar a los clientes: "¿Qué sensaciones o imágenes asocias al escuchar 'Amazonía Okitsoki'?". Las respuestas revelarán si la marca es recordada por su relleno de mermelada exótica, por su empaque ecológico o por su valor cultural asháninka.
+                </div>
+
+                <!-- ESPACIO PARA INSERTAR IMAGEN 2.2 -->
+                <div class="image-placeholder-box">
+                    <img src="imagenes/investigacion-percepcion.jpg" alt="Investigación de Percepción - Encuestas y Clientes" class="auditoria-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-fallback">
+                        <i class="fas fa-image" style="font-size: 32px; color: #D9881A; margin-bottom: 8px;"></i>
+                        <span>[ Insertar aquí imagen sobre Encuestas / Percepción de Clientes ]</span>
+                        <small style="font-size: 11px; color: #888; margin-top: 4px;">Ruta sugerida: imagenes/investigacion-percepcion.jpg</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.3 -->
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.3. Evaluación de la Imagen Externa y Puntos de Contacto</h3>
+                <p>Se examinará la fachada y letrero del establecimiento comercial, la señalización interna (Caja, Productos, Baños), la indumentaria del personal (delantales, gorras y camisetas polo corporativas), los empaques de las barras y bombones, y el diseño de la tienda virtual.</p>
+                
+                <div class="example-callout">
+                    <strong>Ejemplo de Aplicación</strong>
+                    Si el catálogo digital utiliza tonos de color que no coinciden con la paleta oficial (Marrón Cacao #4A1E0D o Verde Selva #226E28), se indicará la estandarización inmediata de plantillas para mantener un estilo corporativo impecable.
+                </div>
+
+                <!-- ESPACIO PARA INSERTAR IMAGEN 2.3 -->
+                <div class="image-placeholder-box">
+                    <img src="imagenes/puntos-contacto.jpg" alt="Puntos de Contacto - Empaques y Fachada" class="auditoria-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-fallback">
+                        <i class="fas fa-image" style="font-size: 32px; color: #D9881A; margin-bottom: 8px;"></i>
+                        <span>[ Insertar aquí imagen sobre Empaques, Fachada o Tienda Virtual ]</span>
+                        <small style="font-size: 11px; color: #888; margin-top: 4px;">Ruta sugerida: imagenes/puntos-contacto.jpg</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.4 -->
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.4. Análisis de la Competencia</h3>
+                <p>Se comparará la imagen de Amazonía Okitsoki con la de otras chocolaterías artesanales o empresas agroindustriales de la región.</p>
+                
+                <div class="example-callout">
+                    <strong>Ejemplo de Aplicación</strong>
+                    Si las marcas competidoras ofrecen chocolates tradicionales en envolturas simples, Amazonía Okitsoki puede destacar ampliamente resaltando sus empaques con acabados modernos, sus combinaciones únicas (sacha inchi, macambo, camu camu) y su narrativa sobre el origen del cacao.
+                </div>
+
+                <!-- ESPACIO PARA INSERTAR IMAGEN 2.4 -->
+                <div class="image-placeholder-box">
+                    <img src="imagenes/analisis-competencia.jpg" alt="Análisis Competitivo de Chocolaterías" class="auditoria-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-fallback">
+                        <i class="fas fa-image" style="font-size: 32px; color: #D9881A; margin-bottom: 8px;"></i>
+                        <span>[ Insertar aquí imagen sobre Comparativa de Chocolates / Competencia ]</span>
+                        <small style="font-size: 11px; color: #888; margin-top: 4px;">Ruta sugerida: imagenes/analisis-competencia.jpg</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.5 -->
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.5. Diagnóstico y Recomendaciones</h3>
+                <p>Se estructurará una matriz de diagnóstico para solucionar incoherencias visuales y potenciar el atractivo de la marca.</p>
+                
+                <div class="example-callout">
+                    <strong>Ejemplo de Aplicación</strong>
+                    Si los clientes desconocen la variedad de presentaciones (packs de regalo de 4, 8 o 16 unidades), se sugerirá implementar exhibidores destacados en tienda y campañas focalizadas en redes sociales para fechas especiales.
+                </div>
+
+                <!-- ESPACIO PARA INSERTAR IMAGEN 2.5 -->
+                <div class="image-placeholder-box">
+                    <img src="imagenes/diagnostico-estrategia.jpg" alt="Diagnóstico y Estrategia de Imagen" class="auditoria-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-fallback">
+                        <i class="fas fa-image" style="font-size: 32px; color: #D9881A; margin-bottom: 8px;"></i>
+                        <span>[ Insertar aquí imagen sobre Diagnóstico / Exhibidores / Packs de Regalo ]</span>
+                        <small style="font-size: 11px; color: #888; margin-top: 4px;">Ruta sugerida: imagenes/diagnostico-estrategia.jpg</small>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 3: DESARROLLO DEL PLAN DE INVESTIGACIÓN -->
+        <section id="sec-03" class="auditoria-section">
+            <div class="section-header-box">
+                <span class="big-section-num">3.</span>
+                <h2>DESARROLLO DEL PLAN DE INVESTIGACIÓN</h2>
+            </div>
+
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0;">3.1. Planteamiento del Problema</h3>
+                <p style="margin:0;">El problema central radica en determinar si la imagen que proyecta Amazonía Okitsoki comunica eficazmente su propuesta de valor diferenciadora —chocolatería artesanal de autor elaborada con cacao nativo de Satipo, rellenos exóticos e identidad asháninka— y si esta satisface las expectativas de frescura, calidad e innovación de su público objetivo.</p>
+            </div>
+
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0;">3.2. Metodología de Investigación</h3>
+                <p>Se aplicará un enfoque mixto (cualitativo y cuantitativo) apoyado en cuatro herramientas fundamentales:</p>
+                <ol style="padding-left:20px; font-size:13.5px; line-height:1.7;">
+                    <li><strong>Encuestas de satisfacción y percepción:</strong> Dirigidas a clientes presenciales y digitales.<br><em>Ejemplo cuantitativo: "En una escala del 1 al 5, ¿cómo califica la presentación visual y el diseño de los empaques de nuestros chocolates?"</em></li>
+                    <li><strong>Entrevistas a profundidad:</strong> Conversaciones breves con clientes frecuentes y turistas.<br><em>Ejemplo cualitativo: "¿Qué aspecto de la experiencia o del sabor del chocolate rellenos considera que diferencia a Amazonía Okitsoki de otras marcas?"</em></li>
+                    <li><strong>Observación directa en tienda:</strong> Evaluación del servicio, el letrero principal, la iluminación, el orden de los mostradores y el uso del uniforme corporativo.</li>
+                    <li><strong>Auditoría de Canales Digitales:</strong> Monitoreo del feed de Instagram, Reels de TikTok, página de Facebook y tiempos de respuesta por WhatsApp.</li>
+                </ol>
+            </div>
+
+            <div class="subcard reveal-item" style="margin-bottom:20px;">
+                <h3>3.3. Población y Muestra</h3>
+                <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.6; color:#33231B;">
+                    <li><strong>Población:</strong> Habitantes de Satipo, estudiantes, profesionales, turistas nacionales e internacionales, y compradores digitales de la región Junín.</li>
+                    <li><strong>Muestra referencial:</strong> 50 clientes encuestados en el local comercial y 50 usuarios participantes a través de formularios digitales y redes sociales.</li>
+                </ul>
+            </div>
+
+            <!-- CRONOGRAMA DE TRABAJO -->
+            <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; font-size:20px; margin-top:25px;" class="reveal-item">3.4. Cronograma del Plan de Trabajo (4 Semanas)</h3>
+            <table class="styled-table reveal-item">
+                <thead>
+                    <tr>
+                        <th style="width:120px;">SEMANA</th>
+                        <th>ACTIVIDADES PRINCIPALES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Semana 1</strong></td>
+                        <td>Definición del plan, diseño de cuestionarios y preparación de fichas de observación para la tienda de Satipo.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Semana 2</strong></td>
+                        <td>Levantamiento de campo: aplicación de encuestas en local, entrevistas y evaluación de redes sociales y web.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Semana 3</strong></td>
+                        <td>Procesamiento de datos, tabulación de resultados y análisis del nivel de reconocimiento de la marca.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Semana 4</strong></td>
+                        <td>Redacción del informe final de auditoría, diagnóstico FODA y presentación del plan de mejora corporativo.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="content-card reveal-item" style="margin-top:20px;">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0;">3.5. Resultados Esperados</h3>
+                <ul style="margin:0; padding-left:18px; font-size:13px; line-height:1.6;">
+                    <li>Medición precisa del nivel de recordación del nombre <em>Amazonía Okitsoki</em> y de su eslogan.</li>
+                    <li>Detección de las combinaciones de sabores y empaques preferidos por los consumidores.</li>
+                    <li>Identificación de oportunidades de mejora en el diseño del catálogo y la atención al cliente.</li>
+                    <li>Estrategia clara para posicionar a la empresa como la marca líder en chocolatería fina de Satipo hacia el 2028.</li>
+                </ul>
+            </div>
+
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 4: PROCESO DE AUTOANÁLISIS DE LA IMAGEN -->
+        <section id="sec-04" class="auditoria-section">
+            <div class="section-header-box">
+                <span class="big-section-num">4.</span>
+                <h2>PROCESO DE AUTOANÁLISIS DE LA IMAGEN</h2>
+            </div>
+
+            <p style="font-size:14px; line-height:1.6; margin-bottom:20px; color:#33231B;">El autoanálisis es una evaluación crítica e interna efectuada por la administración de Amazonía Okitsoki S.A.C. para examinar cómo se gestionan los activos visuales y de comunicación antes de contrastarlos con la opinión del mercado.</p>
+
+            <!-- ESTRUCTURA DEL AUTOANÁLISIS -->
+            <div class="diagram-container reveal-item">
+                <div class="diagram-title">Estructura Interna del Autoanálisis</div>
+                <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:12px;">
+                    <div class="flow-step-node"><span>4.1</span><h4>Autoanálisis de Identidad Visual</h4></div>
+                    <div class="flow-step-node"><span>4.2</span><h4>Autoanálisis de Comunicación</h4></div>
+                    <div class="flow-step-node"><span>4.3</span><h4>Autoanálisis de Atención al Cliente</h4></div>
+                    <div class="flow-step-node"><span>4.4</span><h4>Autoanálisis de Presencia Digital</h4></div>
+                </div>
+                <div style="text-align:center; color:#FFB81C; font-size:20px; margin:15px 0 5px 0;">▼</div>
+                <div class="flow-step-node" style="background:rgba(255,184,28,0.15); border-color:#FFB81C;">
+                    <span>SÍNTESIS FINAL</span>
+                    <h4 style="color:#FFB81C; font-size:15px;">4.5 Matriz FODA de Imagen Corporativa</h4>
+                </div>
+            </div>
+
+            <div class="grid-two-cols" style="margin-bottom:20px;">
+                <div class="subcard reveal-item">
+                    <h3>4.1. Identidad Visual</h3>
+                    <p style="font-size:13px; line-height:1.5; color:#33231B;">Revisión del uso del logotipo en etiquetas, bolsas ecológicas, mandiles del personal, letrero exterior y banners de la web.</p>
+                    <div class="example-callout" style="font-size:12px;">
+                        Verificar que el logotipo no sufra distorsiones de proporción en los envoltorios pequeños y que el color Marrón Cacao mantenga el código Hexadecimal <strong>#4A1E0D</strong>.
+                    </div>
+                </div>
+
+                <div class="subcard reveal-item">
+                    <h3>4.2. Comunicación Corporativa</h3>
+                    <p style="font-size:13px; line-height:1.5; color:#33231B;">Evaluación de los mensajes principales emitidos en medios y empaques (<em>"El sabor del mejor cacao de nuestra selva en cada chocolate"</em>).</p>
+                    <div class="example-callout" style="font-size:12px;">
+                        Garantizar que las publicaciones no solo muestren precios, sino que cuenten la historia del cacao de Satipo, su fermentación y el valor cultural.
+                    </div>
+                </div>
+
+                <div class="subcard reveal-item">
+                    <h3>4.3. Atención al Cliente</h3>
+                    <p style="font-size:13px; line-height:1.5; color:#33231B;">Evaluación del protocolo de bienvenida y asesoría de ventas en tienda y canales de mensajería.</p>
+                    <div class="example-callout" style="font-size:12px;">
+                        Controlar que el personal salude cordialmente, ofrezca degustaciones de mermeladas nativas y explique con entusiasmo el origen del término <em>Okitsoki</em>.
+                    </div>
+                </div>
+
+                <div class="subcard reveal-item">
+                    <h3>4.4. Presencia Digital</h3>
+                    <p style="font-size:13px; line-height:1.5; color:#33231B;">Análisis del catálogo virtual, la tienda web y la calidad visual de las fotografías en redes sociales.</p>
+                    <div class="example-callout" style="font-size:12px;">
+                        Asegurar que las fotografías transmitan el acabado real de los chocolates, mostrando los rellenos cremosos de mango, camu camu, maracuyá o aguaje.
+                    </div>
+                </div>
+            </div>
+
+            <!-- MATRIZ FODA COMPLETA -->
+            <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; font-size:22px; margin-top:30px;" class="reveal-item">4.5. Matriz de Diagnóstico Corporativo (FODA de Imagen)</h3>
+            <div class="foda-grid-container">
+                
+                <div class="foda-box foda-fortalezas reveal-item">
+                    <h3><i class="fas fa-shield-alt" style="color:#226E28;"></i> FORTALEZAS</h3>
+                    <ul>
+                        <li>Nombre de marca con profundo arraigo e identidad cultural asháninka (<em>Okitsoki</em>).</li>
+                        <li>Producto altamente innovador que combina cacao nativo con mermeladas exóticas y frutos secos (sacha inchi, macambo).</li>
+                        <li>Paleta de colores atractiva y diferenciada que evoca riqueza natural.</li>
+                        <li>Aplicaciones corporativas completas en uniformes, empaques y señalética.</li>
+                    </ul>
+                </div>
+
+                <div class="foda-box foda-debilidades reveal-item">
+                    <h3><i class="fas fa-exclamation-triangle" style="color:#E67E22;"></i> DEBILIDADES</h3>
+                    <ul>
+                        <li>Necesidad de consolidar el nivel de recordación del significado del nombre en públicos fuera de Satipo.</li>
+                        <li>Mantenimiento continuo del catálogo digital frente al stock variable de frutas de estación.</li>
+                        <li>Dependencia de canales digitales para la comercialización regional.</li>
+                    </ul>
+                </div>
+
+                <div class="foda-box foda-oportunidades reveal-item">
+                    <h3><i class="fas fa-lightbulb" style="color:#D9881A;"></i> OPORTUNIDADES</h3>
+                    <ul>
+                        <li>Creciente interés del consumidor por productos artesanales, ecofriendly y con responsabilidad social.</li>
+                        <li>Expansión en el mercado de regalos corporativos y packs de obsequio a nivel regional y nacional.</li>
+                        <li>Turismo en la selva central como vitrina de degustación directa para visitantes.</li>
+                    </ul>
+                </div>
+
+                <div class="foda-box foda-amenazas reveal-item">
+                    <h3><i class="fas fa-ban" style="color:#C0392B;"></i> AMENAZAS</h3>
+                    <ul>
+                        <li>Competencia directa de chocolates industriales de bajo costo.</li>
+                        <li>Fluctuación en los precios del cacao o escasez de insumos frutales por factores climáticos.</li>
+                        <li>Copia de combinaciones de sabores únicos por parte de competidores locales.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 5: CONCLUSIONES Y RECOMENDACIONES -->
+        <section id="sec-05" class="auditoria-section">
+            <div class="section-header-box">
+                <span class="big-section-num">5.</span>
+                <h2>CONCLUSIONES Y RECOMENDACIONES</h2>
+            </div>
+
+            <div class="content-card reveal-item">
+                <ol style="margin:0; padding-left:20px; font-size:14px; line-height:1.8;">
+                    <li style="margin-bottom:15px;">
+                        <strong style="color:#4A1E0D;">Consolidación de Identidad:</strong> La ejecución integral de esta auditoría permitirá a Amazonía Okitsoki S.A.C. afianzar una imagen corporativa sólida, profesional e inconfundible, diferenciándose claramente de la oferta de chocolatería tradicional en la región.
+                    </li>
+                    <li style="margin-bottom:15px;">
+                        <strong style="color:#4A1E0D;">Coherencia en Puntos de Contacto:</strong> Al alinear la presentación del establecimiento en Satipo, la vestimenta corporativa del personal, las publicaciones en redes sociales y la atención por WhatsApp, la marca proyectará la confiabilidad y alta calidad requeridas para alcanzar su Visión estratégica al año 2028.
+                    </li>
+                    <li>
+                        <strong style="color:#4A1E0D;">Estrategia Basada en Datos Reales:</strong> Las acciones correctivas deberán sustentarse de manera permanente en las evidencias recogidas durante la investigación de mercado, garantizando que cada cambio visual o promocional responda a los deseos e inquietudes reales de sus consumidores.
+                    </li>
+                </ol>
+            </div>
+
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+        PIE DE PÁGINA (FOOTER) EXACTO Y ORIGINAL DE TU SITIO
+    ===================================================== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo-title">
+                    <img src="imagenes/Amazonia1.jpg" alt="Logo" class="footer-logo-img">
+                    <div class="footer-text-group">
+                        <h2>Amazonía Okitsoki</h2>
+                        <p class="footer-desc">Chocolatería artesanal y confitería de autor.</p>
+                        <p class="footer-location">Satipo, Junín</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-menu">
+                <h3>Explorar</h3>
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html">Empresa</a>
+                <a href="publico.html">Público objetivo</a>
+                <a href="identidad.html">Identidad corporativa</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen institucional</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="manual.html">Manual de identidad corporativa</a>
+                <a href="mejoras.html">Propuestas de mejora</a>
+            </div>
+
+            <div class="footer-info">
+                <h3>Amazonía Okitsoki</h3>
+                <p>El verdadero grano de cacao artesanal de Satipo.</p>
+                <p>Cacao nativo, identidad y tradición de la selva central.</p>
+
+                <div class="footer-socials">
+                    <a href="https://wa.me/tu-numero" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com/@tu-usuario" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://instagram.com/@tu-usuario" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/@tu-usuario" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Amazonía Okitsoki S.A.C.</p>
+            <p>Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT JS SEPARADO DE TU SITIO -->
+    <script src="script.js"></script>
+
+    <!-- SCRIPT DE INTERACCIÓN Y ANIMACIONES (SCROLLREVEAL) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // CONFIGURACIÓN DE ANIMACIÓN AL SCROLLEAR (SCROLLREVEAL)
+            if (typeof ScrollReveal !== 'undefined') {
+                const sr = ScrollReveal({
+                    origin: 'bottom',
+                    distance: '30px',
+                    duration: 800,
+                    delay: 150,
+                    easing: 'cubic-bezier(0.25, 0.8, 0.25, 1)',
+                    reset: false
+                });
+
+                sr.reveal('.reveal-item', { interval: 100 });
+            }
+
+            // BARRA DE PROGRESO DE LECTURA
+            window.addEventListener("scroll", function () {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("scroll-progress").style.width = scrolled + "%";
+            });
+
+            // DESPLAZAMIENTO SUAVE Y RESALTADO ACTIVO EN EL SUB-NAV
+            const navItems = document.querySelectorAll('.auditoria-nav-item');
+            const sections = document.querySelectorAll('.auditoria-section');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').includes(current)) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 130;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // BOTÓN VOLVER ARRIBA
+            document.querySelectorAll('.back-to-top').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
