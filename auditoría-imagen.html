@@ -496,6 +496,27 @@
                 margin: 5px 0;
             }
         }
+
+        /* FORMULARIO DE ENCUESTA, ENTREVISTAS Y ESPACIOS PARA FOTOGRAFÍAS */
+        .okitsoki-form { display:flex; flex-direction:column; gap:14px; margin-top:18px; }
+        .okitsoki-form > label, #sec-06 label[for="resultadosInvestigacion"] { color:#4A1E0D; font-weight:700; }
+        .okitsoki-form input[type="text"], .okitsoki-form textarea, #resultadosInvestigacion { width:100%; box-sizing:border-box; border:1px solid #d8c8b8; border-radius:10px; padding:12px; font:inherit; background:#fffdf9; color:#33231B; }
+        .okitsoki-form fieldset { border:1px solid #e4d7c8; border-radius:12px; padding:14px 16px; display:flex; flex-wrap:wrap; gap:10px 18px; }
+        .okitsoki-form legend { color:#4A1E0D; font-weight:700; padding:0 6px; }
+        .okitsoki-form fieldset label { font-weight:400; display:inline-flex; align-items:center; gap:7px; }
+        .survey-submit { border:0; border-radius:10px; padding:13px 18px; background:#226E28; color:white; font-weight:700; cursor:pointer; align-self:flex-start; }
+        .survey-submit:hover { background:#184f1d; }
+        .survey-result { background:#f4f8ef; border-left:4px solid #226E28; padding:14px; border-radius:8px; overflow-wrap:anywhere; }
+        .interview-card, .image-research-card { min-width:0; }
+        .interview-card h4, .image-research-card h4 { color:#4A1E0D; margin:12px 0; }
+        .interview-card p { line-height:1.65; }
+        .auditoria-img { display:block; width:100%; max-height:260px; object-fit:cover; border-radius:12px; margin:8px 0 12px; }
+        .image-placeholder { min-height:180px; padding:18px; box-sizing:border-box; border:2px dashed #c9b49d; border-radius:12px; background:#fbf4e9; color:#6a4c3c; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:8px; }
+        .image-placeholder i { font-size:30px; color:#226E28; }
+        .image-placeholder span { font-weight:700; }
+        .image-placeholder small { font-size:11px; overflow-wrap:anywhere; }
+        @media(max-width:600px) { .okitsoki-form fieldset { flex-direction:column; } .survey-submit { width:100%; } }
+
     </style>
 </head>
 
@@ -522,10 +543,11 @@
                 <a href="imagen.html">Imagen</a>
                 <a href="aplicaciones.html">Aplicaciones</a>
                 <a href="comunicacion.html">Comunicación</a>
-                <a href="comunicacion-corporativa.html">comunicacion corporativa</a>
+                <a href="comunicacion-corporativa.html">Comunicación corporativa</a>
                 <a href="manual.html">Manual</a>
                 <a href="mejoras.html">Mejoras</a>
                 <a href="auditoría-imagen.html">Auditoría Imagen</a>
+                <a href="#sec-06">Encuestas y entrevistas</a>
             </div>
         </nav>
 
@@ -548,8 +570,8 @@
             </div>
 
             <div class="content-card reveal-item">
-                <p>La investigación sobre la imagen corporativa de Amazonía Okitsoki es necesaria para comprender cómo perciben los clientes la marca, su identidad visual, la calidad de sus chocolates artesanales con cacao nativo de Satipo y el nivel de atención prestado en sus canales físicos y digitales. La auditoría permitirá identificar las fortalezas y debilidades de la imagen de la empresa, asegurando que transmita de manera efectiva sus valores esenciales: artesanalidad, identidad cultural asháninka, innovación gastronómica, frescura y origen natural.</p>
-                <p>Asimismo, este análisis estratégico facilitará la identificación de las expectativas de los consumidores (locales, estudiantes, trabajadores y turistas) y detectará oportunidades clave para diferenciar a Amazonía Okitsoki de otras marcas de chocolates comerciales o artesanales en la provincia de Satipo y la región Junín.</p>
+                <p>La investigación de la imagen corporativa de Amazonía Okitsoki S.A.C. permitirá conocer cómo perciben los clientes la marca, qué elementos visuales reconocen con mayor facilidad y cómo valoran la presentación de sus chocolates artesanales elaborados con cacao nativo de Satipo. También ayudará a evaluar la atención brindada en los canales presenciales y digitales, así como la coherencia entre el logotipo, los colores, los empaques, los mensajes publicitarios y la experiencia de compra. Con esta información será posible reconocer fortalezas, detectar aspectos por mejorar y comunicar con mayor claridad la elaboración artesanal, la identidad cultural asháninka, la innovación en sabores y el origen amazónico de los productos.</p>
+                <p>Además, el estudio permitirá identificar las expectativas de residentes de Satipo, estudiantes, trabajadores y turistas, y reconocer oportunidades para diferenciar a Amazonía Okitsoki de otras marcas de chocolates industriales y artesanales de la provincia y de la región Junín. Los resultados servirán como base para proponer mejoras realistas en la identidad visual, la comunicación y la atención al cliente.</p>
                 
                 <div class="example-callout">
                     <strong>Ejemplo de Aplicación Práctica</strong>
@@ -560,7 +582,7 @@
             <div class="grid-two-cols">
                 <div class="subcard reveal-item">
                     <h3>1.1. Objetivo General</h3>
-                    <p style="margin:0; font-size:13.5px; line-height:1.6; color:#33231B;">Evaluar la imagen corporativa interna y externa de Amazonía Okitsoki S.A.C. para identificar oportunidades estratégicas de mejora que permitan consolidar su identidad visual, fortalecer el posicionamiento de sus chocolates artesanales de autor y potenciar su reconocimiento en el mercado local y regional.</p>
+                    <p style="margin:0; font-size:13.5px; line-height:1.6; color:#33231B;">Evaluar la imagen corporativa interna y externa de Amazonía Okitsoki S.A.C. mediante el análisis de su identidad visual, comunicación, atención al cliente y presencia digital, con el fin de identificar oportunidades de mejora que fortalezcan el reconocimiento y posicionamiento de sus chocolates artesanales en el mercado local y regional.</p>
                 </div>
 
                 <div class="subcard reveal-item">
@@ -586,7 +608,7 @@
             </div>
 
             <p style="font-size: 14px; line-height: 1.6; margin-bottom: 20px; color: #33231B;">
-                El proceso de auditoría de imagen consiste en examinar minuciosamente los elementos internos y externos que configuran la percepción que el público tiene de Amazonía Okitsoki. Se estructura en cinco etapas fundamentales:
+                La auditoría de imagen examina los elementos que influyen en la manera en que el público reconoce y valora a Amazonía Okitsoki. Para obtener un diagnóstico ordenado, se revisarán la identidad corporativa, las opiniones de los clientes, los puntos de contacto, la imagen de la competencia y las oportunidades de mejora. Cada etapa permitirá reunir evidencias y convertirlas en recomendaciones concretas.
             </p>
 
             <!-- DIAGRAMA VISUAL DEL PROCESO CON DESCRIPCIÓN CORTA DENTRO -->
@@ -627,7 +649,7 @@
                     <span class="flow-arrow">➔</span>
 
                     <div class="flow-step-node">
-                        <span>ETAPA 2.5</span>
+                        <span>ETAPA 2.6</span>
                         <h4>Diagnóstico & Estrategia</h4>
                         <p class="node-desc">Definimos las mejoras que debemos realizar.</p>
                     </div>
@@ -635,12 +657,12 @@
                 </div>
             </div>
 
-            <!-- SUBSECCIONES DETALLADAS 2.1 A 2.5 CON EJEMPLOS Y ESPACIO PARA IMÁGENES -->
+            <!-- SUBSECCIONES DETALLADAS DEL PROCESO DE AUDITORÍA CON EJEMPLOS E IMÁGENES -->
             
             <!-- 2.1 -->
             <div class="content-card reveal-item" style="margin-top: 30px;">
                 <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.1. Análisis de la Identidad Corporativa</h3>
-                <p>Se revisarán la Misión, Visión, Valores (Calidad, Responsabilidad, Respeto, Compromiso) y los elementos de diseño corporativo: logotipo con elementos de la selva (mazorcas de cacao, gotas de chocolate, mermelada y hojas tropicales), eslogan ("Amazonía Okitsoki, el verdadero grano de cacao artesanal de Satipo") y el tono de comunicación amigable y cercano.</p>
+                <p>Se revisarán la misión, visión y los valores de Calidad, Responsabilidad, Respeto y Compromiso, junto con los principales elementos de identidad: logotipo, eslogan “Amazonía Okitsoki, el verdadero grano de cacao artesanal de Satipo”, paleta cromática y estilo de comunicación. También se comprobará que las aplicaciones gráficas representen de forma coherente el cacao, la naturaleza amazónica y la elaboración artesanal, sin sobrecargar las composiciones ni dificultar la lectura.</p>
                 
                 <div class="example-callout">
                     <strong>Ejemplo de Aplicación</strong>
@@ -661,7 +683,7 @@
             <!-- 2.2 -->
             <div class="content-card reveal-item">
                 <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.2. Investigación de la Percepción del Público</h3>
-                <p>Se recopilará información directa de los compradores mediante encuestas y entrevistas breves en el establecimiento comercial y a través de canales digitales.</p>
+                <p>Se recogerá información de los compradores mediante encuestas y entrevistas breves, tanto en el establecimiento como en los canales digitales. Las preguntas estarán orientadas a conocer el nivel de reconocimiento de la marca, la claridad de los mensajes, la percepción de calidad y la valoración de los empaques y sabores. Los resultados deberán registrarse y analizarse antes de plantear cambios.</p>
                 
                 <div class="example-callout">
                     <strong>Ejemplo de Aplicación</strong>
@@ -682,7 +704,7 @@
             <!-- 2.3 -->
             <div class="content-card reveal-item">
                 <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.3. Evaluación de la Imagen Externa y Puntos de Contacto</h3>
-                <p>Se examinará la fachada y letrero del establecimiento comercial, la señalización interna (Caja, Productos, Baños), la indumentaria del personal (delantales, gorras y camisetas polo corporativas), los empaques de las barras y bombones, y el diseño de la tienda virtual.</p>
+                <p>Se revisarán los puntos donde el público entra en contacto con la marca: fachada y letrero del establecimiento, señalización interna, indumentaria del personal, envolturas de barras y bombones, bolsas, etiquetas, catálogo y tienda virtual. Se observará si el logotipo es legible, si los colores se mantienen consistentes, si la información del producto se entiende con facilidad y si las fotografías muestran los chocolates de manera fiel y atractiva.</p>
                 
                 <div class="example-callout">
                     <strong>Ejemplo de Aplicación</strong>
@@ -703,7 +725,7 @@
             <!-- 2.4 -->
             <div class="content-card reveal-item">
                 <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.4. Análisis de la Competencia</h3>
-                <p>Se comparará la imagen de Amazonía Okitsoki con la de otras chocolaterías artesanales o empresas agroindustriales de la región.</p>
+                <p>Se compararán, cuando exista información disponible, las presentaciones, empaques, mensajes, canales de atención y propuestas de valor de otras chocolaterías artesanales o empresas agroindustriales de la región. La comparación no buscará copiar a otras marcas, sino identificar oportunidades para comunicar mejor los atributos propios de Amazonía Okitsoki.</p>
                 
                 <div class="example-callout">
                     <strong>Ejemplo de Aplicación</strong>
@@ -721,10 +743,35 @@
                 </div>
             </div>
 
-            <!-- 2.5 -->
+            <!-- 2.5: LECTURA VISUAL DE LOS MATERIALES -->
             <div class="content-card reveal-item">
-                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.5. Diagnóstico y Recomendaciones</h3>
-                <p>Se estructurará una matriz de diagnóstico para solucionar incoherencias visuales y potenciar el atractivo de la marca.</p>
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.5. Análisis de los Recursos Visuales</h3>
+                <p>Las imágenes utilizadas en la página web, las etiquetas, los empaques y las publicaciones deben reforzar la personalidad de Amazonía Okitsoki. Para evaluarlas, se observará si el producto aparece con buena iluminación y nitidez, si los colores corresponden a la identidad de la marca, si el fondo permite distinguir el chocolate y sus ingredientes, y si la composición mantiene una apariencia ordenada y profesional.</p>
+                <ul style="padding-left:20px; font-size:13.5px; line-height:1.7;">
+                    <li><strong>Producto:</strong> mostrar los chocolates, bombones, barras y rellenos con una fotografía clara, realista y bien enfocada.</li>
+                    <li><strong>Identidad:</strong> mantener visibles el logotipo y los colores corporativos sin deformarlos ni alterar sus proporciones.</li>
+                    <li><strong>Origen:</strong> incorporar, cuando corresponda, imágenes del cacao, las frutas nativas y el entorno de Satipo para comunicar procedencia y elaboración artesanal.</li>
+                    <li><strong>Presentación:</strong> evitar imágenes borrosas, fondos recargados o elementos que distraigan de la información principal.</li>
+                    <li><strong>Coherencia:</strong> procurar que las fotografías de la web y redes sociales representen de forma fiel los productos que recibe el cliente.</li>
+                </ul>
+                <div class="example-callout">
+                    <strong>Criterio de evaluación</strong>
+                    Una imagen adecuada debe permitir reconocer el producto rápidamente, apreciar su presentación y relacionarlo con la identidad amazónica de la marca. Si la fotografía no muestra bien el producto o utiliza colores diferentes a los corporativos, deberá reemplazarse o editarse sin modificar la apariencia real del chocolate.
+                </div>
+                <div class="image-placeholder-box">
+                    <img src="imagenes/analisis-recursos-visuales.jpg" alt="Análisis visual de productos y materiales de Amazonía Okitsoki" class="auditoria-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="placeholder-fallback">
+                        <i class="fas fa-image" style="font-size: 32px; color: #D9881A; margin-bottom: 8px;"></i>
+                        <span>[ Insertar una imagen nítida de los chocolates, el empaque y el logotipo de Amazonía Okitsoki ]</span>
+                        <small style="font-size: 11px; color: #888; margin-top: 4px;">Ruta sugerida: imagenes/analisis-recursos-visuales.jpg</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2.6 -->
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; font-size:20px;">2.6. Diagnóstico y Recomendaciones</h3>
+                <p>Se organizarán los hallazgos en una matriz de diagnóstico que distinga fortalezas, debilidades, oportunidades y amenazas. A partir de las evidencias obtenidas, se priorizarán acciones de mejora según su importancia, facilidad de aplicación y aporte al reconocimiento de la marca.</p>
                 
                 <div class="example-callout">
                     <strong>Ejemplo de Aplicación</strong>
@@ -754,7 +801,7 @@
 
             <div class="content-card reveal-item">
                 <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0;">3.1. Planteamiento del Problema</h3>
-                <p style="margin:0;">El problema central radica en determinar si la imagen que proyecta Amazonía Okitsoki comunica eficazmente su propuesta de valor diferenciadora —chocolatería artesanal de autor elaborada con cacao nativo de Satipo, rellenos exóticos e identidad asháninka— y si esta satisface las expectativas de frescura, calidad e innovación de su público objetivo.</p>
+                <p style="margin:0;">El problema de investigación consiste en determinar si la imagen que proyecta Amazonía Okitsoki comunica con claridad su propuesta de valor: chocolates artesanales elaborados con cacao nativo de Satipo, combinaciones de sabores inspiradas en la Amazonía e identidad cultural asháninka. También se busca conocer si el diseño de sus materiales, la información de los productos y la atención brindada generan confianza y responden a las expectativas de calidad, presentación e innovación del público objetivo.</p>
             </div>
 
             <div class="content-card reveal-item">
@@ -762,7 +809,7 @@
                 <p>Se aplicará un enfoque mixto (cualitativo y cuantitativo) apoyado en cuatro herramientas fundamentales:</p>
                 <ol style="padding-left:20px; font-size:13.5px; line-height:1.7;">
                     <li><strong>Encuestas de satisfacción y percepción:</strong> Dirigidas a clientes presenciales y digitales.<br><em>Ejemplo cuantitativo: "En una escala del 1 al 5, ¿cómo califica la presentación visual y el diseño de los empaques de nuestros chocolates?"</em></li>
-                    <li><strong>Entrevistas a profundidad:</strong> Conversaciones breves con clientes frecuentes y turistas.<br><em>Ejemplo cualitativo: "¿Qué aspecto de la experiencia o del sabor del chocolate rellenos considera que diferencia a Amazonía Okitsoki de otras marcas?"</em></li>
+                    <li><strong>Entrevistas a profundidad:</strong> Conversaciones breves con clientes frecuentes y turistas.<br><em>Ejemplo cualitativo: "¿Qué aspecto de la experiencia o del sabor de los chocolates rellenos considera que diferencia a Amazonía Okitsoki de otras marcas?"</em></li>
                     <li><strong>Observación directa en tienda:</strong> Evaluación del servicio, el letrero principal, la iluminación, el orden de los mostradores y el uso del uniforme corporativo.</li>
                     <li><strong>Auditoría de Canales Digitales:</strong> Monitoreo del feed de Instagram, Reels de TikTok, página de Facebook y tiempos de respuesta por WhatsApp.</li>
                 </ol>
@@ -825,7 +872,7 @@
                 <h2>PROCESO DE AUTOANÁLISIS DE LA IMAGEN</h2>
             </div>
 
-            <p style="font-size:14px; line-height:1.6; margin-bottom:20px; color:#33231B;">El autoanálisis es una evaluación crítica e interna efectuada por la administración de Amazonía Okitsoki S.A.C. para examinar cómo se gestionan los activos visuales y de comunicación antes de contrastarlos con la opinión del mercado.</p>
+            <p style="font-size:14px; line-height:1.6; margin-bottom:20px; color:#33231B;">El autoanálisis es una revisión interna de la forma en que Amazonía Okitsoki S.A.C. administra su identidad visual y su comunicación. Permite comprobar si el logotipo, los colores, los empaques, las publicaciones, el catálogo y la atención mantienen una presentación coherente. Esta revisión debe complementarse con las opiniones de los clientes, ya que la percepción interna de la empresa puede ser diferente de la imagen que realmente recibe el público.</p>
 
             <!-- ESTRUCTURA DEL AUTOANÁLISIS -->
             <div class="diagram-container reveal-item">
@@ -923,6 +970,150 @@
             <a href="#top" class="back-to-top">↑ Volver al inicio</a>
         </section>
 
+
+        <!-- SECCIÓN 6: ENCUESTAS Y ENTREVISTAS A PERSONAS -->
+        <section id="sec-06" class="auditoria-section">
+            <div class="section-header-box">
+                <span class="big-section-num">6.</span>
+                <h2>ENCUESTAS Y ENTREVISTAS A PERSONAS</h2>
+            </div>
+            <div class="content-card reveal-item">
+                <p>Esta sección permite recoger opiniones sobre la marca Amazonía Okitsoki, la presentación de sus productos y la experiencia que ofrecen los chocolates artesanales elaborados con cacao de Satipo. Las respuestas deben registrarse con autorización de cada participante y utilizarse para identificar oportunidades de mejora.</p>
+                <div class="example-callout"><strong>Importante:</strong> los nombres y las respuestas que aparecen en las entrevistas de ejemplo son modelos para mostrar cómo organizar la información. Reemplázalos por los nombres y opiniones de las personas que realmente entrevistes; no los presentes como resultados reales si aún no has realizado las entrevistas.</div>
+            </div>
+
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D;font-family:'Playfair Display',serif;margin-top:0;">6.1. Encuesta sobre la marca y los chocolates</h3>
+                <p>Completa esta encuesta con cada participante. Se solicita únicamente el nombre, sin apellidos.</p>
+                <form id="encuestaOkitsoki" class="okitsoki-form">
+                    <label for="nombreEncuesta">Nombre de la persona</label>
+                    <input id="nombreEncuesta" name="nombre" type="text" placeholder="Escribe solo el nombre" required>
+
+                    <fieldset><legend>1. ¿Conocías la marca Amazonía Okitsoki antes de esta encuesta?</legend>
+                        <label><input type="radio" name="conocia" value="Sí" required> Sí</label>
+                        <label><input type="radio" name="conocia" value="No"> No</label>
+                    </fieldset>
+                    <fieldset><legend>2. ¿Qué te transmite el nombre y la identidad visual de la marca?</legend>
+                        <label><input type="radio" name="identidad" value="Natural y amazónica" required> Natural y amazónica</label>
+                        <label><input type="radio" name="identidad" value="Artesanal y tradicional"> Artesanal y tradicional</label>
+                        <label><input type="radio" name="identidad" value="Moderna y creativa"> Moderna y creativa</label>
+                        <label><input type="radio" name="identidad" value="No lo tengo claro"> No lo tengo claro</label>
+                    </fieldset>
+                    <fieldset><legend>3. ¿Qué tan atractiva te parece la presentación de los chocolates?</legend>
+                        <label><input type="radio" name="presentacion" value="Muy atractiva" required> Muy atractiva</label>
+                        <label><input type="radio" name="presentacion" value="Atractiva"> Atractiva</label>
+                        <label><input type="radio" name="presentacion" value="Regular"> Regular</label>
+                        <label><input type="radio" name="presentacion" value="Poco atractiva"> Poco atractiva</label>
+                    </fieldset>
+                    <fieldset><legend>4. ¿Qué característica te interesa más al elegir un chocolate?</legend>
+                        <label><input type="radio" name="caracteristica" value="Sabor y calidad" required> Sabor y calidad</label>
+                        <label><input type="radio" name="caracteristica" value="Ingredientes naturales"> Ingredientes naturales</label>
+                        <label><input type="radio" name="caracteristica" value="Empaque y diseño"> Empaque y diseño</label>
+                        <label><input type="radio" name="caracteristica" value="Precio"> Precio</label>
+                        <label><input type="radio" name="caracteristica" value="Origen local y artesanal"> Origen local y artesanal</label>
+                    </fieldset>
+                    <fieldset><legend>5. ¿Probarías chocolates con rellenos de frutas amazónicas?</legend>
+                        <label><input type="radio" name="rellenos" value="Sí" required> Sí</label>
+                        <label><input type="radio" name="rellenos" value="Tal vez"> Tal vez</label>
+                        <label><input type="radio" name="rellenos" value="No"> No</label>
+                    </fieldset>
+                    <fieldset><legend>6. ¿Cómo calificarías la información de los productos y sus precios?</legend>
+                        <label><input type="radio" name="informacion" value="Muy clara" required> Muy clara</label>
+                        <label><input type="radio" name="informacion" value="Clara"> Clara</label>
+                        <label><input type="radio" name="informacion" value="Poco clara"> Poco clara</label>
+                        <label><input type="radio" name="informacion" value="No he visto la información"> No he visto la información</label>
+                    </fieldset>
+                    <fieldset><legend>7. ¿Dónde te gustaría conocer los productos?</legend>
+                        <label><input type="checkbox" name="canales" value="Instagram"> Instagram</label>
+                        <label><input type="checkbox" name="canales" value="TikTok"> TikTok</label>
+                        <label><input type="checkbox" name="canales" value="Facebook"> Facebook</label>
+                        <label><input type="checkbox" name="canales" value="WhatsApp"> WhatsApp</label>
+                        <label><input type="checkbox" name="canales" value="Tienda física"> Tienda física</label>
+                    </fieldset>
+                    <label for="mejoraEncuesta">8. ¿Qué mejorarías de la marca, el chocolate o su empaque?</label>
+                    <textarea id="mejoraEncuesta" name="mejora" rows="4" placeholder="Escribe la opinión de la persona..."></textarea>
+                    <button type="submit" class="survey-submit">Registrar respuesta</button>
+                    <p id="mensajeEncuesta" role="status" aria-live="polite"></p>
+                    <div id="resumenEncuesta" class="survey-result" hidden></div>
+                </form>
+            </div>
+
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D;font-family:'Playfair Display',serif;margin-top:0;">6.2. Entrevistas sobre Amazonía Okitsoki</h3>
+                <p>Realiza preguntas abiertas para conocer la opinión personal de cada participante. En el registro se coloca únicamente el nombre de pila.</p>
+                <div class="grid-two-cols">
+                    <article class="subcard interview-card">
+                        <img src="imagenes/entrevista-ana.jpg" alt="Fotografía de la persona entrevistada Ana" class="auditoria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display:none"><i class="fas fa-user"></i><span>Agregar foto de Ana</span><small>imagenes/entrevista-ana.jpg</small></div>
+                        <h4>Nombre: Ana</h4>
+                        <p><strong>Pregunta 1. ¿Qué te parece la marca Amazonía Okitsoki?</strong><br><em>Respuesta de ejemplo:</em> Me parece una marca que puede destacar por utilizar cacao de la Amazonía y mostrar su origen local.</p>
+                        <p><strong>Pregunta 2. ¿Qué opinas de la presentación del chocolate y su empaque?</strong><br><em>Respuesta de ejemplo:</em> Me gustaría que el empaque sea atractivo, proteja bien el producto e incluya información clara.</p>
+                        <p><strong>Pregunta 3. ¿Qué te gustaría probar o mejorar?</strong><br><em>Respuesta de ejemplo:</em> Probaría variedades con rellenos de frutas amazónicas y me gustaría ver los sabores y precios en un catálogo.</p>
+                    </article>
+                    <article class="subcard interview-card">
+                        <img src="imagenes/entrevista-luis.jpg" alt="Fotografía de la persona entrevistada Luis" class="auditoria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display:none"><i class="fas fa-user"></i><span>Agregar foto de Luis</span><small>imagenes/entrevista-luis.jpg</small></div>
+                        <h4>Nombre: Luis</h4>
+                        <p><strong>Pregunta 1. ¿Qué característica valoras más en un chocolate artesanal?</strong><br><em>Respuesta de ejemplo:</em> Valoro el sabor, la calidad de los ingredientes y que se explique de dónde proviene el cacao.</p>
+                        <p><strong>Pregunta 2. ¿Qué te comunica el nombre y el logotipo de la marca?</strong><br><em>Respuesta de ejemplo:</em> Me hace pensar en la selva y en un producto relacionado con la naturaleza; la marca podría explicar mejor su significado.</p>
+                        <p><strong>Pregunta 3. ¿Qué recomendarías a Amazonía Okitsoki?</strong><br><em>Respuesta de ejemplo:</em> Publicar fotos claras de los chocolates, mostrar los diferentes sabores y mantener actualizados los precios.</p>
+                    </article>
+                    <article class="subcard interview-card">
+                        <img src="imagenes/entrevista-maria.jpg" alt="Fotografía de la persona entrevistada María" class="auditoria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display:none"><i class="fas fa-user"></i><span>Agregar foto de María</span><small>imagenes/entrevista-maria.jpg</small></div>
+                        <h4>Nombre: María</h4>
+                        <p><strong>Pregunta 1. ¿Comprarías chocolates elaborados con cacao de Satipo?</strong><br><em>Respuesta de ejemplo:</em> Sí, si conozco sus ingredientes, su calidad y el precio antes de comprar.</p>
+                        <p><strong>Pregunta 2. ¿Qué opinas de los chocolates con frutas amazónicas?</strong><br><em>Respuesta de ejemplo:</em> Me parece una combinación interesante porque permite descubrir sabores diferentes.</p>
+                        <p><strong>Pregunta 3. ¿Qué información debería mostrar la marca?</strong><br><em>Respuesta de ejemplo:</em> Los ingredientes, los sabores disponibles, el precio, el tamaño y una forma sencilla de hacer pedidos.</p>
+                    </article>
+                    <article class="subcard interview-card">
+                        <img src="imagenes/entrevista-jose.jpg" alt="Fotografía de la persona entrevistada José" class="auditoria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display:none"><i class="fas fa-user"></i><span>Agregar foto de José</span><small>imagenes/entrevista-jose.jpg</small></div>
+                        <h4>Nombre: José</h4>
+                        <p><strong>Pregunta 1. ¿Qué te parece la identidad visual de Amazonía Okitsoki?</strong><br><em>Respuesta de ejemplo:</em> Los elementos relacionados con el cacao y la Amazonía pueden ayudar a reconocer la marca.</p>
+                        <p><strong>Pregunta 2. ¿Qué influye en tu decisión de compra?</strong><br><em>Respuesta de ejemplo:</em> El sabor, la presentación, la confianza en la elaboración y que el precio sea visible.</p>
+                        <p><strong>Pregunta 3. ¿Cómo podría mejorar su comunicación?</strong><br><em>Respuesta de ejemplo:</em> Con publicaciones frecuentes, fotografías reales de los productos y un catálogo fácil de consultar.</p>
+                    </article>
+                </div>
+                <p class="example-callout"><strong>Recuerda:</strong> las respuestas anteriores son ejemplos de redacción, no testimonios verificados. Al realizar las entrevistas, sustituye cada respuesta por lo que diga la persona entrevistada y pide permiso antes de publicar su fotografía.</p>
+            </div>
+
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D;font-family:'Playfair Display',serif;margin-top:0;">6.3. Imágenes para documentar la investigación</h3>
+                <p>Agrega fotografías propias de los productos y de la actividad de investigación. Si todavía no tienes las fotos, los espacios mostrarán una indicación para que sepas qué archivo colocar.</p>
+                <div class="grid-two-cols">
+                    <div class="subcard image-research-card">
+                        <img src="imagenes/chocolates-amazonia-okitsoki.jpg" alt="Chocolates artesanales de Amazonía Okitsoki" class="auditoria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display:none"><i class="fas fa-cookie-bite"></i><span>Foto de los chocolates</span><small>imagenes/chocolates-amazonia-okitsoki.jpg</small></div>
+                        <h4>Productos de chocolate</h4><p>Fotografía de los chocolates, sus variedades y rellenos.</p>
+                    </div>
+                    <div class="subcard image-research-card">
+                        <img src="imagenes/empaques-amazonia-okitsoki.jpg" alt="Empaques de los chocolates artesanales" class="auditoria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display:none"><i class="fas fa-box-open"></i><span>Foto de los empaques</span><small>imagenes/empaques-amazonia-okitsoki.jpg</small></div>
+                        <h4>Empaques y presentación</h4><p>Fotografía de etiquetas, cajas y presentación final.</p>
+                    </div>
+                    <div class="subcard image-research-card">
+                        <img src="imagenes/encuesta-clientes.jpg" alt="Aplicación de encuesta a una persona" class="auditoria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display:none"><i class="fas fa-clipboard-list"></i><span>Foto aplicando la encuesta</span><small>imagenes/encuesta-clientes.jpg</small></div>
+                        <h4>Aplicación de encuestas</h4><p>Fotografía de la encuesta en papel o en un dispositivo.</p>
+                    </div>
+                    <div class="subcard image-research-card">
+                        <img src="imagenes/entrevista-clientes.jpg" alt="Realización de una entrevista sobre la marca" class="auditoria-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="image-placeholder" style="display:none"><i class="fas fa-comments"></i><span>Foto de una entrevista</span><small>imagenes/entrevista-clientes.jpg</small></div>
+                        <h4>Entrevistas a personas</h4><p>Fotografía tomada con autorización durante la entrevista.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D;font-family:'Playfair Display',serif;margin-top:0;">6.4. Registro y análisis de resultados</h3>
+                <p>Después de aplicar las encuestas, cuenta las respuestas de cada alternativa y resume los comentarios más repetidos. En las entrevistas, identifica qué mencionan las personas sobre la marca, el sabor y calidad del chocolate, el empaque, los precios y los canales de información. No coloques porcentajes ni conclusiones hasta contar con respuestas reales.</p>
+                <label for="resultadosInvestigacion">Resumen de los resultados obtenidos</label>
+                <textarea id="resultadosInvestigacion" rows="5" placeholder="Escribe aquí los resultados reales después de aplicar las encuestas y entrevistas..."></textarea>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
         <!-- SECCIÓN 5: CONCLUSIONES Y RECOMENDACIONES -->
         <section id="sec-05" class="auditoria-section">
             <div class="section-header-box">
@@ -933,13 +1124,13 @@
             <div class="content-card reveal-item">
                 <ol style="margin:0; padding-left:20px; font-size:14px; line-height:1.8;">
                     <li style="margin-bottom:15px;">
-                        <strong style="color:#4A1E0D;">Consolidación de Identidad:</strong> La ejecución integral de esta auditoría permitirá a Amazonía Okitsoki S.A.C. afianzar una imagen corporativa sólida, profesional e inconfundible, diferenciándose claramente de la oferta de chocolatería tradicional en la región.
+                        <strong style="color:#4A1E0D;">Consolidación de Identidad:</strong> La auditoría permitirá identificar qué elementos de la identidad de Amazonía Okitsoki funcionan adecuadamente y cuáles necesitan ajustes. Al mantener una presentación coherente en el logotipo, los empaques, el establecimiento y los medios digitales, la empresa podrá comunicar de manera más clara su propuesta artesanal y diferenciarse de otras opciones de chocolatería de la región.
                     </li>
                     <li style="margin-bottom:15px;">
-                        <strong style="color:#4A1E0D;">Coherencia en Puntos de Contacto:</strong> Al alinear la presentación del establecimiento en Satipo, la vestimenta corporativa del personal, las publicaciones en redes sociales y la atención por WhatsApp, la marca proyectará la confiabilidad y alta calidad requeridas para alcanzar su Visión estratégica al año 2028.
+                        <strong style="color:#4A1E0D;">Coherencia en Puntos de Contacto:</strong> La aplicación consistente de la identidad en el establecimiento, la indumentaria, los empaques, las publicaciones y la atención por WhatsApp contribuirá a ofrecer una experiencia reconocible y confiable. Para lograrlo, conviene utilizar lineamientos gráficos comunes y mantener actualizada la información que se comparte con los clientes.
                     </li>
                     <li>
-                        <strong style="color:#4A1E0D;">Estrategia Basada en Datos Reales:</strong> Las acciones correctivas deberán sustentarse de manera permanente en las evidencias recogidas durante la investigación de mercado, garantizando que cada cambio visual o promocional responda a los deseos e inquietudes reales de sus consumidores.
+                        <strong style="color:#4A1E0D;">Estrategia Basada en Datos Reales:</strong> Las decisiones de mejora deberán basarse en los resultados de encuestas, entrevistas y observaciones, evitando realizar cambios únicamente por preferencias personales. Se recomienda revisar periódicamente la percepción de los clientes y comprobar si las acciones aplicadas mejoran el reconocimiento de la marca, la comprensión de la información y la experiencia de compra.
                     </li>
                 </ol>
             </div>
@@ -1077,6 +1268,26 @@
             });
 
         });
+
+        // ENCUESTA: MUESTRA UN RESUMEN PARA COPIAR AL REGISTRO DE INVESTIGACIÓN
+        const encuestaForm = document.getElementById('encuestaOkitsoki');
+        if (encuestaForm) {
+            encuestaForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(encuestaForm);
+                const nombre = String(formData.get('nombre') || '').trim().split(/\s+/)[0];
+                const respuestas = [];
+                for (const [clave, valor] of formData.entries()) {
+                    if (clave !== 'nombre') respuestas.push(clave + ': ' + valor);
+                }
+                const resumen = document.getElementById('resumenEncuesta');
+                resumen.hidden = false;
+                resumen.textContent = 'Respuesta registrada en esta página para ' + nombre + '.\n' + respuestas.join('\n') + '\n\nCopia este resumen a tu documento de investigación para conservarlo. Esta versión no envía los datos a un servidor.';
+                document.getElementById('mensajeEncuesta').textContent = 'Encuesta completada. Revisa el resumen y guárdalo en tu registro.';
+                resumen.style.whiteSpace = 'pre-line';
+            });
+        }
+
     </script>
 </body>
-</html>
+</html></html>
