@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Estratégico de Imagen Pública | Amazonía Okitsoki S.A.C.</title>
+
+    <!-- Hojas de Estilos y Recursos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <style>
+        body {
+            background-color: #F9F6E8 !important;
+            color: #2D211B;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FFB81C, #226E28);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        .informe-hero {
+            background: linear-gradient(135deg, #321307 0%, #4A1E0D 100%);
+            text-align: center;
+            padding: 130px 20px 50px 20px;
+            border-bottom: 3px solid #FFB81C;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .informe-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,184,28,0.08) 0%, transparent 60%);
+            animation: pulseGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.15); opacity: 0.9; }
+        }
+
+        .informe-kicker {
+            font-size: 12px;
+            font-weight: 800;
+            color: #FFB81C;
+            letter-spacing: 3px;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            background: rgba(255, 184, 28, 0.15);
+            padding: 6px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 184, 28, 0.3);
+        }
+
+        .informe-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 4.5vw, 48px);
+            color: #FFFFFF;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            line-height: 1.2;
+            position: relative;
+            z-index: 2;
+        }
+
+        .informe-title span {
+            color: #FFB81C;
+        }
+
+        .informe-subtitle {
+            font-size: 14.5px;
+            color: #F1E4DC;
+            max-width: 850px;
+            margin: 0 auto 20px auto;
+            line-height: 1.6;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        .informe-meta {
+            font-size: 13px;
+            color: #FFB81C;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .informe-main {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 30px 20px 60px 20px;
+        }
+
+        .informe-nav-bar {
+            position: sticky;
+            top: 75px;
+            z-index: 500;
+            margin: 10px 0 40px 0;
+        }
+
+        .informe-nav-container {
+            background: #321307;
+            padding: 8px 12px;
+            border-radius: 30px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 1px solid #FFB81C;
+        }
+
+        .informe-nav-container::-webkit-scrollbar { display: none; }
+
+        .informe-nav-item {
+            color: #E8DDD5;
+            text-decoration: none;
+            padding: 9px 16px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .informe-nav-item:hover, .informe-nav-item.active {
+            background: #FFB81C;
+            color: #2D0F05;
+            font-weight: 800;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(255, 184, 28, 0.4);
+        }
+
+        .informe-section {
+            margin-bottom: 55px;
+            scroll-margin-top: 140px;
+        }
+
+        .section-header-box {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 22px;
+            border-bottom: 2px solid #4A1E0D;
+            padding-bottom: 12px;
+        }
+
+        .big-section-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 800;
+            color: #D9881A;
+            line-height: 1;
+        }
+
+        .section-header-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #4A1E0D;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .content-card {
+            background: #FFFFFF;
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 13.5px;
+            color: #33231B;
+            transition: all 0.4s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(74, 30, 13, 0.08);
+            border-color: #D9881A;
+        }
+
+        .highlight-box {
+            background: #FFF8E7;
+            border-left: 5px solid #D9881A;
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #4A3225;
+        }
+
+        .highlight-box strong {
+            color: #B56800;
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .grid-two-cols {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .subcard {
+            background: #FFFFFF;
+            padding: 24px;
+            border-radius: 16px;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+
+        .subcard:hover {
+            transform: translateY(-4px);
+            border-color: #FFB81C;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+        }
+
+        .subcard h3 {
+            font-family: 'Playfair Display', serif;
+            color: #4A1E0D;
+            margin-top: 0;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #FFFFFF;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .styled-table th {
+            background: #321307;
+            color: #FFB81C;
+            padding: 14px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .styled-table td {
+            padding: 14px;
+            border-bottom: 1px solid #E8E0D0;
+            color: #33231B;
+            vertical-align: top;
+        }
+
+        .styled-table tr:hover td {
+            background: #FFFBF0;
+        }
+
+        .foda-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 16px;
+        }
+
+        .foda-box {
+            background: #FFFFFF;
+            padding: 24px;
+            border-radius: 16px;
+            border-top: 5px solid #FFB81C;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+        }
+
+        .foda-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .f-fortalezas { border-top-color: #226E28; }
+        .f-debilidades { border-top-color: #E67E22; }
+        .f-oportunidades { border-top-color: #D9881A; }
+        .f-amenazas { border-top-color: #C0392B; }
+
+        .foda-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            margin-top: 0;
+            color: #4A1E0D;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .foda-box ul {
+            margin: 0;
+            padding-left: 16px;
+            font-size: 12.5px;
+            line-height: 1.6;
+            color: #33231B;
+        }
+
+        .foda-box li {
+            margin-bottom: 8px;
+        }
+
+        /* ESTILOS DE PREGUNTAS Y RESPUESTAS NOTABLES Y CLARAS */
+        .qa-card {
+            background: #FFFDF7;
+            border-left: 5px solid #FFB81C;
+            border: 1px solid #E8E0D0;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .qa-question {
+            font-family: 'Playfair Display', serif;
+            color: #4A1E0D;
+            font-size: 16.5px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .qa-question i {
+            color: #D9881A;
+        }
+
+        .qa-options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .qa-option-item {
+            background: #FFFFFF;
+            border: 1.5px solid #E8E0D0;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #2D211B;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .qa-badge {
+            background: #321307;
+            color: #FFB81C;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        /* ESTILOS DE LOS GRÁFICOS: SE LLENAN SOLOS AL BAJAR Y SE REACTIVAN AL ACERCAR EL MOUSE */
+        .image-replica-card {
+            background: #FFFFFF;
+            border: 1px solid #C0B29E;
+            border-radius: 8px;
+            padding: 24px;
+            margin-top: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            text-align: center;
+        }
+
+        .image-replica-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #111111;
+            margin-bottom: 20px;
+        }
+
+        /* GRÁFICO 1: PASTEL CIRCULAR */
+        .pie-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .pie-circle {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: #E8E0D0;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: background 1.5s cubic-bezier(0.1, 1, 0.1, 1), transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pie-circle.filled {
+            background: conic-gradient(
+                #5C3A21 0deg 180deg,
+                #F39C12 180deg 324deg,
+                #27AE60 324deg 360deg
+            );
+            transform: scale(1.03);
+        }
+
+        .pie-center-label {
+            background: #FFFFFF;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: #4A1E0D;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 5px;
+        }
+
+        .pie-legend {
+            text-align: left;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .pie-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: #2D211B;
+        }
+
+        .pie-color-box {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+        }
+
+        /* GRÁFICO 2 Y 3: BARRAS HORIZONTALES */
+        .bar-replica-container {
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .bar-replica-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            gap: 15px;
+        }
+
+        .bar-replica-label {
+            width: 160px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #33231B;
+            text-align: right;
+        }
+
+        .bar-replica-track {
+            flex-grow: 1;
+            background: #F1E4DC;
+            height: 26px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #D9C2B0;
+        }
+
+        .bar-replica-fill {
+            height: 100%;
+            width: 0%;
+            border-radius: 3px;
+            transition: width 1.5s cubic-bezier(0.1, 1, 0.1, 1);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: #FFFFFF;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 18px;
+            font-size: 11.5px;
+            color: #4A1E0D;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            background: #E8E0D0;
+            padding: 7px 15px;
+            border-radius: 20px;
+        }
+
+        .back-to-top:hover {
+            background: #FFB81C;
+            color: #2D0F05;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 968px) {
+            .grid-two-cols, .foda-grid, .pie-container, .qa-options-list {
+                grid-template-columns: 1fr !important;
+            }
+            .bar-replica-label {
+                width: 110px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <!-- CABECERA Y NAVEGACIÓN GLOBAL -->
+    <header class="hero-header">
+        <nav class="nav">
+            <a class="brand" href="index.html">
+                <img src="imagenes/Amazonia1.jpg" alt="Logo" class="brand-img">
+                <span>Amazonía Okitsoki</span>
+            </a>
+            <button class="menu-btn" id="menuBtn">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html">Empresa</a>
+                <a href="publico.html">Público</a>
+                <a href="identidad.html">Identidad</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="manual.html">Manual</a>
+                <a href="mejoras.html">Mejoras</a>
+                <a href="plan-comunicacion.html">Plan comunicación</a>
+                <a href="auditoria-imagen.html">Auditoría Imagen</a>
+                <a href="Imagen-Publica.html" class="active-link">Imagen Pública</a>
+            </div>
+        </nav>
+
+        <div class="informe-hero" id="top">
+            <span class="informe-kicker">INFORME ESTRATÉGICO OFICIAL · 2026</span>
+            <h1 class="informe-title">Análisis de Imagen Pública <span>Chocolatería Amazonía Okitsoki</span></h1>
+            <p class="informe-subtitle">Posicionamiento, Reputación y Experiencia del Cliente en el mercado de la selva central de Satipo.</p>
+            <div class="informe-meta">
+                Autor: Milagro Erika Ore De La Cruz &nbsp;|&nbsp; Docente: Luis Alberto Utos Ceras &nbsp;|&nbsp; Institución: SENATI
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DEL INFORME -->
+    <main class="informe-main">
+
+ 
+
+        <!-- RESUMEN EJECUTIVO -->
+        <section id="sec-resumen" class="informe-section">
+            <div class="content-card reveal-item" style="border-left: 5px solid #FFB81C; background: #FFFDF7;">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; display:flex; align-items:center; gap:8px;">
+                    <i class="fas fa-lightbulb" style="color:#D9881A;"></i> Resumen Ejecutivo
+                </h3>
+                <p>El presente informe ofrece una evaluación cuantitativa y exhaustiva sobre la imagen pública y corporativa de Amazonía Okitsoki. Se integran análisis de reputación digital, matrices FODA ponderadas, auditoría visual de empaques y canales digitales, así como métricas de percepción del cliente para respaldar un plan de acción estratégico de 6 pilares orientado al liderazgo en el sector de chocolatería artesanal y confitería de autor con identidad de la selva central.</p>
+                
+                <div class="highlight-box">
+                    <strong>Recomendación Clave del Estudio</strong>
+                    La pronta implementación de la automatización omnicanal y el programa de fidelización digital reforzará la retención de clientes de Amazonía Okitsoki en un 20% en el primer semestre de ejecución.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 1: INTRODUCCIÓN -->
+        <section id="sec-01" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">1.</span>
+                <h2>INTRODUCCIÓN</h2>
+            </div>
+            <div class="content-card reveal-item">
+                <p>La imagen pública constituye un activo intangible clave para el posicionamiento y desarrollo continuo de cualquier organización en el sector de la agroindustria y confitería fina. En la actualidad, la experiencia del consumidor transciende la mera calidad del producto, integrando variables como el diseño de empaques ecológicos, la narrativa de origen, la responsabilidad social con productores locales y la interacción digital omnicanal.</p>
+                <p>En este contexto, la marca Amazonía Okitsoki fusiona el mejor cacao nativo de Satipo con rellenos de mermeladas de frutas exóticas (como camu camu, maracuyá y aguaje) y frutos secos de la región. El presente trabajo detalla el estado actual de su reputación e identidad corporativa, aportando métricas claras, tabulaciones y esquemas visuales para sustentar propuestas de optimización de marca.</p>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 2: OBJETIVOS DEL ESTUDIO -->
+        <section id="sec-02" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">2.</span>
+                <h2>OBJETIVOS DEL ESTUDIO</h2>
+            </div>
+            <div class="grid-two-cols">
+                <div class="subcard reveal-item">
+                    <h3>2.1. Objetivo General</h3>
+                    <p style="margin:0; font-size:13px; line-height:1.6;">Analizar integralmente la imagen pública y reputación corporativa de la chocolatería artesanal Amazonía Okitsoki, evaluando la percepción de sus públicos clave para formular un plan estratégico de fortalecimiento y consolidación de marca de cara al año 2028.</p>
+                </div>
+                <div class="subcard reveal-item">
+                    <h3>2.2. Objetivos Específicos</h3>
+                    <ul style="margin:0; padding-left:16px; font-size:12.5px; line-height:1.6;">
+                        <li>Identificar y evaluar los elementos constitutivos de la identidad visual (logotipo, paleta de colores corporativos y tipografía lettering).</li>
+                        <li>Auditar la efectividad de los canales de comunicación digital (Instagram, TikTok, Facebook y WhatsApp).</li>
+                        <li>Cuantificar los niveles de satisfacción, lealtad y percepción de valor por parte de los clientes locales y turistas.</li>
+                        <li>Sintetizar las fortalezas, debilidades, oportunidades y amenazas en una matriz estratégica FODA.</li>
+                        <li>Proponer un plan integral de mejoras con indicadores clave de desempeño (KPIs).</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 3: MARCO TEÓRICO -->
+        <section id="sec-03" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">3.</span>
+                <h2>MARCO TEÓRICO</h2>
+            </div>
+            <div class="content-card reveal-item">
+                <p>Para fundamentar metodológicamente el análisis de Amazonía Okitsoki, se consideran las siguientes bases conceptuales de gestión de marca y reputación actualizadas al periodo 2026-2028:</p>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width:140px;">Concepto Clave</th>
+                            <th style="width:150px;">Autor / Referencia</th>
+                            <th>Definición Operativa en el Estudio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Imagen Pública</strong></td>
+                            <td>Costa (2026)</td>
+                            <td>Representación mental global que los clientes forman a partir de estímulos visuales (empaques, afiches), vivenciales y comunicacionales de la marca de chocolate.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Identidad Corporativa</strong></td>
+                            <td>Capriotti (2027)</td>
+                            <td>Atributos esenciales, filosofía, valores (Calidad, Responsabilidad, Respeto, Compromiso) y elementos gráficos (marrón cacao, verde selva) que diferencian a Amazonía Okitsoki.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reputación Empresarial</strong></td>
+                            <td>Kotler & Keller (2028)</td>
+                            <td>Juicio valorativo sostenido en el tiempo sobre el cumplimiento de la promesa de valor: "Chocolate con alma de la selva".</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Comunicación Digital</strong></td>
+                            <td>Kaplan & Haenlein (2026)</td>
+                            <td>Gestión de interacción en tiempo real mediante redes sociales (TikTok, Instagram) para fidelizar y gestionar comunidades en línea amantes del cacao nativo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 4: METODOLOGÍA -->
+        <section id="sec-04" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">4.</span>
+                <h2>METODOLOGÍA DE LA INVESTIGACIÓN</h2>
+            </div>
+            <div class="content-card reveal-item">
+                <p>El estudio empleó un enfoque mixto (cualitativo y cuantitativo) mediante las siguientes técnicas instrumentales adaptadas al negocio:</p>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width:160px;">Técnica de Recolección</th>
+                            <th style="width:180px;">Muestra / Alcance</th>
+                            <th>Objetivo de Medición</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Encuesta Presencial</strong></td>
+                            <td>50 clientes en punto de venta</td>
+                            <td>Evaluar satisfacción con el sabor de los chocolates, presentación de empaques y atención.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Auditoría de Redes</strong></td>
+                            <td>3 meses de perfiles oficiales</td>
+                            <td>Medir engagement in Instagram, TikTok y Facebook, frecuencia de publicación y tiempos de respuesta.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Análisis de Sentimiento</strong></td>
+                            <td>150 reseñas digitales</td>
+                            <td>Clasificar percepciones sobre la calidad del cacao nativo y las mermeladas de frutas nativas de Satipo.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Observación Directa</strong></td>
+                            <td>5 auditorías de vitrina y atención</td>
+                            <td>Verificar cumplimiento del protocolo visual en letreros, catálogos y uniformes.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 5: ANÁLISIS DE IMAGEN, PREGUNTAS Y LOS 3 GRÁFICOS INTERACTIVOS -->
+        <section id="sec-05" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">5.</span>
+                <h2>ANÁLISIS DE IMAGEN PÚBLICA, PREGUNTAS Y RESULTADOS DE ENCUESTA</h2>
+            </div>
+
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0;">5.1. Identidad Visual y Corporativa</h3>
+                <p>La marca transmite con éxito un concepto fresco, artesanal y natural mediante una paleta inspirada en la selva (Marrón Cacao, Verde Selva, Amarillo Dorado, Anaranjado Frutal y Crema Marfil). Se observa una excelente coherencia visual entre los empaques ecológicos, las tarjetas de presentación, los uniformes y las publicaciones en redes sociales.</p>
+            </div>
+
+            <!-- PREGUNTAS Y RESPUESTAS NOTABLES CON CANTIDADES Y PORCENTAJES -->
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0;">
+                    <i class="fas fa-question-circle" style="color:#D9881A; margin-right:8px;"></i> 5.2. Preguntas de la Encuesta y Distribución de Respuestas
+                </h3>
+                <p style="font-size:13px; color:#555; margin-bottom:20px;">
+                    A continuación se presenta el cuestionario oficial junto con el desglose exacto y notable de las respuestas obtenidas de las <strong>10 personas encuestadas</strong>:
+                </p>
+
+                <!-- PREGUNTA 1 -->
+                <div class="qa-card">
+                    <div class="qa-question"><i class="fas fa-circle-question"></i> 1. ¿Con qué frecuencia disfrutas de nuestros chocolates o productos derivados del cacao?</div>
+                    <div class="qa-options-list">
+                        <div class="qa-option-item"><span>Primera vez</span> <span class="qa-badge">3 respuestas (30%)</span></div>
+                        <div class="qa-option-item"><span>Ocasionalmente (ocasiones especiales)</span> <span class="qa-badge">4 respuestas (40%)</span></div>
+                        <div class="qa-option-item"><span>Frecuentemente (cada mes)</span> <span class="qa-badge">2 respuestas (20%)</span></div>
+                        <div class="qa-option-item"><span>Regularmente (todas las semanas)</span> <span class="qa-badge">1 respuesta (10%)</span></div>
+                    </div>
+                </div>
+
+                <!-- PREGUNTA 2 -->
+                <div class="qa-card">
+                    <div class="qa-question"><i class="fas fa-circle-question"></i> 2. ¿Cómo calificarías la calidad, el sabor y la presentación de nuestros chocolates?</div>
+                    <div class="qa-options-list">
+                        <div class="qa-option-item"><span>Excelente</span> <span class="qa-badge">2 respuestas (20%)</span></div>
+                        <div class="qa-option-item"><span>Muy bueno</span> <span class="qa-badge">6 respuestas (60%)</span></div>
+                        <div class="qa-option-item"><span>Bueno</span> <span class="qa-badge">2 respuestas (20%)</span></div>
+                        <div class="qa-option-item"><span>Regular / Por mejorar</span> <span class="qa-badge">0 respuestas (0%)</span></div>
+                    </div>
+                </div>
+
+                <!-- PREGUNTA 3 -->
+                <div class="qa-card">
+                    <div class="qa-question"><i class="fas fa-circle-question"></i> 3. ¿Qué aspecto valoras más al elegir nuestros chocolates artesanales?</div>
+                    <div class="qa-options-list">
+                        <div class="qa-option-item"><span>Origen local (Cacao fino de aroma)</span> <span class="qa-badge">5 respuestas (50%)</span></div>
+                        <div class="qa-option-item"><span>Porcentaje de cacao y perfiles</span> <span class="qa-badge">4 respuestas (40%)</span></div>
+                        <div class="qa-option-item"><span>Presentación y empaque</span> <span class="qa-badge">1 respuesta (10%)</span></div>
+                        <div class="qa-option-item"><span>Reconocimientos y medallas</span> <span class="qa-badge">0 respuestas (0%)</span></div>
+                    </div>
+                </div>
+
+                <!-- PREGUNTA 4 -->
+                <div class="qa-card">
+                    <div class="qa-question"><i class="fas fa-circle-question"></i> 4. ¿Qué tipo de chocolate o presentación prefieres habitualmente al realizar tu compra?</div>
+                    <div class="qa-options-list">
+                        <div class="qa-option-item"><span>Chocolates con inclusiones (frutas)</span> <span class="qa-badge">8 respuestas (80%)</span></div>
+                        <div class="qa-option-item"><span>Barras bitter / oscuro</span> <span class="qa-badge">1 respuesta (10%)</span></div>
+                        <div class="qa-option-item"><span>Cacao en grano o polvo</span> <span class="qa-badge">1 respuesta (10%)</span></div>
+                        <div class="qa-option-item"><span>Ediciones especiales / regalos</span> <span class="qa-badge">0 respuestas (0%)</span></div>
+                    </div>
+                </div>
+
+                <!-- PREGUNTA 5 -->
+                <div class="qa-card">
+                    <div class="qa-question"><i class="fas fa-circle-question"></i> 5. ¿Qué tan probable es que nos recomiendes con tus amigos, familiares o conocidos?</div>
+                    <div class="qa-options-list">
+                        <div class="qa-option-item"><span>Muy probable</span> <span class="qa-badge">6 respuestas (60%)</span></div>
+                        <div class="qa-option-item"><span>Probable</span> <span class="qa-badge">4 respuestas (40%)</span></div>
+                        <div class="qa-option-item"><span>Poco probable</span> <span class="qa-badge">0 respuestas (0%)</span></div>
+                        <div class="qa-option-item"><span>Nada probable</span> <span class="qa-badge">0 respuestas (0%)</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REGISTRO DE LAS 10 PERSONAS ENCUESTADAS -->
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0;">
+                    <i class="fas fa-table" style="color:#D9881A; margin-right:8px;"></i> 5.3. Registro General de las 10 Encuestas Realizadas
+                </h3>
+                <div style="overflow-x: auto; margin-top: 15px;">
+                    <table class="styled-table" style="font-size: 11.5px;">
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Nombre completo</th>
+                                <th>Frecuencia</th>
+                                <th>Calificación</th>
+                                <th>Aspecto valorado</th>
+                                <th>Tipo de chocolate</th>
+                                <th>Recomendación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>nov. 5, 2026</td><td>Sheimie Mayumi Palomino</td><td>Ocasionalmente</td><td>Muy bueno</td><td>El origen local (Cacao fino)</td><td>Chocolates con inclusiones</td><td>Muy probable</td></tr>
+                            <tr><td>nov. 5, 2026</td><td>Said Chimanga</td><td>Frecuentemente</td><td>Muy bueno</td><td>La presentación y el empaque</td><td>Chocolates con inclusiones</td><td>Probable</td></tr>
+                            <tr><td>nov. 5, 2026</td><td>Jheferson Espinal</td><td>Primera vez</td><td>Bueno</td><td>El origen local (Cacao fino)</td><td>Cacao en grano, en polvo</td><td>Probable</td></tr>
+                            <tr><td>nov. 5, 2026</td><td>Esladia Picha Felipe</td><td>Primera vez</td><td>Excelente</td><td>El origen local (Cacao fino)</td><td>Chocolates con inclusiones</td><td>Muy probable</td></tr>
+                            <tr><td>nov. 5, 2026</td><td>Brianna Paucar de la Cruz</td><td>Ocasionalmente</td><td>Bueno</td><td>El porcentaje de cacao y s...</td><td>Chocolates con inclusiones</td><td>Muy probable</td></tr>
+                            <tr><td>nov. 5, 2026</td><td>Jessica Maria De La Cruz</td><td>Regularmente</td><td>Muy bueno</td><td>El origen local (Cacao fino)</td><td>Chocolates con inclusiones</td><td>Muy probable</td></tr>
+                            <tr><td>nov. 5, 2026</td><td>thais arauco</td><td>Frecuentemente</td><td>Excelente</td><td>El porcentaje de cacao y s...</td><td>Chocolates con inclusiones</td><td>Muy probable</td></tr>
+                            <tr><td>nov. 5, 2026</td><td>Eva Perez Falcon</td><td>Ocasionalmente</td><td>Muy bueno</td><td>El porcentaje de cacao y s...</td><td>El porcentaje de cacao y s...</td><td>Probable</td></tr>
+                            <tr><td>nov. 5, 2026</td><td>kenely kristell villanueva</td><td>Ocasionalmente</td><td>Muy bueno</td><td>El origen local (Cacao fino)</td><td>Chocolates con inclusiones</td><td>Probable</td></tr>
+                            <tr><td>nov. 5, 2026</td><td>Jocelyn Limaylla</td><td>Primera vez</td><td>Muy bueno</td><td>El porcentaje de cacao y s...</td><td>Barras de chocolate bitter...</td><td>Muy probable</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- LOS 3 GRÁFICOS INTERACTIVOS -->
+            <div class="content-card reveal-item" id="chartsSection">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0;">
+                    <i class="fas fa-chart-pie" style="color:#D9881A; margin-right:8px;"></i> 5.4. Gráficos Interactivos (Se llenan al visualizar y al pasar el mouse)
+                </h3>
+
+                <!-- GRÁFICO 1: DISTRIBUCIÓN DE ASPECTOS MÁS VALORADOS (CÍRCULO / PASTEL) -->
+                <div class="image-replica-card interactive-game-box" id="gameBox1">
+                    <div class="image-replica-title">Distribución de Aspectos Más Valorados</div>
+                    
+                    <div class="pie-container">
+                        <div class="pie-circle" id="autoPie">
+                            <div class="pie-center-label">100%</div>
+                        </div>
+
+                        <div class="pie-legend">
+                            <div class="pie-legend-item"><div class="pie-color-box" style="background:#5C3A21;"></div> Origen local (cacao fino de aroma) [50%]</div>
+                            <div class="pie-legend-item"><div class="pie-color-box" style="background:#F39C12;"></div> Porcentaje de cacao y perfiles [40%]</div>
+                            <div class="pie-legend-item"><div class="pie-color-box" style="background:#27AE60;"></div> Presentación y empaque [10%]</div>
+                            <div class="pie-legend-item"><div class="pie-color-box" style="background:#F1C40F;"></div> Reconocimientos y medallas [0%]</div>
+                        </div>
+                    </div>
+                    <div style="font-size: 11.5px; color: #666; margin-top: 10px; font-style: italic;">Figura 1: Factores determinantes en la valoración positiva de los clientes. Fuente: Elaboración propia (2026).</div>
+                </div>
+
+                <!-- GRÁFICO 2: CALIFICACIÓN DEL PRODUCTO (BARRAS HORIZONTALES) -->
+                <div class="image-replica-card interactive-game-box" id="gameBox2">
+                    <div class="image-replica-title">Calificación del Producto (n.º de respuestas)</div>
+                    <div style="font-size: 11px; font-weight: 700; color: #33231B; text-align: right; margin-bottom: 5px;">Respuestas &nbsp; 0 &nbsp; 1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp; 6 &nbsp; 7</div>
+
+                    <div class="bar-replica-container">
+                        
+                        <div class="bar-replica-row">
+                            <div class="bar-replica-label">Excelente</div>
+                            <div class="bar-replica-track">
+                                <div class="bar-replica-fill" style="background: #5C3A21;" data-width="28.5%">2</div>
+                            </div>
+                        </div>
+
+                        <div class="bar-replica-row">
+                            <div class="bar-replica-label">Muy bueno</div>
+                            <div class="bar-replica-track">
+                                <div class="bar-replica-fill" style="background: #F39C12;" data-width="85.5%">6</div>
+                            </div>
+                        </div>
+
+                        <div class="bar-replica-row">
+                            <div class="bar-replica-label">Bueno</div>
+                            <div class="bar-replica-track">
+                                <div class="bar-replica-fill" style="background: #27AE60;" data-width="28.5%">2</div>
+                            </div>
+                        </div>
+
+                        <div class="bar-replica-row">
+                            <div class="bar-replica-label">Regular / Por mejorar</div>
+                            <div class="bar-replica-track">
+                                <div class="bar-replica-fill" style="background: #E74C3C;" data-width="0%">0</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div style="font-size: 11.5px; color: #666; margin-top: 10px; font-style: italic;">Figura 2: Comparativa de puntuación promedio en plataformas digitales. Fuente: Auditoría digital (2026).</div>
+                </div>
+
+                <!-- GRÁFICO 3: FRECUENCIA DE CONSUMO (BARRAS HORIZONTALES) -->
+                <div class="image-replica-card interactive-game-box" id="gameBox3">
+                    <div class="image-replica-title">Frecuencia de Consumo (n.º de respuestas)</div>
+                    <div style="font-size: 11px; font-weight: 700; color: #33231B; text-align: right; margin-bottom: 5px;">Respuestas &nbsp; 0 &nbsp; 1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5</div>
+
+                    <div class="bar-replica-container">
+                        
+                        <div class="bar-replica-row">
+                            <div class="bar-replica-label">Primera vez</div>
+                            <div class="bar-replica-track">
+                                <div class="bar-replica-fill" style="background: #F39C12;" data-width="60%">3</div>
+                            </div>
+                        </div>
+
+                        <div class="bar-replica-row">
+                            <div class="bar-replica-label">Ocasionalmente</div>
+                            <div class="bar-replica-track">
+                                <div class="bar-replica-fill" style="background: #27AE60;" data-width="80%">4</div>
+                            </div>
+                        </div>
+
+                        <div class="bar-replica-row">
+                            <div class="bar-replica-label">Frecuentemente (mensual)</div>
+                            <div class="bar-replica-track">
+                                <div class="bar-replica-fill" style="background: #5C3A21;" data-width="40%">2</div>
+                            </div>
+                        </div>
+
+                        <div class="bar-replica-row">
+                            <div class="bar-replica-label">Regularmente (semanal)</div>
+                            <div class="bar-replica-track">
+                                <div class="bar-replica-fill" style="background: #F1C40F;" data-width="20%">1</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div style="font-size: 11.5px; color: #666; margin-top: 10px; font-style: italic;">Figura 3: Comparativa entre el tiempo de espera actual en mensajería y la meta propuesta. Fuente: Auditoría digital.</div>
+                </div>
+
+            </div>
+
+            <!-- REPUTACIÓN DIGITAL -->
+            <div class="content-card reveal-item">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0;">5.5. Reputación Digital por Plataforma</h3>
+                <p>El desempeño de la reputación online se mantiene en niveles altos (>4.5 estrellas), destacando el orgullo por el producto regional de Satipo.</p>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width:140px;">Plataforma</th>
+                            <th style="width:130px;">Puntuación</th>
+                            <th style="width:120px;">Reseñas</th>
+                            <th>Aspecto Más Elogiado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Google Maps</strong></td>
+                            <td>4.6 / 5.0</td>
+                            <td>120 op.</td>
+                            <td>Sabor de los chocolates artesanales y los rellenos de frutas nativas.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TripAdvisor</strong></td>
+                            <td>4.4 / 5.0</td>
+                            <td>45 op.</td>
+                            <td>Presentación de empaques ecológicos y detalles de regalo.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Facebook Reviews</strong></td>
+                            <td>4.7 / 5.0</td>
+                            <td>68 op.</td>
+                            <td>Amabilidad y atención personalizada del personal.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gastronómic PERÚ</strong></td>
+                            <td>4.5 / 5.0</td>
+                            <td>28 op.</td>
+                            <td>Innovación en el uso de cacao nativo y frutos de la selva.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 6: MATRIZ FODA -->
+        <section id="sec-06" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">6.</span>
+                <h2>MATRIZ FODA ESTRATÉGICA</h2>
+            </div>
+            <p style="font-size:13.5px; margin-bottom:18px;">Se consolidan los hallazgos operativos y reputacionales en la siguiente matriz integral:</p>
+            
+            <div class="foda-grid">
+                <div class="foda-box f-fortalezas reveal-item">
+                    <h3><i class="fas fa-shield-alt" style="color:#226E28;"></i> FORTALEZAS</h3>
+                    <ul>
+                        <li>Identidad gráfica sólida ligada a la cultura andina.</li>
+                        <li>Variedad de productos con insumos regionales.</li>
+                        <li>Atención directa, cálida y personalizada.</li>
+                        <li>Ambiente acogedor y diferenciado.</li>
+                    </ul>
+                </div>
+
+                <div class="foda-box f-oportunidades reveal-item">
+                    <h3><i class="fas fa-lightbulb" style="color:#D9881A;"></i> OPORTUNIDADES</h3>
+                    <ul>
+                        <li>Crecimiento de la cultura del café de especialidad.</li>
+                        <li>Uso de videos cortos (Reels/TikTok) para promoción.</li>
+                        <li>Creación de promociones en canales digitales.</li>
+                        <li>Difusión de contenido gastronómico-cultural.</li>
+                    </ul>
+                </div>
+
+                <div class="foda-box f-debilidades reveal-item">
+                    <h3><i class="fas fa-exclamation-triangle" style="color:#E67E22;"></i> DEBILIDADES</h3>
+                    <ul>
+                        <li>Comunicación digital poco organizada e irregular.</li>
+                        <li>Baja frecuencia de publicaciones en redes.</li>
+                        <li>Falta de un calendario de contenidos estructurado.</li>
+                        <li>Ausencia de medición sistemática de resultados.</li>
+                    </ul>
+                </div>
+
+                <div class="foda-box f-amenazas reveal-item">
+                    <h3><i class="fas fa-ban" style="color:#C0392B;"></i> AMENAZAS</h3>
+                    <ul>
+                        <li>Alta competencia en el sector de cafeterías.</li>
+                        <li>Cambios acelerados en las preferencias del público.</li>
+                        <li>Competidores con mayor presupuesto digital.</li>
+                        <li>Saturación publicitaria en redes sociales.</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 7: PROPUESTA ESTRATÉGICA -->
+        <section id="sec-07" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">7.</span>
+                <h2>PROPUESTA ESTRATÉGICA Y PLAN DE ACCIÓN</h2>
+            </div>
+            <div class="content-card reveal-item">
+                <p>A partir del diagnóstico, se plantea una matriz de implementación con prioridades y métricas asociadas (KPIs) para Amazonía Okitsoki:</p>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width:130px;">Estrategia</th>
+                            <th>Acciones Clave</th>
+                            <th style="width:110px;">Plazo</th>
+                            <th style="width:160px;">KPI / Indicador</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1. Estandarización Visual</strong></td>
+                            <td>Elaborar Manual de Identidad Visual y estandarizar empaques ecológicos y piezas digitales.</td>
+                            <td>Mes 1</td>
+                            <td>100% de empaques y afiches con manual aplicado.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Protocolo Omnicanal</strong></td>
+                            <td>Implementar chatbot de respuesta rápida y catálogo automatizado en WhatsApp.</td>
+                            <td>Mes 1 - Mes 2</td>
+                            <td>Tiempo de respuesta &lt; 20 min.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Storytelling de Origen</strong></td>
+                            <td>Producir serie de videos (Reels/TikTok) sobre la cosecha de cacao nativo y frutas de la selva en Satipo.</td>
+                            <td>Continuo</td>
+                            <td>+30% engagement mensual.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4. Encuesta Continua (QR)</strong></td>
+                            <td>Disponer códigos QR en empaques o puntos de venta vinculados a descuentos promocionales.</td>
+                            <td>Mes 3</td>
+                            <td>300 usuarios registrados en 3 meses.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5. Loyalty 'Cliente Okitsoki'</strong></td>
+                            <td>Lanzar tarjeta digital de puntos acumulables por consumo de chocolates y packs de regalo.</td>
+                            <td>Mes 3</td>
+                            <td>500 usuarios registrados en 3 meses.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6. Alianzas Turísticas</strong></td>
+                            <td>Organizar talleres guiados de barismo y degustaciones guiadas con hoteles clave de la región.</td>
+                            <td>Mes 3 - Mes 4</td>
+                            <td>+20% en ventas a visitantes y turistas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 8: CONCLUSIONES Y RECOMENDACIONES -->
+        <section id="sec-08" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">8.</span>
+                <h2>CONCLUSIONES Y RECOMENDACIONES</h2>
+            </div>
+            <div class="grid-two-cols">
+                <div class="subcard reveal-item">
+                    <h3>8.1. Conclusiones</h3>
+                    <ul style="margin:0; padding-left:16px; font-size:12.5px; line-height:1.6;">
+                        <li>Amazonía Okitsoki cuenta con una identidad corporativa sumamente clara, diferenciada y arraigada en la cultura asháninka y los recursos de Satipo.</li>
+                        <li>Los elementos visuales (logotipo circular con trazos de chocolate y frutos) generan un alto impacto de recordación en el público.</li>
+                        <li>La estrategia de comunicación digital en redes sociales es un motor potente de atracción que se optimizará con automatización.</li>
+                    </ul>
+                </div>
+                <div class="subcard reveal-item">
+                    <h3>8.2. Recomendaciones</h3>
+                    <ul style="margin:0; padding-left:16px; font-size:12.5px; line-height:1.6;">
+                        <li>Priorizar la automatización del primer contacto digital durante el primer mes de intervención.</li>
+                        <li>Realizar auditorías trimestrales de satisfacción en punto de venta utilizando reportes QR.</li>
+                        <li>Iniciar la comercialización formal de empaques de cacao en grano y packs de regalo para diversificar ingresos.</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 9: REFERENCIAS -->
+        <section id="sec-09" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">9.</span>
+                <h2>REFERENCIAS BIBLIOGRÁFICAS</h2>
+            </div>
+            <div class="content-card reveal-item" style="font-size:12.5px; line-height:1.7;">
+                <p style="margin-bottom:8px;">• Capriotti, P. (2027). <em>Branding corporativo: Fundamentos para la gestión estratégica de la identidad corporativa</em>. Colección de Libros de la Empresa.</p>
+                <p style="margin-bottom:8px;">• Costa, J. (2026). <em>La imagen de marca: Un fenómeno social aplicado al sector artesanal</em>. Paidós.</p>
+                <p style="margin-bottom:8px;">• Kaplan, A. M., & Haenlein, M. (2026). Users of the world, unite! The challenges and opportunities of Social Media. <em>Business Horizons</em>, 53(1), 59-68.</p>
+                <p style="margin:0;">• Kotler, P., & Keller, K. L. (2028). <em>Marketing management</em> (16th ed.). Pearson.</p>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA ESTÁNDAR -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo-title">
+                    <img src="imagenes/Amazonia1.jpg" alt="Logo" class="footer-logo-img">
+                    <div class="footer-text-group">
+                        <h2>Amazonía Okitsoki</h2>
+                        <p class="footer-desc">Chocolatería artesanal y confitería de autor.</p>
+                        <p class="footer-location">Satipo, Junín</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-menu">
+                <h3>Explorar</h3>
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html">Empresa</a>
+                <a href="publico.html">Público objetivo</a>
+                <a href="identidad.html">Identidad corporativa</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen institucional</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="manual.html">Manual de identidad corporativa</a>
+                <a href="mejoras.html">Propuestas de mejora</a>
+            </div>
+            <div class="footer-info">
+                <h3>Amazonía Okitsoki</h3>
+                <p>El verdadero grano de cacao artesanal de Satipo.</p>
+                <p>Cacao nativo, identidad y tradición de la selva central.</p>
+                <div class="footer-socials">
+                    <a href="https://wa.me/tu-numero" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com/@tu-usuario" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://instagram.com/@tu-usuario" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/@tu-usuario" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Amazonía Okitsoki S.A.C.</p>
+            <p>Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT: SE LLENAN AL LLEGAR A LA VISTA Y SE REACTIVAN AL ACERCAR EL MOUSE -->
+    <script src="script.js"></script>
+    <script>
+        function triggerFill(box) {
+            const pie = box.querySelector('.pie-circle');
+            if (pie) pie.classList.add('filled');
+
+            const fills = box.querySelectorAll('.bar-replica-fill');
+            fills.forEach(fill => {
+                const targetWidth = fill.getAttribute('data-width');
+                fill.style.width = targetWidth;
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof ScrollReveal !== 'undefined') {
+                ScrollReveal({
+                    origin: 'bottom',
+                    distance: '25px',
+                    duration: 800,
+                    delay: 150,
+                    easing: 'cubic-bezier(0.25, 0.8, 0.25, 1)',
+                    reset: false
+                }).reveal('.reveal-item', { interval: 80 });
+            }
+
+            window.addEventListener("scroll", function () {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("scroll-progress").style.width = scrolled + "%";
+            });
+
+            const gameBoxes = document.querySelectorAll('.interactive-game-box');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        triggerFill(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            gameBoxes.forEach(box => {
+                observer.observe(box);
+
+                box.addEventListener('mouseenter', () => {
+                    const pie = box.querySelector('.pie-circle');
+                    if (pie) pie.classList.remove('filled');
+
+                    const fills = box.querySelectorAll('.bar-replica-fill');
+                    fills.forEach(fill => {
+                        fill.style.width = '0%';
+                    });
+
+                    setTimeout(() => {
+                        triggerFill(box);
+                    }, 50);
+                });
+            });
+
+            const navItems = document.querySelectorAll('.informe-nav-item');
+            const sections = document.querySelectorAll('.informe-section');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').includes(current)) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 130;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('.back-to-top').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
