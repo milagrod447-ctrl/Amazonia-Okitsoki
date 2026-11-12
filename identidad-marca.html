@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identidad marca | Amazonía Okitsoki S.A.C.</title>
+
+    <!-- Hojas de Estilos y Recursos Externos -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- ESTILOS INTERNOS COMPLETOS Y CORREGIDOS PARA EL MENÚ -->
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #F9F6E8 !important;
+            color: #2D211B;
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FFB81C, #226E28);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* NAVEGACIÓN SUPERIOR FIJA (DISTRIBUCIÓN HORIZONTAL FLUIDA EXACTA) */
+        .hero-header {
+            width: 100%;
+        }
+
+        .nav {
+            background: #321307;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 2px solid #FFB81C;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.1;
+            flex-shrink: 0;
+        }
+
+        .brand-img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #FFB81C;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #FFB81C;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+
+        .nav-links a {
+            color: #E8DDD5;
+            text-decoration: none;
+            font-size: 10.5px;
+            font-weight: 600;
+            padding: 6px 8px;
+            border-radius: 14px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover, .nav-links a.active-link {
+            background: #FFB81C;
+            color: #2D0F05;
+            font-weight: 700;
+        }
+
+        /* HERO PRINCIPAL */
+        .informe-hero {
+            background: linear-gradient(135deg, #321307 0%, #4A1E0D 100%);
+            text-align: center;
+            padding: 140px 20px 50px 20px;
+            border-bottom: 3px solid #FFB81C;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .informe-kicker {
+            font-size: 12px;
+            font-weight: 800;
+            color: #FFB81C;
+            letter-spacing: 3px;
+            display: inline-block;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            background: rgba(255, 184, 28, 0.15);
+            padding: 6px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 184, 28, 0.3);
+        }
+
+        .informe-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 4.5vw, 46px);
+            color: #FFFFFF;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .informe-title span {
+            color: #FFB81C;
+        }
+
+        .informe-subtitle {
+            font-size: 14px;
+            color: #F1E4DC;
+            max-width: 850px;
+            margin: 0 auto 20px auto;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .informe-meta {
+            font-size: 13px;
+            color: #FFB81C;
+            font-weight: 600;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .informe-main {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 30px 20px 60px 20px;
+        }
+
+        /* SUB-NAVEGACIÓN FLOTANTE INTERNA */
+        .informe-nav-bar {
+            position: sticky;
+            top: 75px;
+            z-index: 500;
+            margin: 10px 0 40px 0;
+        }
+
+        .informe-nav-container {
+            background: #321307;
+            padding: 8px 12px;
+            border-radius: 30px;
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 1px solid #FFB81C;
+        }
+
+        .informe-nav-container::-webkit-scrollbar { display: none; }
+
+        .informe-nav-item {
+            color: #E8DDD5;
+            text-decoration: none;
+            padding: 9px 16px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            white-space: nowrap;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .informe-nav-item:hover, .informe-nav-item.active {
+            background: #FFB81C;
+            color: #2D0F05;
+            font-weight: 800;
+            transform: scale(1.05);
+        }
+
+        /* SECCIONES Y TARJETAS */
+        .informe-section {
+            margin-bottom: 55px;
+            scroll-margin-top: 140px;
+        }
+
+        .section-header-box {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            margin-bottom: 22px;
+            border-bottom: 2px solid #4A1E0D;
+            padding-bottom: 12px;
+        }
+
+        .big-section-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 800;
+            color: #D9881A;
+            line-height: 1;
+        }
+
+        .section-header-box h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #4A1E0D;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .content-card {
+            background: #FFFFFF;
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 13.5px;
+            color: #33231B;
+        }
+
+        /* CONTENEDOR DE IMÁGENES */
+        .content-image-box {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .content-image-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+        }
+
+        .highlight-box {
+            background: #FFF8E7;
+            border-left: 5px solid #D9881A;
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #4A3225;
+        }
+
+        .highlight-box strong {
+            color: #B56800;
+            display: block;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .grid-two-cols {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #FFFFFF;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid #E8E0D0;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.03);
+            margin-top: 16px;
+            font-size: 13px;
+        }
+
+        .styled-table th {
+            background: #321307;
+            color: #FFB81C;
+            padding: 14px;
+            text-align: left;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .styled-table td {
+            padding: 14px;
+            border-bottom: 1px solid #E8E0D0;
+            color: #33231B;
+            vertical-align: top;
+        }
+
+        .styled-table tr:hover td {
+            background: #FFFBF0;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 18px;
+            font-size: 11.5px;
+            color: #4A1E0D;
+            font-weight: 800;
+            text-decoration: none;
+            background: #E8E0D0;
+            padding: 7px 15px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+        }
+
+        .back-to-top:hover {
+            background: #FFB81C;
+            color: #2D0F05;
+        }
+
+        /* PIE DE PÁGINA */
+        .footer {
+            background: #321307;
+            color: #E8DDD5;
+            padding: 50px 20px 20px 20px;
+            border-top: 3px solid #FFB81C;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer h3 {
+            color: #FFB81C;
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .footer-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-menu a {
+            color: #D4C5B9;
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.2s;
+        }
+
+        .footer-menu a:hover {
+            color: #FFB81C;
+        }
+
+        .footer-info p {
+            font-size: 12.5px;
+            line-height: 1.5;
+            margin: 0 0 8px 0;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .footer-socials a {
+            color: #321307;
+            background: #FFB81C;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 14px;
+            transition: transform 0.2s;
+        }
+
+        .footer-socials a:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 11.5px;
+            color: #B5A497;
+        }
+
+        @media (max-width: 1200px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #321307;
+                padding: 15px;
+                border-bottom: 2px solid #FFB81C;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .menu-btn {
+                display: block;
+            }
+            .grid-two-cols, .footer-container {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <!-- CABECERA Y NAVEGACIÓN GLOBAL CON MENÚ HORIZONTAL PERFECTO -->
+    <header class="hero-header">
+        <nav class="nav">
+            <a class="brand" href="index.html">
+                <img src="imagenes/Amazonia1.jpg" alt="Logo" class="brand-img">
+                <span>Amazonía<br>Okitsoki</span>
+            </a>
+            <button class="menu-btn" id="menuBtn">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html">Empresa</a>
+                <a href="publico.html">Público</a>
+                <a href="identidad.html">Identidad</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="manual.html">Manual</a>
+                <a href="mejoras.html">Mejoras</a>
+                <a href="plan-comunicacion.html">Plan comunicación</a>
+                <a href="auditoria-imagen.html">Auditoría Imagen</a>
+                <a href="identidad-marca.html" class="active-link">Identidad marca</a>
+            </div>
+        </nav>
+
+        <div class="informe-hero" id="top">
+            <span class="informe-kicker">FICHA TÉCNICA DE IDENTIDAD DE MARCA · 2026</span>
+            <h1 class="informe-title">Imagología, Iconología e Imagen Verbal <span>Amazonía Okitsoki</span></h1>
+            <p class="informe-subtitle">«Amazonía Okitsoki, el verdadero grano de cacao artesanal de Satipo» — Tradición artesanal, identidad asháninka y riqueza natural de la selva central.</p>
+            <div class="informe-meta">
+                Rubro: Alimentos y bebidas – Chocolatería artesanal y confitería de autor
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="informe-main">
+
+        <!-- SUB-NAVEGACIÓN FLOTANTE -->
+        <div class="informe-nav-bar">
+            <div class="informe-nav-container">
+                <a href="#sec-resumen" class="informe-nav-item active">Resumen</a>
+                <a href="#sec-01" class="informe-nav-item">1. Imagología</a>
+                <a href="#sec-02" class="informe-nav-item">2. Iconología</a>
+                <a href="#sec-03" class="informe-nav-item">3. Imagen Verbal</a>
+                <a href="#sec-04" class="informe-nav-item">4. Cuadro Comparativo</a>
+                <a href="#sec-05" class="informe-nav-item">5. Conclusión</a>
+            </div>
+        </div>
+
+        <!-- RESUMEN / INFORMACIÓN GENERAL -->
+        <section id="sec-resumen" class="informe-section">
+            <div class="content-card reveal-item" style="border-left: 5px solid #FFB81C; background: #FFFDF7;">
+                <h3 style="color:#4A1E0D; font-family:'Playfair Display', serif; margin-top:0; display:flex; align-items:center; gap:8px;">
+                    <i class="fas fa-bookmark" style="color:#D9881A;"></i> Información General de la Marca
+                </h3>
+
+                <!-- IMAGEN 1: imagen_9.jpeg -->
+                <div class="content-image-box">
+                    <img src="imagenes/imagen_9.jpeg" alt="Ficha Técnica de Identidad de Marca - Amazonía Okitsoki">
+                </div>
+
+                <div class="grid-two-cols" style="margin-top: 15px;">
+                    <div>
+                        <p><strong>Nombre de marca:</strong> Amazonía Okitsoki</p>
+                        <p><strong>Rubro:</strong> Alimentos y bebidas – Chocolatería artesanal y confitería de autor</p>
+                        <p><strong>Concepto:</strong> Tradición artesanal, identidad asháninka y riqueza natural de la selva central.</p>
+                    </div>
+                    <div>
+                        <p><strong>Eslogan:</strong> «Amazonía Okitsoki, el verdadero grano de cacao artesanal de Satipo»</p>
+                        <p><strong>Estilo gráfico:</strong> Artesanal gourmet y orgánico contemporáneo</p>
+                        <p><strong>Personalidad:</strong> Artesanal, juvenil, auténtica, innovadora, deliciosa y natural.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 1: IMAGOLOGÍA -->
+        <section id="sec-01" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">1.</span>
+                <h2>IMAGOLOGÍA</h2>
+            </div>
+            
+            <div class="content-card reveal-item">
+                <!-- IMAGEN 2: imagen200.jpeg -->
+                <div class="content-image-box">
+                    <img src="imagenes/imagen200.jpeg" alt="Imagología y Paleta de Colores Corporativos - Amazonía Okitsoki">
+                </div>
+
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width:200px;">Ficha técnica</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Definición</strong></td><td>Estudia cómo se construye y percibe la imagen de una marca ante el público.</td></tr>
+                        <tr><td><strong>Aplicación</strong></td><td>Construcción de la imagen corporativa de Amazonía Okitsoki.</td></tr>
+                        <tr><td><strong>Objetivo</strong></td><td>Transmitir una imagen artesanal, natural, confiable, de alta calidad y representativa de Satipo.</td></tr>
+                        <tr><td><strong>Personalidad</strong></td><td>Fresca, moderna, cercana, auténtica e innovadora.</td></tr>
+                        <tr><td><strong>Público objetivo</strong></td><td>Jóvenes y adultos de 14 a 50 años (residentes de Satipo, estudiantes, trabajadores y turistas) que buscan productos locales y naturales.</td></tr>
+                        <tr><td><strong>Identidad visual</strong></td><td>Imagotipo inspirado en la mazorca de cacao nativo, hojas amazónicas y trazos de chocolate fundido con rellenos frutales.</td></tr>
+                        <tr><td><strong>Colores corporativos</strong></td><td>Marrón Cacao (#4A1E0D), Verde Selva (#226E28), Amarillo Dorado (#FFB81C), Anaranjado Frutal (#F59D00) y Crema Marfil (#F9F6E8).</td></tr>
+                        <tr><td><strong>Percepción deseada</strong></td><td>Que el consumidor relacione la marca con el cacao nativo de Satipo, la cultura local y la chocolatería artesanal de calidad.</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <strong>Análisis de la marca</strong>
+                    Amazonía Okitsoki proyecta una imagen vinculada con la riqueza natural y cultural de la selva central de Satipo. Su identidad transmite calidez, origen artesanal y frescura mediante una presentación visual orgánica que destaca el cacao nativo y las frutas exóticas de la zona.
+                </div>
+                <div style="margin-top: 15px; font-size: 13px;">
+                    <strong>Resultado esperado:</strong> Una marca reconocible en Satipo y la región Junín que transmita confianza, calidad, autenticidad e identidad cultural.
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 2: ICONOLOGÍA -->
+        <section id="sec-02" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">2.</span>
+                <h2>ICONOLOGÍA</h2>
+            </div>
+            
+            <div class="content-card reveal-item">
+                <!-- IMAGEN 3: Amazonia1.jpg -->
+                <div class="content-image-box">
+                    <img src="imagenes/Amazonia1.jpg" alt="Iconología - Logotipo y Símbolos de Amazonía Okitsoki">
+                </div>
+
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width:200px;">Ficha técnica</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Definición</strong></td><td>Estudia e interpreta los significados simbólicos y culturales de las imágenes.</td></tr>
+                        <tr><td><strong>Aplicación</strong></td><td>Uso de símbolos relacionados con el cacao nativo, la flora amazónica y la cultura asháninka.</td></tr>
+                        <tr><td><strong>Objetivo</strong></td><td>Transmitir origen territorial, trabajo artesanal y valor cultural mediante elementos gráficos.</td></tr>
+                        <tr><td><strong>Símbolo principal</strong></td><td>Mazorca de cacao nativo abierta con sus granos internos visibles en la parte superior central.</td></tr>
+                        <tr><td><strong>Elementos secundarios</strong></td><td>Hojas tropicales de la selva, trazos curvos y gotas de chocolate fundido, y ondas de relleno frutal.</td></tr>
+                        <tr><td><strong>Estilo gráfico</strong></td><td>Ilustración orgánica artesanal y tipografía fluida en composición circular equilibrada.</td></tr>
+                        <tr><td><strong>Significado</strong></td><td>Representar el origen agrícola de Satipo, la pureza del cacao y su transformación en chocolatería gourmet.</td></tr>
+                    </tbody>
+                </table>
+
+                <h3 style="font-family:'Playfair Display', serif; color:#4A1E0D; margin-top:25px;">Interpretación de los símbolos:</h3>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width:220px;">Símbolo</th>
+                            <th>Significado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Mazorca y granos de cacao</strong></td><td>Representan la materia prima pura, el origen en Satipo y la autenticidad del producto artesanal.</td></tr>
+                        <tr><td><strong>Término Okitsoki</strong></td><td>Proviene de la lengua asháninka («semilla» o «grano») y vincula la marca con las comunidades productoras locales.</td></tr>
+                        <tr><td><strong>Hojas amazónicas</strong></td><td>Simbolizan la naturaleza, la frescura, la biodiversidad y el respeto ecológico por la selva.</td></tr>
+                        <tr><td><strong>Gotas y trazos de chocolate</strong></td><td>Evocan la fluidez, la textura cremosa del chocolate derretido y la calidad gourmet.</td></tr>
+                        <tr><td><strong>Trazo frutal dorado/naranja</strong></td><td>Representa las mermeladas artesanales de frutas nativas (maracuyá, camu camu, coco, cocona, aguaje).</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <strong>Análisis de la marca</strong>
+                    La iconología de Amazonía Okitsoki reúne elementos visuales que representan la biodiversidad de Satipo y la herencia cultural asháninka. La combinación de la mazorca abierta, las hojas y el flujo de chocolate y fruta crea una identidad simbólica apetecible y memorable.
+                </div>
+                <div style="margin-top: 15px; font-size: 13px;">
+                    <strong>Resultado esperado:</strong> Una identidad gráfica con símbolos propios y claros que conecten el producto con su origen amazónico.
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 3: IMAGEN VERBAL -->
+        <section id="sec-03" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">3.</span>
+                <h2>IMAGEN VERBAL</h2>
+            </div>
+            
+            <div class="content-card reveal-item">
+                <!-- IMAGEN 4: imagen_8.jpeg -->
+                <div class="content-image-box">
+                    <img src="imagenes/imagen_8.jpeg" alt="Imagen Verbal - Empaques Ecológicos y Presentación de Amazonía Okitsoki">
+                </div>
+
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width:200px;">Ficha técnica</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Definición</strong></td><td>Conjunto de palabras, frases, mensajes y expresiones que construyen la identidad comunicativa de una marca.</td></tr>
+                        <tr><td><strong>Aplicación</strong></td><td>Nombre comercial, eslogan, empaques, catálogo digital, página web y redes sociales.</td></tr>
+                        <tr><td><strong>Objetivo</strong></td><td>Comunicar la personalidad cercana, natural y artesanal de Amazonía Okitsoki mediante palabras.</td></tr>
+                        <tr><td><strong>Nombre</strong></td><td>AMAZONÍA OKITSOKI.</td></tr>
+                        <tr><td><strong>Eslogan</strong></td><td>«Amazonía Okitsoki, el verdadero grano de cacao artesanal de Satipo».</td></tr>
+                        <tr><td><strong>Tono comunicativo</strong></td><td>Cercano, amigable, cálido, sencillo y auténtico.</td></tr>
+                        <tr><td><strong>Palabras clave</strong></td><td>Cacao nativo, Satipo, Okitsoki, artesanal, selva central, frutas nativas, natural y origen.</td></tr>
+                        <tr><td><strong>Tipografía propuesta</strong></td><td>Tipografía Script / Lettering artesanal para el logotipo y Sans Serif (Montserrat o Arial) para textos informativos.</td></tr>
+                        <tr><td><strong>Estilo verbal</strong></td><td>Cercano, sugerente, emotivo y orgulloso de los insumos locales.</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <strong>Análisis de la marca y Ejemplo de mensaje publicitario</strong>
+                    <p>La imagen verbal de Amazonía Okitsoki transmite una experiencia ligada al sabor natural de la selva central, la elaboración artesanal y el orgullo por los productos de Satipo.</p>
+                    <p style="font-style: italic; margin-top: 8px;">«El sabor del mejor cacao de nuestra selva en cada chocolate. Nuestros chocolates artesanales combinan el cacao puro de Satipo con el relleno natural de frutas amazónicas. Amazonía Okitsoki, el verdadero grano de cacao artesanal de Satipo». — Autor: Milagro Erika Ore De La Cruz</p>
+                </div>
+                <div style="margin-top: 15px; font-size: 13px;">
+                    <strong>Resultado esperado:</strong> Una comunicación coherente, cálida y fácil de recordar que refuerce la identidad de la marca ante sus clientes.
+                </div>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 4: CUADRO COMPARATIVO GENERAL -->
+        <section id="sec-04" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">4.</span>
+                <h2>CUADRO COMPARATIVO GENERAL</h2>
+            </div>
+            
+            <div class="content-card reveal-item">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th style="width:200px;">Concepto</th>
+                            <th>Función en Amazonía Okitsoki</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Imagología</strong></td><td>Construye la percepción e imagen artesanal, natural y de calidad de la marca.</td></tr>
+                        <tr><td><strong>Iconología</strong></td><td>Da significado simbólico a la mazorca de cacao, las hojas selváticas y el nombre asháninka Okitsoki.</td></tr>
+                        <tr><td><strong>Imagen verbal</strong></td><td>Comunica la personalidad y promesa de sabor mediante el nombre, eslogan y mensajes cercanos.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+        <!-- SECCIÓN 5: CONCLUSIÓN -->
+        <section id="sec-05" class="informe-section">
+            <div class="section-header-box">
+                <span class="big-section-num">5.</span>
+                <h2>CONCLUSIÓN</h2>
+            </div>
+            
+            <div class="content-card reveal-item">
+                <p>Amazonía Okitsoki integra la imagología, iconología e imagen verbal para desarrollar una identidad corporativa coherente y diferenciada. La imagología proyecta una marca artesanal, moderna y comprometida con la naturaleza; la iconología aporta significado cultural y territorial mediante símbolos inspirados en el cacao nativo y la selva de Satipo; y la imagen verbal transmite los valores de la empresa a través de su nombre, su eslogan y un lenguaje cercano.</p>
+                <p>De esta manera, Amazonía Okitsoki consolida la unión entre el cacao de Satipo, las frutas amazónicas y la identidad cultural de la selva central, logrando una presencia sólida y reconocible en el mercado local y regional.</p>
+            </div>
+            <a href="#top" class="back-to-top">↑ Volver al inicio</a>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA ESTÁNDAR -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo-title">
+                    <img src="imagenes/Amazonia1.jpg" alt="Logo" class="footer-logo-img" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #FFB81C;margin-bottom:10px;">
+                    <div class="footer-text-group">
+                        <h3>Amazonía Okitsoki</h3>
+                        <p style="font-size:12px; color:#D4C5B9;">Chocolatería artesanal y confitería de autor.</p>
+                        <p style="font-size:12px; color:#D4C5B9;">Satipo, Junín</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-menu">
+                <h3>Explorar</h3>
+                <a href="index.html">Inicio</a>
+                <a href="empresa.html">Empresa</a>
+                <a href="publico.html">Público objetivo</a>
+                <a href="identidad.html">Identidad corporativa</a>
+                <a href="identidad-visual.html">Identidad visual</a>
+                <a href="imagen.html">Imagen institucional</a>
+                <a href="aplicaciones.html">Aplicaciones</a>
+                <a href="comunicacion.html">Comunicación</a>
+                <a href="manual.html">Manual de identidad corporativa</a>
+                <a href="mejoras.html">Propuestas de mejora</a>
+                <a href="identidad-marca.html">Identidad marca</a>
+            </div>
+            <div class="footer-info">
+                <h3>Amazonía Okitsoki</h3>
+                <p>El verdadero grano de cacao artesanal de Satipo.</p>
+                <p>Cacao nativo, identidad y tradición de la selva central.</p>
+                <div class="footer-socials">
+                    <a href="https://wa.me/tu-numero" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com/@tu-usuario" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://instagram.com/@tu-usuario" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/@tu-usuario" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Amazonía Okitsoki S.A.C. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS Y LÓGICA INTERACTIVA -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById('menuBtn');
+            const navLinks = document.getElementById('navLinks');
+            if (menuBtn && navLinks) {
+                menuBtn.addEventListener('click', function () {
+                    navLinks.classList.toggle('show');
+                });
+            }
+
+            if (typeof ScrollReveal !== 'undefined') {
+                ScrollReveal({
+                    origin: 'bottom',
+                    distance: '25px',
+                    duration: 800,
+                    delay: 150,
+                    easing: 'cubic-bezier(0.25, 0.8, 0.25, 1)',
+                    reset: false
+                }).reveal('.reveal-item', { interval: 80 });
+            }
+
+            window.addEventListener("scroll", function () {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                const progressBar = document.getElementById("scroll-progress");
+                if (progressBar) {
+                    progressBar.style.width = scrolled + "%";
+                }
+            });
+
+            const navItems = document.querySelectorAll('.informe-nav-item');
+            const sections = document.querySelectorAll('.informe-section');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href').includes(current)) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+
+            navItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const offsetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 130;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('.back-to-top').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
