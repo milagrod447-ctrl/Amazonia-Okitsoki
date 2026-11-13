@@ -7,7 +7,6 @@
     <title>Identidad marca | Amazonía Okitsoki S.A.C.</title>
 
     <!-- Hojas de Estilos y Recursos Externos -->
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -38,24 +37,25 @@
             transition: width 0.1s ease;
         }
 
-        /* NAVEGACIÓN SUPERIOR FIJA (DISTRIBUCIÓN HORIZONTAL FLUIDA EXACTA) */
+        /* MENÚ SUPERIOR: DISTRIBUCIÓN COMO EN LA IMAGEN DE REFERENCIA */
         .hero-header {
             width: 100%;
         }
 
         .nav {
             background: #321307;
-            padding: 10px 20px;
+            min-height: 94px;
+            padding: 12px clamp(24px, 5vw, 76px);
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
+            gap: clamp(22px, 3.2vw, 48px);
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            border-bottom: 2px solid #FFB81C;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
         }
 
         .brand {
@@ -65,15 +65,15 @@
             text-decoration: none;
             color: #FFFFFF;
             font-family: 'Playfair Display', serif;
-            font-size: 15px;
+            font-size: 20px;
             font-weight: 700;
-            line-height: 1.1;
-            flex-shrink: 0;
+            line-height: 1.05;
+            flex: 0 0 auto;
         }
 
         .brand-img {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             object-fit: cover;
             border: 2px solid #FFB81C;
@@ -81,34 +81,49 @@
 
         .menu-btn {
             display: none;
-            background: none;
+            margin-left: auto;
+            padding: 8px;
+            background: transparent;
             border: none;
             color: #FFB81C;
-            font-size: 24px;
+            font-size: 27px;
+            line-height: 1;
             cursor: pointer;
         }
 
         .nav-links {
             display: flex;
-            gap: 4px;
+            flex: 1 1 auto;
+            min-width: 0;
             align-items: center;
-            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: clamp(5px, 0.7vw, 11px);
         }
 
         .nav-links a {
-            color: #E8DDD5;
+            color: #F3EAE4;
             text-decoration: none;
-            font-size: 10.5px;
+            font-size: clamp(11px, 0.92vw, 14px);
             font-weight: 600;
-            padding: 6px 8px;
-            border-radius: 14px;
-            transition: all 0.3s ease;
-            white-space: nowrap;
+            line-height: 1.35;
+            padding: 6px 2px;
+            border-radius: 0;
+            transition: color 0.25s ease;
+            white-space: normal;
+            flex: 0 1 auto;
         }
 
-        .nav-links a:hover, .nav-links a.active-link {
-            background: #FFB81C;
-            color: #2D0F05;
+        /* Los nombres largos se muestran en dos líneas, como en la referencia. */
+        .nav-links a:nth-child(5)  { max-width: 76px; }
+        .nav-links a:nth-child(11) { max-width: 98px; }
+        .nav-links a:nth-child(12) { max-width: 84px; }
+        .nav-links a:nth-child(13) { max-width: 76px; }
+        .nav-links a:nth-child(14) { max-width: 82px; }
+
+        .nav-links a:hover,
+        .nav-links a.active-link {
+            color: #FFB81C;
+            background: transparent;
             font-weight: 700;
         }
 
@@ -344,108 +359,363 @@
             color: #2D0F05;
         }
 
-        /* PIE DE PÁGINA */
+        /* PIE DE PÁGINA: DISEÑO EN TRES COLUMNAS COMO LA REFERENCIA */
+        /* PIE DE PÁGINA: MISMO ESTILO DEL MENÚ DE REFERENCIA */
         .footer {
-            background: #321307;
-            color: #E8DDD5;
-            padding: 50px 20px 20px 20px;
-            border-top: 3px solid #FFB81C;
-            margin-top: 60px;
+            position: relative;
+            width: 100%;
+            margin-top: 0;
+            padding: 0 28px 22px;
+            color: #FFFFFF;
+            background: linear-gradient(
+                120deg,
+                rgba(50, 19, 7, 0.95),
+                rgba(74, 30, 13, 0.92) 55%,
+                rgba(34, 110, 40, 0.9)
+            );
+            border-top: 4px solid #FFB81C;
         }
 
         .footer-container {
-            max-width: 1150px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 1290px;
+            margin: 0 auto 62px;
+            padding-top: 65px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 30px;
+            grid-template-columns: minmax(420px, 1.45fr) minmax(300px, 1.15fr) minmax(270px, 0.9fr);
+            column-gap: 50px;
+            align-items: start;
         }
 
-        .footer h3 {
+        .footer-brand {
+            display: flex;
+            align-items: flex-start;
+            min-width: 0;
+        }
+
+        .footer-logo-title {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            min-width: 0;
+        }
+
+        .footer-logo-img {
+            display: block;
+            flex: 0 0 200px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid #FFB81C;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Rebote y resplandor amarillo al tocar el logo con el cursor */
+        .footer-logo-img:hover {
+            animation: reboteLogo 0.5s ease;
+            box-shadow: 0 15px 35px rgba(255, 184, 28, 0.4);
+        }
+
+        @keyframes reboteLogo {
+            0%   { transform: scale(1) translateY(0); }
+            30%  { transform: scale(1.08) translateY(-4px); }
+            50%  { transform: scale(0.96) translateY(2px); }
+            70%  { transform: scale(1.03) translateY(-2px); }
+            100% { transform: scale(1) translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .footer-logo-img:hover {
+                animation: none;
+            }
+        }
+
+        .footer-text-group {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            max-width: 175px;
+        }
+
+        .footer-text-group h2 {
+            margin: 0 0 10px;
             color: #FFB81C;
             font-family: 'Playfair Display', serif;
-            font-size: 16px;
-            margin-bottom: 15px;
+            font-size: 30px;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .footer-desc {
+            margin: 0 0 10px;
+            color: #F9F6E8;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .footer-location {
+            margin: 0;
+            color: #FFB81C !important;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .footer-menu,
+        .footer-info {
+            min-width: 0;
+        }
+
+        .footer-menu h3,
+        .footer-info h3 {
+            margin: 0 0 18px;
+            color: #FFB81C;
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.15;
         }
 
         .footer-menu {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            align-items: flex-start;
+            gap: 10px;
         }
 
         .footer-menu a {
-            color: #D4C5B9;
-            text-decoration: none;
+            display: block;
+            width: fit-content;
+            color: #F9F6E8;
+            font-family: 'Montserrat', Arial, sans-serif;
             font-size: 12px;
-            transition: color 0.2s;
+            font-weight: 500;
+            line-height: 1.4;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .footer-menu a:hover {
             color: #FFB81C;
+            padding-left: 6px;
         }
 
         .footer-info p {
-            font-size: 12.5px;
-            line-height: 1.5;
-            margin: 0 0 8px 0;
+            margin: 0 0 10px;
+            color: #F9F6E8;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
         }
 
         .footer-socials {
             display: flex;
-            gap: 12px;
-            margin-top: 15px;
+            align-items: center;
+            gap: 15px;
+            margin-top: 18px;
         }
 
         .footer-socials a {
-            color: #321307;
-            background: #FFB81C;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            width: 36px;
+            height: 36px;
+            color: #F9F6E8;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 184, 28, 0.3);
+            border-radius: 50%;
+            font-size: 16px;
             text-decoration: none;
-            font-size: 14px;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
         }
 
         .footer-socials a:hover {
-            transform: scale(1.1);
+            color: #321307;
+            background: #FFB81C;
+            border-color: #FFB81C;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 184, 28, 0.4);
         }
 
         .footer-bottom {
-            max-width: 1150px;
+            width: 100%;
+            max-width: 1290px;
             margin: 0 auto;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            font-size: 11.5px;
-            color: #B5A497;
+            padding: 21px 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        @media (max-width: 1200px) {
+        .footer-bottom p {
+            margin: 0;
+            color: #DCD6CB;
+            font-size: 12px;
+        }
+
+        @media (max-width: 1250px) {
+            .nav {
+                min-height: 82px;
+                padding: 10px 28px;
+                gap: 20px;
+            }
+
+            .brand {
+                font-size: 18px;
+            }
+
             .nav-links {
                 display: none;
-                flex-direction: column;
                 position: absolute;
-                top: 65px;
+                top: 100%;
                 left: 0;
                 width: 100%;
+                max-height: calc(100vh - 82px);
+                overflow-y: auto;
+                flex-direction: column;
+                align-items: stretch;
+                justify-content: flex-start;
+                gap: 0;
+                padding: 12px 28px 18px;
                 background: #321307;
-                padding: 15px;
                 border-bottom: 2px solid #FFB81C;
+                box-shadow: 0 12px 22px rgba(0, 0, 0, 0.22);
             }
+
             .nav-links.show {
                 display: flex;
             }
+
+            .nav-links a,
+            .nav-links a:nth-child(n) {
+                display: block;
+                width: 100%;
+                max-width: none;
+                padding: 11px 8px;
+                font-size: 14px;
+                line-height: 1.4;
+                border-bottom: 1px solid rgba(232, 221, 213, 0.12);
+            }
+
             .menu-btn {
                 display: block;
             }
-            .grid-two-cols, .footer-container {
+
+            .grid-two-cols {
                 grid-template-columns: 1fr !important;
+            }
+
+            .footer-container {
+                grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+                column-gap: 38px;
+                row-gap: 38px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-logo-img {
+                flex-basis: 160px;
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .nav {
+                min-height: 74px;
+                padding: 9px 18px;
+            }
+
+            .brand {
+                gap: 8px;
+                font-size: 16px;
+            }
+
+            .brand-img {
+                width: 38px;
+                height: 38px;
+            }
+
+            .nav-links {
+                max-height: calc(100vh - 74px);
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .informe-hero {
+                padding-top: 120px;
+            }
+
+            .footer {
+                padding: 42px 20px 18px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding-top: 0;
+                margin-bottom: 38px;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .footer-logo-title {
+                flex-direction: column;
+                align-items: center;
+                gap: 18px;
+                text-align: center;
+            }
+
+            .footer-logo-img {
+                flex: 0 0 140px;
+                width: 140px;
+                height: 140px;
+            }
+
+            .footer-text-group {
+                max-width: 260px;
+                align-items: center;
+            }
+
+            .footer-text-group h2 {
+                font-size: 27px;
+            }
+
+            .footer-menu,
+            .footer-info {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-menu {
+                gap: 12px;
+            }
+
+            .footer-menu h3,
+            .footer-info h3 {
+                margin-bottom: 8px;
+            }
+
+            .footer-socials {
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                justify-content: center;
+                gap: 9px;
+                padding: 18px 0 0;
+                text-align: center;
             }
         }
     </style>
@@ -462,7 +732,7 @@
                 <img src="imagenes/Amazonia1.jpg" alt="Logo" class="brand-img">
                 <span>Amazonía<br>Okitsoki</span>
             </a>
-            <button class="menu-btn" id="menuBtn">☰</button>
+            <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">☰</button>
             <div class="nav-links" id="navLinks">
             <a href="index.html" class="active-link">Inicio</a>
             <a href="empresa.html">Empresa</a>
@@ -493,8 +763,6 @@
 
     <!-- CONTENIDO PRINCIPAL -->
     <main class="informe-main">
-
-        </div>
 
         <!-- RESUMEN / INFORMACIÓN GENERAL -->
         <section id="sec-resumen" class="informe-section">
@@ -711,20 +979,21 @@
 
     </main>
 
-    <!-- PIE DE PÁGINA ESTÁNDAR -->
+    <!-- PIE DE PÁGINA: DISEÑO INSPIRADO EN LA IMAGEN DE REFERENCIA -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <div class="footer-logo-title">
-                    <img src="imagenes/Amazonia1.jpg" alt="Logo" class="footer-logo-img" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #FFB81C;margin-bottom:10px;">
+                    <img src="imagenes/Amazonia1.jpg" alt="Logotipo de Amazonía Okitsoki" class="footer-logo-img">
                     <div class="footer-text-group">
-                        <h3>Amazonía Okitsoki</h3>
-                        <p style="font-size:12px; color:#D4C5B9;">Chocolatería artesanal y confitería de autor.</p>
-                        <p style="font-size:12px; color:#D4C5B9;">Satipo, Junín</p>
+                        <h2>Amazonía Okitsoki</h2>
+                        <p class="footer-desc">Chocolatería artesanal y confitería de autor.</p>
+                        <p class="footer-location">Satipo, Junín</p>
                     </div>
                 </div>
             </div>
-            <div class="footer-menu">
+
+            <nav class="footer-menu" aria-label="Enlaces del pie de página">
                 <h3>Explorar</h3>
                 <a href="index.html">Inicio</a>
                 <a href="empresa.html">Empresa</a>
@@ -736,22 +1005,24 @@
                 <a href="comunicacion.html">Comunicación</a>
                 <a href="manual.html">Manual de identidad corporativa</a>
                 <a href="mejoras.html">Propuestas de mejora</a>
-                <a href="identidad-marca.html">Identidad marca</a>
-            </div>
+            </nav>
+
             <div class="footer-info">
                 <h3>Amazonía Okitsoki</h3>
                 <p>El verdadero grano de cacao artesanal de Satipo.</p>
                 <p>Cacao nativo, identidad y tradición de la selva central.</p>
                 <div class="footer-socials">
-                    <a href="https://wa.me/tu-numero" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://tiktok.com/@tu-usuario" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-                    <a href="https://instagram.com/@tu-usuario" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://facebook.com/@tu-usuario" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/tu-numero" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://tiktok.com/@tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://instagram.com/@tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/@tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 </div>
             </div>
         </div>
+
         <div class="footer-bottom">
-            <p>© 2026 Amazonía Okitsoki S.A.C. Todos los derechos reservados.</p>
+            <p>© 2026 Amazonía Okitsoki S.A.C.</p>
+            <p>Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -761,8 +1032,30 @@
             const menuBtn = document.getElementById('menuBtn');
             const navLinks = document.getElementById('navLinks');
             if (menuBtn && navLinks) {
+                const closeMenu = function () {
+                    navLinks.classList.remove('show');
+                    menuBtn.setAttribute('aria-expanded', 'false');
+                    menuBtn.setAttribute('aria-label', 'Abrir menú');
+                };
+
                 menuBtn.addEventListener('click', function () {
-                    navLinks.classList.toggle('show');
+                    const isOpen = navLinks.classList.toggle('show');
+                    menuBtn.setAttribute('aria-expanded', String(isOpen));
+                    menuBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+                });
+
+                navLinks.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', function () {
+                        if (window.innerWidth <= 1250) {
+                            closeMenu();
+                        }
+                    });
+                });
+
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth > 1250) {
+                        closeMenu();
+                    }
                 });
             }
 
